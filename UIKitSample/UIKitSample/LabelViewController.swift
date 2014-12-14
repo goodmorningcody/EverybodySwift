@@ -15,6 +15,7 @@ class LabelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         label!.text = "Hello Swift"
+        label!.textAlignment = NSTextAlignment.Justified
     }
     
     override func viewDidLayoutSubviews() {

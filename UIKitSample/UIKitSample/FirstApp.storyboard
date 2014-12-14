@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DZd-LX-edp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="59C-Sf-zga">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -112,31 +113,61 @@
             <point key="canvasLocation" x="-397" y="515"/>
         </scene>
         <!--Text View Controller-->
-        <scene sceneID="NYJ-ED-8FU">
+        <scene sceneID="2at-fZ-8CN">
             <objects>
-                <viewController id="DZd-LX-edp" customClass="TextViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="59C-Sf-zga" customClass="TextViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8sb-NS-3Cf"/>
-                        <viewControllerLayoutGuide type="bottom" id="HOb-lg-MD4"/>
+                        <viewControllerLayoutGuide type="top" id="UyM-Al-Zjd"/>
+                        <viewControllerLayoutGuide type="bottom" id="AXp-rM-SMA"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YC1-Gw-3Kf">
+                    <view key="view" contentMode="scaleToFill" id="8eI-y8-Zcj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t72-ec-S1s">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" minimumZoomScale="5" maximumZoomScale="10" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="RUl-xE-ePb">
+                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <mutableString key="text">Copyright (c) &lt;2014&gt; &lt;Cody&gt;
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.</mutableString>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="light" secureTextEntry="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="RUl-xE-ePb" secondAttribute="trailing" id="6vv-0v-gY7"/>
+                            <constraint firstItem="AXp-rM-SMA" firstAttribute="top" secondItem="RUl-xE-ePb" secondAttribute="bottom" id="94c-uI-IkO"/>
+                            <constraint firstItem="RUl-xE-ePb" firstAttribute="leading" secondItem="8eI-y8-Zcj" secondAttribute="leadingMargin" id="Adp-Gt-B1M"/>
+                            <constraint firstItem="RUl-xE-ePb" firstAttribute="top" secondItem="UyM-Al-Zjd" secondAttribute="bottom" id="ECE-Pz-XvU"/>
+                            <constraint firstItem="RUl-xE-ePb" firstAttribute="leading" secondItem="8eI-y8-Zcj" secondAttribute="leadingMargin" id="YCg-2N-22j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RUl-xE-ePb" secondAttribute="trailing" id="lEH-8y-mgM"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eRZ-x9-BRF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XzL-xq-nms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="515"/>
+            <point key="canvasLocation" x="198" y="745"/>
         </scene>
     </scenes>
 </document>
