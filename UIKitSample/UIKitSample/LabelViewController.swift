@@ -15,7 +15,6 @@ class LabelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         label!.text = "Hello Swift"
-        label!.frame.origin.x = UIScreen.mainScreen().bounds.width/2-label!.frame.width/2
     }
     
     override func viewDidLayoutSubviews() {
