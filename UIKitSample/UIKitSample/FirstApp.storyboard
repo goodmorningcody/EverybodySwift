@@ -139,7 +139,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" minimumZoomScale="5" maximumZoomScale="10" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="RUl-xE-ePb">
                                 <rect key="frame" x="0.0" y="28" width="600" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Copyright (c) &lt;2014&gt; &lt;Cody&gt;
+                                <string key="text">Copyright (c) &lt;2014&gt; &lt;Cody&gt;
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -160,7 +160,7 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
 HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.</mutableString>
+OTHER DEALINGS IN THE SOFTWARE.</string>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" spellCheckingType="yes" keyboardAppearance="light" secureTextEntry="YES"/>
@@ -250,7 +250,10 @@ OTHER DEALINGS IN THE SOFTWARE.</mutableString>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTE-Zu-uU4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lotto" translatesAutoresizingMaskIntoConstraints="NO" id="shq-PX-uNZ" userLabel="lotto image">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTE-Zu-uU4" userLabel="button">
                                 <rect key="frame" x="16" y="122" width="568" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="로또 번호 생성">
@@ -263,7 +266,19 @@ OTHER DEALINGS IN THE SOFTWARE.</mutableString>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6mr-k6-LDA" firstAttribute="top" secondItem="shq-PX-uNZ" secondAttribute="bottom" id="5zC-Hz-dui"/>
+                            <constraint firstItem="shq-PX-uNZ" firstAttribute="top" secondItem="4uR-Ic-Nzw" secondAttribute="bottom" id="9WI-F5-Pjk"/>
+                            <constraint firstItem="shq-PX-uNZ" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leading" id="CQg-BH-BTi"/>
+                            <constraint firstItem="shq-PX-uNZ" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leadingMargin" id="CWQ-hA-SpP"/>
+                            <constraint firstItem="shq-PX-uNZ" firstAttribute="top" secondItem="4uR-Ic-Nzw" secondAttribute="bottom" id="Iaf-lX-c9W"/>
+                            <constraint firstItem="6mr-k6-LDA" firstAttribute="top" secondItem="shq-PX-uNZ" secondAttribute="bottom" id="RJ8-U3-PVC"/>
                             <constraint firstAttribute="centerX" secondItem="CTE-Zu-uU4" secondAttribute="centerX" id="VwU-zS-jX9"/>
+                            <constraint firstItem="shq-PX-uNZ" firstAttribute="top" secondItem="4uR-Ic-Nzw" secondAttribute="bottom" id="dVe-qL-hJu"/>
+                            <constraint firstItem="shq-PX-uNZ" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leading" id="hG8-Vh-Yno"/>
+                            <constraint firstAttribute="trailing" secondItem="shq-PX-uNZ" secondAttribute="trailing" id="kwK-DU-3id"/>
+                            <constraint firstItem="6mr-k6-LDA" firstAttribute="top" secondItem="shq-PX-uNZ" secondAttribute="bottom" id="uGB-Gt-a67"/>
+                            <constraint firstAttribute="trailing" secondItem="shq-PX-uNZ" secondAttribute="trailing" id="vQF-7v-Pnn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="shq-PX-uNZ" secondAttribute="trailing" id="xet-GL-YmB"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -272,4 +287,7 @@ OTHER DEALINGS IN THE SOFTWARE.</mutableString>
             <point key="canvasLocation" x="-947" y="1204"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lotto" width="320" height="240"/>
+    </resources>
 </document>
