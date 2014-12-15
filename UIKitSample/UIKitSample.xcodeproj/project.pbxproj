@@ -16,6 +16,7 @@
 		C3AF746A1A3D68C7002BDF58 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AF74691A3D68C7002BDF58 /* LabelViewController.swift */; };
 		C3AF746C1A3D8C31002BDF58 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AF746B1A3D8C31002BDF58 /* TextViewController.swift */; };
 		C3C956461A39BBBE00AB12AC /* FirstApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C956451A39BBBE00AB12AC /* FirstApp.storyboard */; };
+		C3D162641A3E839900F916B1 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D162631A3E839900F916B1 /* TextFieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		C3AF74691A3D68C7002BDF58 /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		C3AF746B1A3D8C31002BDF58 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		C3C956451A39BBBE00AB12AC /* FirstApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstApp.storyboard; sourceTree = "<group>"; };
+		C3D162631A3E839900F916B1 /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		C33D21AA1A38EF6700E41ACE /* UIKitSample */ = {
 			isa = PBXGroup;
 			children = (
+				C3D162631A3E839900F916B1 /* TextFieldViewController.swift */,
 				C3AF746B1A3D8C31002BDF58 /* TextViewController.swift */,
 				C3AF74691A3D68C7002BDF58 /* LabelViewController.swift */,
 				C3C956451A39BBBE00AB12AC /* FirstApp.storyboard */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D162641A3E839900F916B1 /* TextFieldViewController.swift in Sources */,
 				C33D21B01A38EF6700E41ACE /* ViewController.swift in Sources */,
 				C33D21AE1A38EF6700E41ACE /* AppDelegate.swift in Sources */,
 				C3AF746A1A3D68C7002BDF58 /* LabelViewController.swift in Sources */,

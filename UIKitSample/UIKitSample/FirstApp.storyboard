@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="59C-Sf-zga">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="i23-eI-Ypn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -167,7 +167,64 @@ OTHER DEALINGS IN THE SOFTWARE.</mutableString>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XzL-xq-nms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="198" y="745"/>
+            <point key="canvasLocation" x="316" y="533"/>
+        </scene>
+        <!--Text Field View Controller-->
+        <scene sceneID="Ads-G3-0si">
+            <objects>
+                <viewController id="i23-eI-Ypn" customClass="TextFieldViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sq3-hr-CQF"/>
+                        <viewControllerLayoutGuide type="bottom" id="jkx-N7-zrQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kN2-aM-jc2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="패스워드의 길이는 최소6자, 최대 12자" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V2t-4L-oIX" userLabel="password">
+                                <rect key="frame" x="28" y="82" width="545" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="i23-eI-Ypn" id="NEC-PS-Zuk"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="패스워드를 다시 한 번 더 입력해주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H33-mj-THB" userLabel="re-password">
+                                <rect key="frame" x="27" y="139" width="545" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="join" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="i23-eI-Ypn" id="h4c-Uo-7jk"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일을 입력해주세요." minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="eOJ-NN-sSi" userLabel="email">
+                                <rect key="frame" x="27" y="28" width="545" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="i23-eI-Ypn" id="h9H-Yj-8ys"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="H33-mj-THB" firstAttribute="leading" secondItem="kN2-aM-jc2" secondAttribute="leadingMargin" constant="40" id="PTR-0J-gzV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eOJ-NN-sSi" secondAttribute="trailing" constant="40" id="lTe-WY-Q3P"/>
+                            <constraint firstItem="eOJ-NN-sSi" firstAttribute="leading" secondItem="kN2-aM-jc2" secondAttribute="leadingMargin" constant="40" id="oAK-vA-yng"/>
+                            <constraint firstItem="V2t-4L-oIX" firstAttribute="leading" secondItem="kN2-aM-jc2" secondAttribute="leadingMargin" constant="40" id="pkF-te-D1v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H33-mj-THB" secondAttribute="trailing" constant="40" id="s7I-Xh-vGZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V2t-4L-oIX" secondAttribute="trailing" constant="40" id="wVP-gv-S7e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="eOJ-NN-sSi" id="UMe-kB-thj"/>
+                        <outlet property="passwordTextField" destination="V2t-4L-oIX" id="nok-wk-dhl"/>
+                        <outlet property="repasswordTextField" destination="H33-mj-THB" id="Ea4-U8-6ZI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OiI-hH-TNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-195" y="1197"/>
         </scene>
     </scenes>
 </document>
