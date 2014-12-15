@@ -169,10 +169,10 @@ OTHER DEALINGS IN THE SOFTWARE.</mutableString>
             </objects>
             <point key="canvasLocation" x="316" y="533"/>
         </scene>
-        <!--Text Field View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="Ads-G3-0si">
             <objects>
-                <viewController id="i23-eI-Ypn" customClass="TextFieldViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="i23-eI-Ypn" customClass="RegisterViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sq3-hr-CQF"/>
                         <viewControllerLayoutGuide type="bottom" id="jkx-N7-zrQ"/>

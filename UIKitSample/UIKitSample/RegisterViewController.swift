@@ -1,5 +1,5 @@
 //
-//  TextFieldViewController.swift
+//  RegisterViewController.swift
 //  UIKitSample
 //
 //  Created by Cody on 2014. 12. 15..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TextFieldViewController: UIViewController, UITextFieldDelegate {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var emailTextField : UITextField?
     @IBOutlet var passwordTextField : UITextField?
@@ -37,7 +37,6 @@ class TextFieldViewController: UIViewController, UITextFieldDelegate {
         }
         
         let inputedText = textField.text
-        
         if textField==emailTextField {
             if inputedText.rangeOfString("@") != nil {
                 passwordTextField?.becomeFirstResponder()
