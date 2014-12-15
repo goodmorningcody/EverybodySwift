@@ -16,10 +16,31 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var alertView = UIAlertView(title: "Swift", message: "Hello Swift", delegate: nil, cancelButtonTitle: "확인")
-        alertView.show()
+        
+        //var alertView = UIAlertView(title: "Swift", message: "Hello Swift", delegate: self, cancelButtonTitle: "확인")
+        //alertView.show()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        var alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+            switch action.style{
+            case .Default:
+                UIApplication.sharedApplication().openURL(NSURL(string:"http://daum.net")!)
+                println("default")
+                
+            case .Cancel:
+                
+                println("cancel")
+                
+            case .Destructive:
+                println("destructive")
+            }
+        }))
+        presentViewController(alert, animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -68,5 +89,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    
+//    func alertViewCancel(alertView: UIAlertView) {
+//        UIApplication.sharedApplication().openURL(NSURL(string:"http://daum.net")!)
+//    }
     
 }
