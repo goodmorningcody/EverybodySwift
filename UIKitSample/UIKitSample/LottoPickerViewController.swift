@@ -29,6 +29,7 @@ class LottoPickerViewController: UIViewController {
     
     @IBOutlet var backgroundImageView : UIImageView?
     @IBOutlet var imageOptionSegmentedControl : UISegmentedControl?
+    @IBOutlet var imageSwitch : UISwitch?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +37,23 @@ class LottoPickerViewController: UIViewController {
         for option : ImageModeOption in ImageModeOption.values {
             imageOptionSegmentedControl?.setTitle(option.name(), forSegmentAtIndex:option.rawValue)
         }
+        
+        if let control=imageSwitch? {
+            backgroundImageView?.hidden = !control.on
+        }
+        
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func touchedSwitch(sender:UISwitch) {
+        backgroundImageView?.hidden = !sender.on
+    }
     @IBAction func touchedSegmented(sender:UISegmentedControl) {
         if sender.selectedSegmentIndex==ImageModeOption.ScaleToFill.rawValue {
             backgroundImageView?.contentMode = UIViewContentMode.ScaleToFill

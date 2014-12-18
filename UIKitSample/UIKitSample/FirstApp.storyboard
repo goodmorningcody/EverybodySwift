@@ -274,6 +274,12 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                                     <action selector="touchedSegmented:" destination="OR4-5h-bgV" eventType="valueChanged" id="mnA-4A-2Zk"/>
                                 </connections>
                             </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" onImage="switch_icon" offImage="switch_icon" translatesAutoresizingMaskIntoConstraints="NO" id="76e-MN-DSs">
+                                <rect key="frame" x="16" y="28" width="51" height="31"/>
+                                <connections>
+                                    <action selector="touchedSwitch:" destination="OR4-5h-bgV" eventType="valueChanged" id="ezk-QQ-AA1"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -298,6 +304,7 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                     <connections>
                         <outlet property="backgroundImageView" destination="shq-PX-uNZ" id="V8h-ux-Dtl"/>
                         <outlet property="imageOptionSegmentedControl" destination="BeY-iv-LfD" id="bae-k9-dLW"/>
+                        <outlet property="imageSwitch" destination="76e-MN-DSs" id="7ys-D5-W5T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPz-lh-MgK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,5 +314,6 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
     </scenes>
     <resources>
         <image name="lotto" width="320" height="240"/>
+        <image name="switch_icon" width="48" height="52"/>
     </resources>
 </document>
