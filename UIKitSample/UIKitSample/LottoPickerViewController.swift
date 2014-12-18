@@ -8,17 +8,50 @@
 
 import UIKit
 
-class LottoPickerViewController: UIViewController {
+enum ImageModeOption : Int {
+    case ScaleToFill, ScaleAspectFill, ScaleAspectFit
+    
+    static let values = [ScaleToFill, ScaleAspectFill, ScaleAspectFit]
+    
+    func name() -> String {
+        switch self {
+        case ScaleToFill:
+            return "Scale to Fill"
+        case ScaleAspectFill:
+            return "Aspect Fill"
+        case ScaleAspectFit:
+            return "Aspect Fit"
+        }
+    }
+}
 
+class LottoPickerViewController: UIViewController {
+    
+    @IBOutlet var backgroundImageView : UIImageView?
+    @IBOutlet var imageOptionSegmentedControl : UISegmentedControl?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        for option : ImageModeOption in ImageModeOption.values {
+            imageOptionSegmentedControl?.setTitle(option.name(), forSegmentAtIndex:option.rawValue)
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func touchedSegmented(sender:UISegmentedControl) {
+        if sender.selectedSegmentIndex==ImageModeOption.ScaleToFill.rawValue {
+            backgroundImageView?.contentMode = UIViewContentMode.ScaleToFill
+        }
+        else if sender.selectedSegmentIndex==ImageModeOption.ScaleAspectFit.rawValue {
+            backgroundImageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        }
+        else if sender.selectedSegmentIndex==ImageModeOption.ScaleAspectFill.rawValue {
+            backgroundImageView?.contentMode = UIViewContentMode.ScaleAspectFill
+        }
     }
     
     @IBAction func touchedGenerateLotto(sender:UIButton) {
@@ -37,16 +70,4 @@ class LottoPickerViewController: UIViewController {
 
         UIAlertView(title: "Lotto", message: results.description, delegate: nil, cancelButtonTitle: "확인").show()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -263,6 +263,17 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                                     <action selector="touchedGenerateLotto:" destination="OR4-5h-bgV" eventType="touchUpInside" id="k8f-c7-y12"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="BeY-iv-LfD">
+                                <rect key="frame" x="16" y="564" width="568" height="29"/>
+                                <segments>
+                                    <segment title="Scale to Fill"/>
+                                    <segment title="Aspect Fit"/>
+                                    <segment title="Aspect Fill"/>
+                                </segments>
+                                <connections>
+                                    <action selector="touchedSegmented:" destination="OR4-5h-bgV" eventType="valueChanged" id="mnA-4A-2Zk"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -271,9 +282,12 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                             <constraint firstItem="shq-PX-uNZ" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leading" id="CQg-BH-BTi"/>
                             <constraint firstItem="shq-PX-uNZ" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leadingMargin" id="CWQ-hA-SpP"/>
                             <constraint firstItem="shq-PX-uNZ" firstAttribute="top" secondItem="4uR-Ic-Nzw" secondAttribute="bottom" id="Iaf-lX-c9W"/>
+                            <constraint firstItem="6mr-k6-LDA" firstAttribute="top" secondItem="BeY-iv-LfD" secondAttribute="bottom" constant="16" id="QTw-bA-cw3"/>
                             <constraint firstItem="6mr-k6-LDA" firstAttribute="top" secondItem="shq-PX-uNZ" secondAttribute="bottom" id="RJ8-U3-PVC"/>
+                            <constraint firstItem="BeY-iv-LfD" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leading" constant="16" id="Uju-ke-GCy"/>
                             <constraint firstAttribute="centerX" secondItem="CTE-Zu-uU4" secondAttribute="centerX" id="VwU-zS-jX9"/>
                             <constraint firstItem="shq-PX-uNZ" firstAttribute="top" secondItem="4uR-Ic-Nzw" secondAttribute="bottom" id="dVe-qL-hJu"/>
+                            <constraint firstAttribute="trailing" secondItem="BeY-iv-LfD" secondAttribute="trailing" constant="16" id="dZV-P5-iJO"/>
                             <constraint firstItem="shq-PX-uNZ" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leading" id="hG8-Vh-Yno"/>
                             <constraint firstAttribute="trailing" secondItem="shq-PX-uNZ" secondAttribute="trailing" id="kwK-DU-3id"/>
                             <constraint firstItem="6mr-k6-LDA" firstAttribute="top" secondItem="shq-PX-uNZ" secondAttribute="bottom" id="uGB-Gt-a67"/>
@@ -281,6 +295,10 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                             <constraint firstAttribute="trailingMargin" secondItem="shq-PX-uNZ" secondAttribute="trailing" id="xet-GL-YmB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="shq-PX-uNZ" id="V8h-ux-Dtl"/>
+                        <outlet property="imageOptionSegmentedControl" destination="BeY-iv-LfD" id="bae-k9-dLW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPz-lh-MgK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
