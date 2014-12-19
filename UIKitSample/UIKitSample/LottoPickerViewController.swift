@@ -30,6 +30,8 @@ class LottoPickerViewController: UIViewController {
     @IBOutlet var backgroundImageView : UIImageView?
     @IBOutlet var imageOptionSegmentedControl : UISegmentedControl?
     @IBOutlet var imageSwitch : UISwitch?
+    @IBOutlet var numberCountLabel : UILabel?
+    @IBOutlet var countStepper : UIStepper?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,9 @@ class LottoPickerViewController: UIViewController {
             backgroundImageView?.hidden = !control.on
         }
         
+        if let stepper=countStepper? {
+            numberCountLabel?.text = Int(stepper.value).description+"개"
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -51,6 +56,9 @@ class LottoPickerViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func valueChangedStepper(sender:UIStepper) {
+        numberCountLabel?.text = Int(sender.value).description+"개"
+    }
     @IBAction func touchedSwitch(sender:UISwitch) {
         backgroundImageView?.hidden = !sender.on
     }
@@ -66,7 +74,7 @@ class LottoPickerViewController: UIViewController {
         }
     }
     
-    @IBAction func touchedGenerateLotto(sender:UIButton) {
+    func generateLotto()->[Int] {
         var numbers = [Int]()
         for( var i=1; i<=45; ++i ) {
             numbers.append(i)
@@ -79,7 +87,15 @@ class LottoPickerViewController: UIViewController {
             var result = numbers.removeAtIndex(randomIndex)
             results.append(result)
         }
-
-        UIAlertView(title: "Lotto", message: results.description, delegate: nil, cancelButtonTitle: "확인").show()
+        return results
+    }
+    @IBAction func touchedGenerateLotto(sender:UIButton) {
+        if let stepper = countStepper? {
+            var lottoNumberSet : [[Int]] = [[Int]]()
+            for index in 0...Int(stepper.value) {
+                lottoNumberSet.append(generateLotto())
+            }
+            UIAlertView(title: "Lotto", message: lottoNumberSet.description, delegate: nil, cancelButtonTitle: "확인").show()
+        }
     }
 }
