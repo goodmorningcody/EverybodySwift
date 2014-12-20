@@ -280,7 +280,7 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                                     <action selector="touchedSwitch:" destination="OR4-5h-bgV" eventType="valueChanged" id="ezk-QQ-AA1"/>
                                 </connections>
                             </switch>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="100" stepValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="vvv-fE-KT4">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="vvv-fE-KT4">
                                 <rect key="frame" x="16" y="487" width="94" height="29"/>
                                 <connections>
                                     <action selector="valueChangedStepper:" destination="OR4-5h-bgV" eventType="valueChanged" id="d85-Ey-i6h"/>

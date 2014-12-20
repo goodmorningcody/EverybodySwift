@@ -92,7 +92,7 @@ class LottoPickerViewController: UIViewController {
     @IBAction func touchedGenerateLotto(sender:UIButton) {
         if let stepper = countStepper? {
             var lottoNumberSet : [[Int]] = [[Int]]()
-            for index in 0...Int(stepper.value) {
+            for( var index=0; index<Int(stepper.value); ++index ) {
                 lottoNumberSet.append(generateLotto())
             }
             UIAlertView(title: "Lotto", message: lottoNumberSet.description, delegate: nil, cancelButtonTitle: "확인").show()
