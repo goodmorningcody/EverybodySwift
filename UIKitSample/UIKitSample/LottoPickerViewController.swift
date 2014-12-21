@@ -40,11 +40,11 @@ class LottoPickerViewController: UIViewController {
             imageOptionSegmentedControl?.setTitle(option.name(), forSegmentAtIndex:option.rawValue)
         }
         
-        if let control=imageSwitch? {
+        if let control=imageSwitch {
             backgroundImageView?.hidden = !control.on
         }
         
-        if let stepper=countStepper? {
+        if let stepper=countStepper {
             numberCountLabel?.text = Int(stepper.value).description+"개"
         }
     }
@@ -90,12 +90,15 @@ class LottoPickerViewController: UIViewController {
         return results
     }
     @IBAction func touchedGenerateLotto(sender:UIButton) {
-        if let stepper = countStepper? {
+        if let stepper = countStepper {
             var lottoNumberSet : [[Int]] = [[Int]]()
             for( var index=0; index<Int(stepper.value); ++index ) {
                 lottoNumberSet.append(generateLotto())
             }
             UIAlertView(title: "Lotto", message: lottoNumberSet.description, delegate: nil, cancelButtonTitle: "확인").show()
         }
+    }
+    @IBAction func changedSliderValue(sender:UISlider) {
+        backgroundImageView?.alpha = CGFloat(sender.value)
     }
 }
