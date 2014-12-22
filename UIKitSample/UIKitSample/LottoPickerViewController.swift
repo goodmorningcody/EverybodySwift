@@ -32,6 +32,8 @@ class LottoPickerViewController: UIViewController {
     @IBOutlet var imageSwitch : UISwitch?
     @IBOutlet var numberCountLabel : UILabel?
     @IBOutlet var countStepper : UIStepper?
+    @IBOutlet var blockView : UIView?
+    @IBOutlet var progressView : UIProgressView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,15 +91,36 @@ class LottoPickerViewController: UIViewController {
         }
         return results
     }
+    
     @IBAction func touchedGenerateLotto(sender:UIButton) {
-        if let stepper = countStepper {
-            var lottoNumberSet : [[Int]] = [[Int]]()
-            for( var index=0; index<Int(stepper.value); ++index ) {
-                lottoNumberSet.append(generateLotto())
+        blockView?.hidden = false
+        progressView?.progress = 0.0
+        NSTimer.scheduledTimerWithTimeInterval(0.1,
+            target:self,
+            selector:Selector("updateForProgress:"),
+            userInfo:nil,
+            repeats:true)
+    }
+    func updateForProgress(timer:NSTimer) {
+        if progressView?.progress>=1.0 {
+            blockView?.hidden = true
+            
+            if let stepper = countStepper {
+                var lottoNumberSet : [[Int]] = [[Int]]()
+                for( var index=0; index<Int(stepper.value); ++index ) {
+                    lottoNumberSet.append(generateLotto())
+                }
+                UIAlertView(title: "Lotto", message: lottoNumberSet.description, delegate: nil, cancelButtonTitle: "확인").show()
             }
-            UIAlertView(title: "Lotto", message: lottoNumberSet.description, delegate: nil, cancelButtonTitle: "확인").show()
+            
+            timer.invalidate()
+        }
+        else {
+            progressView?.setProgress(progressView!.progress+0.1, animated: true)
         }
     }
+
+    
     @IBAction func changedSliderValue(sender:UISlider) {
         backgroundImageView?.alpha = CGFloat(sender.value)
     }

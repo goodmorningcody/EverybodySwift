@@ -293,11 +293,39 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" minimumValueImage="low_opacity" maximumValueImage="full_opacity" translatesAutoresizingMaskIntoConstraints="NO" id="VZJ-vK-Qm8">
-                                <rect key="frame" x="15" y="391" width="570" height="31"/>
+                                <rect key="frame" x="15" y="391" width="570" height="33"/>
                                 <connections>
                                     <action selector="changedSliderValue:" destination="OR4-5h-bgV" eventType="valueChanged" id="nZW-NN-YFh"/>
                                 </connections>
                             </slider>
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ml-21-PUm" userLabel="Block View">
+                                <rect key="frame" x="0.0" y="13" width="600" height="587"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleAspectFill" verticalHuggingPriority="750" trackImage="track" translatesAutoresizingMaskIntoConstraints="NO" id="9VJ-HB-cYK">
+                                        <rect key="frame" x="17" y="298.5" width="565" height="2"/>
+                                    </progressView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ym9-r0-2a1">
+                                        <rect key="frame" x="281" y="319" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로또 번호 생성 중..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9Y-n8-1jG">
+                                        <rect key="frame" x="200" y="255" width="199" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="Ym9-r0-2a1" secondAttribute="centerX" id="0lI-JN-jqg"/>
+                                    <constraint firstAttribute="centerX" secondItem="M9Y-n8-1jG" secondAttribute="centerX" id="I3o-Wz-g1s"/>
+                                    <constraint firstAttribute="centerX" secondItem="9VJ-HB-cYK" secondAttribute="centerX" id="QVh-K6-Uy2"/>
+                                    <constraint firstItem="Ym9-r0-2a1" firstAttribute="top" secondItem="9VJ-HB-cYK" secondAttribute="bottom" constant="18.5" id="aMn-u9-daA"/>
+                                    <constraint firstAttribute="centerY" secondItem="9VJ-HB-cYK" secondAttribute="centerY" id="e2b-lb-Vg5"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="9VJ-HB-cYK" secondAttribute="trailing" constant="10" id="h9M-HF-sT0"/>
+                                    <constraint firstItem="9VJ-HB-cYK" firstAttribute="top" secondItem="M9Y-n8-1jG" secondAttribute="bottom" constant="13" id="ha2-CZ-RIB"/>
+                                    <constraint firstItem="9VJ-HB-cYK" firstAttribute="leading" secondItem="2Ml-21-PUm" secondAttribute="leadingMargin" constant="9" id="wdf-A3-nEA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -307,6 +335,7 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                             <constraint firstItem="shq-PX-uNZ" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leading" id="CQg-BH-BTi"/>
                             <constraint firstItem="shq-PX-uNZ" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leadingMargin" id="CWQ-hA-SpP"/>
                             <constraint firstItem="shq-PX-uNZ" firstAttribute="top" secondItem="4uR-Ic-Nzw" secondAttribute="bottom" id="Iaf-lX-c9W"/>
+                            <constraint firstItem="6mr-k6-LDA" firstAttribute="top" secondItem="2Ml-21-PUm" secondAttribute="bottom" id="O6u-Rt-IJh"/>
                             <constraint firstItem="6mr-k6-LDA" firstAttribute="top" secondItem="BeY-iv-LfD" secondAttribute="bottom" constant="16" id="QTw-bA-cw3"/>
                             <constraint firstItem="6mr-k6-LDA" firstAttribute="top" secondItem="shq-PX-uNZ" secondAttribute="bottom" id="RJ8-U3-PVC"/>
                             <constraint firstItem="q7T-wN-rRk" firstAttribute="top" secondItem="VZJ-vK-Qm8" secondAttribute="bottom" constant="14" id="SBY-Jh-miU"/>
@@ -319,24 +348,29 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                             <constraint firstItem="shq-PX-uNZ" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leading" id="hG8-Vh-Yno"/>
                             <constraint firstItem="vvv-fE-KT4" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leading" constant="16" id="kUF-5f-gf9"/>
                             <constraint firstAttribute="trailing" secondItem="shq-PX-uNZ" secondAttribute="trailing" id="kwK-DU-3id"/>
+                            <constraint firstItem="2Ml-21-PUm" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leading" id="qq5-6z-eo0"/>
                             <constraint firstItem="BeY-iv-LfD" firstAttribute="top" secondItem="vvv-fE-KT4" secondAttribute="bottom" constant="40" id="sCa-y5-aKS"/>
+                            <constraint firstAttribute="trailing" secondItem="2Ml-21-PUm" secondAttribute="trailing" id="tzq-uY-UGP"/>
                             <constraint firstItem="6mr-k6-LDA" firstAttribute="top" secondItem="shq-PX-uNZ" secondAttribute="bottom" id="uGB-Gt-a67"/>
                             <constraint firstItem="VZJ-vK-Qm8" firstAttribute="leading" secondItem="Xpr-1w-4d9" secondAttribute="leading" constant="10" id="uVz-Ad-9PK"/>
                             <constraint firstAttribute="trailing" secondItem="shq-PX-uNZ" secondAttribute="trailing" id="vQF-7v-Pnn"/>
+                            <constraint firstItem="2Ml-21-PUm" firstAttribute="top" secondItem="Xpr-1w-4d9" secondAttribute="top" id="w3c-aG-dj5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="shq-PX-uNZ" secondAttribute="trailing" id="xet-GL-YmB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="shq-PX-uNZ" id="V8h-ux-Dtl"/>
+                        <outlet property="blockView" destination="2Ml-21-PUm" id="4BR-Fx-NPG"/>
                         <outlet property="countStepper" destination="vvv-fE-KT4" id="Ptj-Sb-SZP"/>
                         <outlet property="imageOptionSegmentedControl" destination="BeY-iv-LfD" id="bae-k9-dLW"/>
                         <outlet property="imageSwitch" destination="76e-MN-DSs" id="7ys-D5-W5T"/>
                         <outlet property="numberCountLabel" destination="q7T-wN-rRk" id="7DU-WW-Yvy"/>
+                        <outlet property="progressView" destination="9VJ-HB-cYK" id="zEF-eK-Fm6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPz-lh-MgK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-947" y="1179"/>
+            <point key="canvasLocation" x="-1004" y="1235.75"/>
         </scene>
     </scenes>
     <resources>
@@ -344,5 +378,6 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
         <image name="lotto" width="320" height="240"/>
         <image name="low_opacity" width="33" height="33"/>
         <image name="switch_icon" width="48" height="52"/>
+        <image name="track" width="3" height="7"/>
     </resources>
 </document>
