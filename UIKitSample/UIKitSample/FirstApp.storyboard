@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OR4-5h-bgV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gzu-YF-NFo">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -95,6 +95,76 @@
             </objects>
             <point key="canvasLocation" x="86" y="-171"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Cyp-U0-oUY">
+            <objects>
+                <viewController id="Gzu-YF-NFo" customClass="LoginViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zyI-y6-VgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="ruH-i5-6ee"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="24y-qA-Mpk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="18N-Ti-gE3">
+                                <rect key="frame" x="30" y="43" width="540" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Gzu-YF-NFo" id="VQI-pv-zTk"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3J7-52-rIx">
+                                <rect key="frame" x="30" y="92" width="540" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Gzu-YF-NFo" id="cUD-vn-bmj"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3S-ET-yc7">
+                                <rect key="frame" x="30" y="156" width="540" height="30"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedLogin:" destination="Gzu-YF-NFo" eventType="touchUpInside" id="9D5-Pc-6CP"/>
+                                    <segue destination="OR4-5h-bgV" kind="show" id="V9p-g6-C3G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rX-AD-tBq">
+                                <rect key="frame" x="30" y="550" width="540" height="30"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedSignup:" destination="Gzu-YF-NFo" eventType="touchUpInside" id="uI0-Gy-yK2"/>
+                                    <segue destination="i23-eI-Ypn" kind="show" id="Vdu-7j-kB1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3rX-AD-tBq" firstAttribute="leading" secondItem="24y-qA-Mpk" secondAttribute="leadingMargin" constant="14" id="5il-y6-yhO"/>
+                            <constraint firstItem="3J7-52-rIx" firstAttribute="leading" secondItem="24y-qA-Mpk" secondAttribute="leadingMargin" constant="14" id="7s9-GR-t1B"/>
+                            <constraint firstItem="ruH-i5-6ee" firstAttribute="top" secondItem="3rX-AD-tBq" secondAttribute="bottom" constant="20" id="9r2-6w-TUX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="18N-Ti-gE3" secondAttribute="trailing" constant="14" id="9zP-ds-HhL"/>
+                            <constraint firstItem="E3S-ET-yc7" firstAttribute="leading" secondItem="24y-qA-Mpk" secondAttribute="leadingMargin" constant="14" id="CBK-A1-ZTk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="E3S-ET-yc7" secondAttribute="trailing" constant="14" id="GAn-VH-apQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3rX-AD-tBq" secondAttribute="trailing" constant="14" id="PHR-D1-8ot"/>
+                            <constraint firstItem="E3S-ET-yc7" firstAttribute="top" secondItem="3J7-52-rIx" secondAttribute="bottom" constant="34" id="Pfg-7y-Dkv"/>
+                            <constraint firstItem="18N-Ti-gE3" firstAttribute="top" secondItem="zyI-y6-VgU" secondAttribute="bottom" constant="23" id="Y4x-cY-M0d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3J7-52-rIx" secondAttribute="trailing" constant="14" id="lQb-MI-3kz"/>
+                            <constraint firstItem="3J7-52-rIx" firstAttribute="top" secondItem="18N-Ti-gE3" secondAttribute="bottom" constant="19" id="mys-0i-hYf"/>
+                            <constraint firstItem="18N-Ti-gE3" firstAttribute="leading" secondItem="24y-qA-Mpk" secondAttribute="leadingMargin" constant="14" id="z5P-Ib-2SF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6k-gz-LGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1205" y="777"/>
+        </scene>
         <!--Label View Controller-->
         <scene sceneID="st5-6R-hjF">
             <objects>
@@ -122,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pos-9l-nmu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-397" y="515"/>
+            <point key="canvasLocation" x="-1011" y="-221"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="2at-fZ-8CN">
@@ -217,15 +287,27 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                                     <outlet property="delegate" destination="i23-eI-Ypn" id="h9H-Yj-8ys"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gl-Ls-1Ea">
+                                <rect key="frame" x="34" y="204" width="538" height="30"/>
+                                <state key="normal" title="Join">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="B86-st-4df" kind="unwind" unwindAction="unwindFromRegister:" id="Omg-U6-24I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3gl-Ls-1Ea" secondAttribute="trailing" constant="12" id="NbJ-q8-oA6"/>
                             <constraint firstItem="H33-mj-THB" firstAttribute="leading" secondItem="kN2-aM-jc2" secondAttribute="leadingMargin" constant="40" id="PTR-0J-gzV"/>
+                            <constraint firstItem="3gl-Ls-1Ea" firstAttribute="top" secondItem="H33-mj-THB" secondAttribute="bottom" constant="35" id="V8W-b3-Q76"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eOJ-NN-sSi" secondAttribute="trailing" constant="40" id="lTe-WY-Q3P"/>
                             <constraint firstItem="eOJ-NN-sSi" firstAttribute="leading" secondItem="kN2-aM-jc2" secondAttribute="leadingMargin" constant="40" id="oAK-vA-yng"/>
                             <constraint firstItem="V2t-4L-oIX" firstAttribute="leading" secondItem="kN2-aM-jc2" secondAttribute="leadingMargin" constant="40" id="pkF-te-D1v"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H33-mj-THB" secondAttribute="trailing" constant="40" id="s7I-Xh-vGZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V2t-4L-oIX" secondAttribute="trailing" constant="40" id="wVP-gv-S7e"/>
+                            <constraint firstItem="3gl-Ls-1Ea" firstAttribute="leading" secondItem="kN2-aM-jc2" secondAttribute="leadingMargin" constant="18" id="z7P-ig-2Na"/>
                         </constraints>
                     </view>
                     <connections>
@@ -235,8 +317,9 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiI-hH-TNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="B86-st-4df" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-195" y="1197"/>
+            <point key="canvasLocation" x="-435" y="515"/>
         </scene>
         <!--Lotto Picker View Controller-->
         <scene sceneID="gqC-GR-d7Z">
@@ -370,7 +453,7 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPz-lh-MgK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1004" y="1235.75"/>
+            <point key="canvasLocation" x="-435" y="1173"/>
         </scene>
     </scenes>
     <resources>

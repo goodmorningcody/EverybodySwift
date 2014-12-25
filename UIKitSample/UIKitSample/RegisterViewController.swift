@@ -24,26 +24,31 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        var alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
-            switch action.style{
-            case .Default:
-                UIApplication.sharedApplication().openURL(NSURL(string:"http://daum.net")!)
-                println("default")
-                
-            case .Cancel:
-                
-                println("cancel")
-                
-            case .Destructive:
-                println("destructive")
-            }
-        }))
-        presentViewController(alert, animated: true, completion: nil)
+//        var alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+//        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+//            switch action.style{
+//            case .Default:
+//                UIApplication.sharedApplication().openURL(NSURL(string:"http://daum.net")!)
+//                println("default")
+//                
+//            case .Cancel:
+//                
+//                println("cancel")
+//                
+//            case .Destructive:
+//                println("destructive")
+//            }
+//        }))
+//        presentViewController(alert, animated: true, completion: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+//    @IBAction func unwindFromAgreement(segue: UIStoryboardSegue) {
+//        println("unwindFromAgreement")
+//    }
+    
     
     func alert(alertMessage: String) {
         var alertView = UIAlertView(title: "Swift", message: alertMessage, delegate: nil, cancelButtonTitle: "확인")

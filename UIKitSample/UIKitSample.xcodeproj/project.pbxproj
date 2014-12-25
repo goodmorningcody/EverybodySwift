@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C311478A1A4C2A9A00BFBF4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31147891A4C2A9A00BFBF4C /* LoginViewController.swift */; };
 		C33D21AE1A38EF6700E41ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D21AD1A38EF6700E41ACE /* AppDelegate.swift */; };
 		C33D21B01A38EF6700E41ACE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D21AF1A38EF6700E41ACE /* ViewController.swift */; };
 		C33D21B31A38EF6700E41ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33D21B11A38EF6700E41ACE /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C31147891A4C2A9A00BFBF4C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C33D21A81A38EF6700E41ACE /* UIKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33D21AC1A38EF6700E41ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C33D21AD1A38EF6700E41ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		C33D21AA1A38EF6700E41ACE /* UIKitSample */ = {
 			isa = PBXGroup;
 			children = (
+				C31147891A4C2A9A00BFBF4C /* LoginViewController.swift */,
 				C3D162651A3F3E4400F916B1 /* LottoPickerViewController.swift */,
 				C3D162631A3E839900F916B1 /* RegisterViewController.swift */,
 				C3AF746B1A3D8C31002BDF58 /* TextViewController.swift */,
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C311478A1A4C2A9A00BFBF4C /* LoginViewController.swift in Sources */,
 				C3D162641A3E839900F916B1 /* RegisterViewController.swift in Sources */,
 				C33D21B01A38EF6700E41ACE /* ViewController.swift in Sources */,
 				C33D21AE1A38EF6700E41ACE /* AppDelegate.swift in Sources */,
