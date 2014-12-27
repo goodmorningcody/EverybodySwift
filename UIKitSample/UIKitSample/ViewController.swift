@@ -20,12 +20,5 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-     //- (IBACTION)메소드이름:(UIStoryboardSegue *)
-    //func ib
-    @IBAction func likedThis(segue:UIStoryboardSegue) {
-        NSLog("안녕하세요");
-    }
-
 }
 

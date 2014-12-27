@@ -49,6 +49,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 //        println("unwindFromAgreement")
 //    }
     
+    @IBAction func touchedCancel(sender:UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+        //self.navigationController?.popViewControllerAnimated(true)
+    }
     
     func alert(alertMessage: String) {
         var alertView = UIAlertView(title: "Swift", message: alertMessage, delegate: nil, cancelButtonTitle: "확인")

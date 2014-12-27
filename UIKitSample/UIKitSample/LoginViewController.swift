@@ -10,6 +10,13 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    @IBAction func segueFromRegisterWithCancel(segue:UIStoryboardSegue) {
+    }
+    @IBAction func segueFromRegisterWithJoin(segue:UIStoryboardSegue) {
+    }
+    @IBAction func segueFromLottoWithLogout(segue:UIStoryboardSegue) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,10 +34,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func touchedSignup(sender: UIButton) {
     }
     
-    @IBAction func unwindFromRegister(segue: UIStoryboardSegue) {
-        println("unwindFromRegister")
-    }
-
     /*
     // MARK: - Navigation
 
