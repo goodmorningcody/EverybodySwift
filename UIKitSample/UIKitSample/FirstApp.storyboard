@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ngU-uC-hxc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="yO9-sb-PHb">
+            <objects>
+                <viewController id="Sit-wh-eLh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DF8-vn-2ag"/>
+                        <viewControllerLayoutGuide type="bottom" id="duW-Ua-edb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lPq-y0-Ihd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MLS-Qe-PiS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-403" y="-1668"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="qZA-iu-fig">
             <objects>
@@ -93,7 +111,229 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vog-ZI-b3N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="-171"/>
+            <point key="canvasLocation" x="-644" y="-859"/>
+        </scene>
+        <!--Advance View Controller-->
+        <scene sceneID="uMx-JO-0gM">
+            <objects>
+                <viewController id="ngU-uC-hxc" customClass="AdvanceViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3zg-uh-MK1"/>
+                        <viewControllerLayoutGuide type="bottom" id="QFC-ZJ-hhL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8vN-Sx-bdH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oos-ze-GLq">
+                                <rect key="frame" x="16" y="35" width="568" height="30"/>
+                                <state key="normal" title="Test UIDatePicker">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Le9-OX-k4h" kind="presentation" id="3Jb-4P-b6l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQe-QU-jeq">
+                                <rect key="frame" x="16" y="89" width="568" height="30"/>
+                                <state key="normal" title="Test UIWebView">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="UZI-k4-pDo" kind="presentation" id="dqw-pA-Epd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTD-Fw-8Ra">
+                                <rect key="frame" x="16" y="143" width="568" height="30"/>
+                                <state key="normal" title="Test MKMapView">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="AZ2-XY-gAA" kind="presentation" id="0Ap-16-ex4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oos-ze-GLq" firstAttribute="trailing" secondItem="8vN-Sx-bdH" secondAttribute="trailingMargin" id="5Dl-YT-x8s"/>
+                            <constraint firstItem="JTD-Fw-8Ra" firstAttribute="leading" secondItem="8vN-Sx-bdH" secondAttribute="leadingMargin" id="B66-hI-M11"/>
+                            <constraint firstItem="oos-ze-GLq" firstAttribute="centerX" secondItem="JTD-Fw-8Ra" secondAttribute="centerX" id="Hd0-hS-4Wq"/>
+                            <constraint firstItem="oos-ze-GLq" firstAttribute="leading" secondItem="8vN-Sx-bdH" secondAttribute="leadingMargin" id="L4Y-cJ-B9A"/>
+                            <constraint firstItem="oos-ze-GLq" firstAttribute="centerX" secondItem="NQe-QU-jeq" secondAttribute="centerX" id="ZpM-Xm-ypi"/>
+                            <constraint firstItem="JTD-Fw-8Ra" firstAttribute="trailing" secondItem="8vN-Sx-bdH" secondAttribute="trailingMargin" id="aAM-Dv-bZw"/>
+                            <constraint firstItem="NQe-QU-jeq" firstAttribute="leading" secondItem="8vN-Sx-bdH" secondAttribute="leadingMargin" id="fFe-Pn-2LC"/>
+                            <constraint firstItem="NQe-QU-jeq" firstAttribute="trailing" secondItem="8vN-Sx-bdH" secondAttribute="trailingMargin" id="ra1-yO-uZe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5T-kS-14z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736" y="-1085"/>
+        </scene>
+        <!--Date Picker Test View Controller-->
+        <scene sceneID="uYP-4M-hgG">
+            <objects>
+                <viewController id="Le9-OX-k4h" customClass="DatePickerTestViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CFg-AI-TSA"/>
+                        <viewControllerLayoutGuide type="bottom" id="gv6-Ml-70J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kwe-0R-mQi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QxR-hM-r2o">
+                                <rect key="frame" x="16" y="20" width="574" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="au5-Ku-Ara" kind="unwind" unwindAction="unwindFromTestViewController:" id="ind-YS-l51"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhK-4o-T6h">
+                                <rect key="frame" x="0.0" y="58" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="441378845.785124">
+                                    <!--2014-12-27 13:14:05 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-3187254600">
+                                    <!--1900-01-01 11:30:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="changedDateValue:" destination="Le9-OX-k4h" eventType="valueChanged" id="VRb-n0-3R1"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fhK-4o-T6h" firstAttribute="top" secondItem="QxR-hM-r2o" secondAttribute="bottom" constant="8" id="CpV-t9-IbI"/>
+                            <constraint firstItem="fhK-4o-T6h" firstAttribute="leading" secondItem="Kwe-0R-mQi" secondAttribute="leadingMargin" constant="-16" id="LPm-jL-Ejx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fhK-4o-T6h" secondAttribute="trailing" constant="-16" id="Pk8-gj-8Fq"/>
+                            <constraint firstItem="QxR-hM-r2o" firstAttribute="top" secondItem="CFg-AI-TSA" secondAttribute="bottom" id="jSq-y2-krq"/>
+                            <constraint firstItem="QxR-hM-r2o" firstAttribute="leading" secondItem="Kwe-0R-mQi" secondAttribute="leadingMargin" id="pJv-Ez-huQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QxR-hM-r2o" secondAttribute="trailing" id="v7H-X3-yU7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0cm-fX-bDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="au5-Ku-Ara" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="-1085"/>
+        </scene>
+        <!--Web View Test View Controller-->
+        <scene sceneID="s3g-Yk-MKm">
+            <objects>
+                <viewController id="UZI-k4-pDo" customClass="WebViewTestViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tu0-rs-had"/>
+                        <viewControllerLayoutGuide type="bottom" id="0t3-Xy-kU4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eCq-4j-gxU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iza-Nk-Daa">
+                                <rect key="frame" x="13" y="28" width="574" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5jW-Yt-xWf" kind="unwind" unwindAction="unwindFromTestViewController:" id="7pg-vb-222"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzC-aZ-nNr">
+                                <rect key="frame" x="328" y="550" width="256" height="30"/>
+                                <state key="normal" title="Test UIWebView">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedTestUIWebView:" destination="UZI-k4-pDo" eventType="touchUpInside" id="SHw-06-9KR"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PD5-Qi-T5B">
+                                <rect key="frame" x="16" y="66" width="568" height="476"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="UZI-k4-pDo" id="Wzx-if-gFL"/>
+                                </connections>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KL-rf-urq">
+                                <rect key="frame" x="16" y="550" width="256" height="30"/>
+                                <state key="normal" title="Open Safari">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchedOpenSafari:" destination="UZI-k4-pDo" eventType="touchUpInside" id="n1o-FJ-1Lp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5KL-rf-urq" firstAttribute="leading" secondItem="eCq-4j-gxU" secondAttribute="leadingMargin" id="7XV-7r-KvL"/>
+                            <constraint firstItem="PD5-Qi-T5B" firstAttribute="leading" secondItem="eCq-4j-gxU" secondAttribute="leadingMargin" id="C9v-2l-kM8"/>
+                            <constraint firstItem="vzC-aZ-nNr" firstAttribute="leading" secondItem="5KL-rf-urq" secondAttribute="trailing" constant="56" id="Gzw-PW-46Q"/>
+                            <constraint firstItem="PD5-Qi-T5B" firstAttribute="trailing" secondItem="eCq-4j-gxU" secondAttribute="trailingMargin" id="HfT-Ce-JAT"/>
+                            <constraint firstItem="vzC-aZ-nNr" firstAttribute="trailing" secondItem="eCq-4j-gxU" secondAttribute="trailingMargin" id="Kb9-WY-XvT"/>
+                            <constraint firstItem="Iza-Nk-Daa" firstAttribute="top" secondItem="Tu0-rs-had" secondAttribute="bottom" id="NdS-jk-jO8"/>
+                            <constraint firstItem="vzC-aZ-nNr" firstAttribute="width" secondItem="5KL-rf-urq" secondAttribute="width" id="PmK-2Z-BwW"/>
+                            <constraint firstItem="0t3-Xy-kU4" firstAttribute="top" secondItem="vzC-aZ-nNr" secondAttribute="bottom" constant="20" id="bSq-jC-6C0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Iza-Nk-Daa" secondAttribute="trailing" id="d8m-iL-BYh"/>
+                            <constraint firstItem="Iza-Nk-Daa" firstAttribute="leading" secondItem="eCq-4j-gxU" secondAttribute="leadingMargin" id="jGr-nl-IAp"/>
+                            <constraint firstItem="vzC-aZ-nNr" firstAttribute="top" secondItem="PD5-Qi-T5B" secondAttribute="bottom" constant="8" id="ocZ-cz-uFV"/>
+                            <constraint firstItem="PD5-Qi-T5B" firstAttribute="top" secondItem="Iza-Nk-Daa" secondAttribute="bottom" constant="8" id="q5r-sX-wiP"/>
+                            <constraint firstItem="0t3-Xy-kU4" firstAttribute="top" secondItem="5KL-rf-urq" secondAttribute="bottom" constant="20" id="rMm-no-esS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="PD5-Qi-T5B" id="Yhi-D2-Ila"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DeH-BU-cwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5jW-Yt-xWf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="-290"/>
+        </scene>
+        <!--Map View Test View Controller-->
+        <scene sceneID="8DM-G9-h0k">
+            <objects>
+                <viewController id="AZ2-XY-gAA" customClass="MapViewTestViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zCP-1G-wOb"/>
+                        <viewControllerLayoutGuide type="bottom" id="U71-8J-BiI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A6M-hl-Tya">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nJ-6K-odu">
+                                <rect key="frame" x="10" y="28" width="574" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="q50-Qo-z7t" kind="unwind" unwindAction="unwindFromTestViewController:" id="yUD-Xb-CS0"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3X-Mf-irt">
+                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z3X-Mf-irt" secondAttribute="trailing" constant="-16" id="8Rt-Mt-I3c"/>
+                            <constraint firstItem="2nJ-6K-odu" firstAttribute="trailing" secondItem="A6M-hl-Tya" secondAttribute="trailingMargin" id="FwM-Zi-oxt"/>
+                            <constraint firstItem="Z3X-Mf-irt" firstAttribute="leading" secondItem="A6M-hl-Tya" secondAttribute="leadingMargin" constant="-16" id="M8G-ON-FvD"/>
+                            <constraint firstItem="U71-8J-BiI" firstAttribute="top" secondItem="Z3X-Mf-irt" secondAttribute="bottom" id="MOy-RM-YDt"/>
+                            <constraint firstItem="Z3X-Mf-irt" firstAttribute="top" secondItem="2nJ-6K-odu" secondAttribute="bottom" constant="2" id="SXg-w7-3cV"/>
+                            <constraint firstItem="2nJ-6K-odu" firstAttribute="top" secondItem="zCP-1G-wOb" secondAttribute="bottom" id="dlS-AP-lga"/>
+                            <constraint firstItem="2nJ-6K-odu" firstAttribute="leading" secondItem="A6M-hl-Tya" secondAttribute="leadingMargin" id="w9v-oi-edC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eck-Kb-k8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="q50-Qo-z7t" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="728" y="-290"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Cyp-U0-oUY">
