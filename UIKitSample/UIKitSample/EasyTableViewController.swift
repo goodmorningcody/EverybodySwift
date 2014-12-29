@@ -13,6 +13,12 @@ class EasyTableViewController: UITableViewController {
     var arrayOfStoryboardID : [String] = ["DatePickerTestViewController","WebViewTestViewController","MapViewTestViewController"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "모두의 Swift"
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,20 +40,16 @@ class EasyTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCellWithIdentifier("ViewControllerIdentifier", forIndexPath: indexPath) as UITableViewCell
-        //tableView.deque
-        tableView.dequ
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
         cell.textLabel?.text = arrayOfStoryboardID[indexPath.row]
-
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var storyboarId = arrayOfStoryboardID[indexPath.row]
         var viewController = storyboard?.instantiateViewControllerWithIdentifier(storyboarId) as UIViewController
-        self.presentViewController(viewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(viewController, animated: true)
+        //self.presentViewController(viewController, animated: true, completion: nil)
     }
 
     /*
