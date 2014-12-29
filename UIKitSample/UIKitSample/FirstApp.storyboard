@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ngU-uC-hxc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CfY-if-hLx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Test Table View Controller-->
         <scene sceneID="yO9-sb-PHb">
             <objects>
-                <viewController id="Sit-wh-eLh" sceneMemberID="viewController">
+                <viewController id="Sit-wh-eLh" customClass="TestTableViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DF8-vn-2ag"/>
                         <viewControllerLayoutGuide type="bottom" id="duW-Ua-edb"/>
@@ -16,12 +16,54 @@
                     <view key="view" contentMode="scaleToFill" id="lPq-y0-Ihd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bk0-Kh-W6e">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sit-wh-eLh" id="9GD-85-j24"/>
+                                    <outlet property="delegate" destination="Sit-wh-eLh" id="88x-ef-eCm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="bk0-Kh-W6e" secondAttribute="trailing" constant="-16" id="8EQ-Lc-BZl"/>
+                            <constraint firstItem="bk0-Kh-W6e" firstAttribute="top" secondItem="lPq-y0-Ihd" secondAttribute="topMargin" id="VTI-YJ-fzQ"/>
+                            <constraint firstItem="duW-Ua-edb" firstAttribute="top" secondItem="bk0-Kh-W6e" secondAttribute="bottom" id="it6-Fo-QGw"/>
+                            <constraint firstItem="bk0-Kh-W6e" firstAttribute="leading" secondItem="lPq-y0-Ihd" secondAttribute="leadingMargin" constant="-16" id="yn8-W2-g2R"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MLS-Qe-PiS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-403" y="-1668"/>
+        </scene>
+        <!--Easy Table View Controller-->
+        <scene sceneID="3lf-UR-ANs">
+            <objects>
+                <tableViewController id="CfY-if-hLx" customClass="EasyTableViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VxF-A9-11m">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="g5r-vL-Mdn">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g5r-vL-Mdn" id="XJT-IT-w4b">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CfY-if-hLx" id="mBX-tf-CrE"/>
+                            <outlet property="delegate" destination="CfY-if-hLx" id="SAM-4d-sXp"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xdj-lh-9De" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="341" y="-1677"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qZA-iu-fig">
@@ -173,7 +215,7 @@
         <!--Date Picker Test View Controller-->
         <scene sceneID="uYP-4M-hgG">
             <objects>
-                <viewController id="Le9-OX-k4h" customClass="DatePickerTestViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DatePickerTestViewController" id="Le9-OX-k4h" customClass="DatePickerTestViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CFg-AI-TSA"/>
                         <viewControllerLayoutGuide type="bottom" id="gv6-Ml-70J"/>
@@ -223,7 +265,7 @@
         <!--Web View Test View Controller-->
         <scene sceneID="s3g-Yk-MKm">
             <objects>
-                <viewController id="UZI-k4-pDo" customClass="WebViewTestViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewTestViewController" id="UZI-k4-pDo" customClass="WebViewTestViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tu0-rs-had"/>
                         <viewControllerLayoutGuide type="bottom" id="0t3-Xy-kU4"/>
@@ -296,7 +338,7 @@
         <!--Map View Test View Controller-->
         <scene sceneID="8DM-G9-h0k">
             <objects>
-                <viewController id="AZ2-XY-gAA" customClass="MapViewTestViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewTestViewController" id="AZ2-XY-gAA" customClass="MapViewTestViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zCP-1G-wOb"/>
                         <viewControllerLayoutGuide type="bottom" id="U71-8J-BiI"/>

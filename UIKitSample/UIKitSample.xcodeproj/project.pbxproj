@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C311478A1A4C2A9A00BFBF4C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31147891A4C2A9A00BFBF4C /* LoginViewController.swift */; };
 		C33BCC231A5035C600E7F272 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33BCC221A5035C600E7F272 /* MapKit.framework */; };
+		C33BCC251A505D9100E7F272 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BCC241A505D9100E7F272 /* TestTableViewController.swift */; };
+		C33BCC291A5069F600E7F272 /* EasyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BCC281A5069F600E7F272 /* EasyTableViewController.swift */; };
+		C33BCC2B1A507A9C00E7F272 /* tempTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BCC2A1A507A9C00E7F272 /* tempTableViewController.swift */; };
 		C33D21AE1A38EF6700E41ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D21AD1A38EF6700E41ACE /* AppDelegate.swift */; };
 		C33D21B01A38EF6700E41ACE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D21AF1A38EF6700E41ACE /* ViewController.swift */; };
 		C33D21B31A38EF6700E41ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33D21B11A38EF6700E41ACE /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 /* Begin PBXFileReference section */
 		C31147891A4C2A9A00BFBF4C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C33BCC221A5035C600E7F272 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C33BCC241A505D9100E7F272 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		C33BCC281A5069F600E7F272 /* EasyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyTableViewController.swift; sourceTree = "<group>"; };
+		C33BCC2A1A507A9C00E7F272 /* tempTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tempTableViewController.swift; sourceTree = "<group>"; };
 		C33D21A81A38EF6700E41ACE /* UIKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33D21AC1A38EF6700E41ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C33D21AD1A38EF6700E41ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 		C33D21AA1A38EF6700E41ACE /* UIKitSample */ = {
 			isa = PBXGroup;
 			children = (
+				C33BCC241A505D9100E7F272 /* TestTableViewController.swift */,
 				C3780CC81A4ED57700907D68 /* DatePickerTestViewController.swift */,
 				C3780CCA1A4ED58200907D68 /* MapViewTestViewController.swift */,
 				C3780CCC1A4ED59600907D68 /* WebViewTestViewController.swift */,
@@ -117,6 +124,8 @@
 				C33D21B41A38EF6700E41ACE /* Images.xcassets */,
 				C33D21B61A38EF6700E41ACE /* LaunchScreen.xib */,
 				C33D21AB1A38EF6700E41ACE /* Supporting Files */,
+				C33BCC281A5069F600E7F272 /* EasyTableViewController.swift */,
+				C33BCC2A1A507A9C00E7F272 /* tempTableViewController.swift */,
 			);
 			path = UIKitSample;
 			sourceTree = "<group>";
@@ -258,11 +267,14 @@
 				C33D21B01A38EF6700E41ACE /* ViewController.swift in Sources */,
 				C33D21AE1A38EF6700E41ACE /* AppDelegate.swift in Sources */,
 				C3780CCD1A4ED59600907D68 /* WebViewTestViewController.swift in Sources */,
+				C33BCC291A5069F600E7F272 /* EasyTableViewController.swift in Sources */,
 				C3AF746A1A3D68C7002BDF58 /* LabelViewController.swift in Sources */,
 				C3780CC91A4ED57700907D68 /* DatePickerTestViewController.swift in Sources */,
+				C33BCC2B1A507A9C00E7F272 /* tempTableViewController.swift in Sources */,
 				C3D162661A3F3E4400F916B1 /* LottoPickerViewController.swift in Sources */,
 				C3AF746C1A3D8C31002BDF58 /* TextViewController.swift in Sources */,
 				C3780CC71A4ED2A500907D68 /* AdvanceViewController.swift in Sources */,
+				C33BCC251A505D9100E7F272 /* TestTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
