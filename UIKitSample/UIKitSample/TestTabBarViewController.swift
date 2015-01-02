@@ -1,20 +1,25 @@
 //
-//  MapViewTestViewController.swift
+//  TestTabBarViewController.swift
 //  UIKitSample
 //
-//  Created by Cody on 2014. 12. 27..
+//  Created by Cody on 2014. 12. 31..
 //  Copyright (c) 2014년 tiekle. All rights reserved.
 //
 
 import UIKit
 
-class MapViewTestViewController: UIViewController {
+class TestTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        //
 
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        //self.tabBarController?.selectedIndex = 2
+        //self.selectedIndex = 2
+        //self.tabBarController?.selec
     }
 
     override func didReceiveMemoryWarning() {

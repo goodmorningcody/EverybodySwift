@@ -11,13 +11,12 @@
 		C33BCC231A5035C600E7F272 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33BCC221A5035C600E7F272 /* MapKit.framework */; };
 		C33BCC251A505D9100E7F272 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BCC241A505D9100E7F272 /* TestTableViewController.swift */; };
 		C33BCC291A5069F600E7F272 /* EasyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BCC281A5069F600E7F272 /* EasyTableViewController.swift */; };
-		C33BCC2B1A507A9C00E7F272 /* tempTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BCC2A1A507A9C00E7F272 /* tempTableViewController.swift */; };
 		C33D21AE1A38EF6700E41ACE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D21AD1A38EF6700E41ACE /* AppDelegate.swift */; };
 		C33D21B01A38EF6700E41ACE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D21AF1A38EF6700E41ACE /* ViewController.swift */; };
 		C33D21B31A38EF6700E41ACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33D21B11A38EF6700E41ACE /* Main.storyboard */; };
-		C33D21B51A38EF6700E41ACE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33D21B41A38EF6700E41ACE /* Images.xcassets */; };
 		C33D21B81A38EF6700E41ACE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33D21B61A38EF6700E41ACE /* LaunchScreen.xib */; };
 		C33D21C41A38EF6700E41ACE /* UIKitSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D21C31A38EF6700E41ACE /* UIKitSampleTests.swift */; };
+		C370A5291A51970200AC1D3B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C370A5281A51970200AC1D3B /* Images.xcassets */; };
 		C3780CC71A4ED2A500907D68 /* AdvanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3780CC61A4ED2A500907D68 /* AdvanceViewController.swift */; };
 		C3780CC91A4ED57700907D68 /* DatePickerTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3780CC81A4ED57700907D68 /* DatePickerTestViewController.swift */; };
 		C3780CCB1A4ED58200907D68 /* MapViewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3780CCA1A4ED58200907D68 /* MapViewTestViewController.swift */; };
@@ -27,6 +26,9 @@
 		C3C956461A39BBBE00AB12AC /* FirstApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C956451A39BBBE00AB12AC /* FirstApp.storyboard */; };
 		C3D162641A3E839900F916B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D162631A3E839900F916B1 /* RegisterViewController.swift */; };
 		C3D162661A3F3E4400F916B1 /* LottoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D162651A3F3E4400F916B1 /* LottoPickerViewController.swift */; };
+		C3D7C7821A539D9200598DF4 /* TestTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7C7811A539D9200598DF4 /* TestTabBarViewController.swift */; };
+		C3D7C7841A54E3EC00598DF4 /* WebServiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7C7831A54E3EC00598DF4 /* WebServiceTableViewController.swift */; };
+		C3D7C7861A54E41100598DF4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D7C7851A54E41100598DF4 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,17 +46,16 @@
 		C33BCC221A5035C600E7F272 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C33BCC241A505D9100E7F272 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		C33BCC281A5069F600E7F272 /* EasyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyTableViewController.swift; sourceTree = "<group>"; };
-		C33BCC2A1A507A9C00E7F272 /* tempTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tempTableViewController.swift; sourceTree = "<group>"; };
 		C33D21A81A38EF6700E41ACE /* UIKitSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33D21AC1A38EF6700E41ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C33D21AD1A38EF6700E41ACE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C33D21AF1A38EF6700E41ACE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C33D21B21A38EF6700E41ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C33D21B41A38EF6700E41ACE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C33D21B71A38EF6700E41ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C33D21BD1A38EF6700E41ACE /* UIKitSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33D21C21A38EF6700E41ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C33D21C31A38EF6700E41ACE /* UIKitSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitSampleTests.swift; sourceTree = "<group>"; };
+		C370A5281A51970200AC1D3B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C3780CC61A4ED2A500907D68 /* AdvanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvanceViewController.swift; sourceTree = "<group>"; };
 		C3780CC81A4ED57700907D68 /* DatePickerTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTestViewController.swift; sourceTree = "<group>"; };
 		C3780CCA1A4ED58200907D68 /* MapViewTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewTestViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +65,9 @@
 		C3C956451A39BBBE00AB12AC /* FirstApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstApp.storyboard; sourceTree = "<group>"; };
 		C3D162631A3E839900F916B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C3D162651A3F3E4400F916B1 /* LottoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottoPickerViewController.swift; sourceTree = "<group>"; };
+		C3D7C7811A539D9200598DF4 /* TestTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTabBarViewController.swift; sourceTree = "<group>"; };
+		C3D7C7831A54E3EC00598DF4 /* WebServiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceTableViewController.swift; sourceTree = "<group>"; };
+		C3D7C7851A54E41100598DF4 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		C33D21AA1A38EF6700E41ACE /* UIKitSample */ = {
 			isa = PBXGroup;
 			children = (
+				C370A5281A51970200AC1D3B /* Images.xcassets */,
 				C33BCC241A505D9100E7F272 /* TestTableViewController.swift */,
 				C3780CC81A4ED57700907D68 /* DatePickerTestViewController.swift */,
 				C3780CCA1A4ED58200907D68 /* MapViewTestViewController.swift */,
@@ -121,11 +126,12 @@
 				C33D21AD1A38EF6700E41ACE /* AppDelegate.swift */,
 				C33D21AF1A38EF6700E41ACE /* ViewController.swift */,
 				C33D21B11A38EF6700E41ACE /* Main.storyboard */,
-				C33D21B41A38EF6700E41ACE /* Images.xcassets */,
 				C33D21B61A38EF6700E41ACE /* LaunchScreen.xib */,
 				C33D21AB1A38EF6700E41ACE /* Supporting Files */,
 				C33BCC281A5069F600E7F272 /* EasyTableViewController.swift */,
-				C33BCC2A1A507A9C00E7F272 /* tempTableViewController.swift */,
+				C3D7C7811A539D9200598DF4 /* TestTabBarViewController.swift */,
+				C3D7C7831A54E3EC00598DF4 /* WebServiceTableViewController.swift */,
+				C3D7C7851A54E41100598DF4 /* WebViewController.swift */,
 			);
 			path = UIKitSample;
 			sourceTree = "<group>";
@@ -241,8 +247,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C33D21B31A38EF6700E41ACE /* Main.storyboard in Resources */,
+				C370A5291A51970200AC1D3B /* Images.xcassets in Resources */,
 				C33D21B81A38EF6700E41ACE /* LaunchScreen.xib in Resources */,
-				C33D21B51A38EF6700E41ACE /* Images.xcassets in Resources */,
 				C3C956461A39BBBE00AB12AC /* FirstApp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,12 +271,14 @@
 				C3D162641A3E839900F916B1 /* RegisterViewController.swift in Sources */,
 				C3780CCB1A4ED58200907D68 /* MapViewTestViewController.swift in Sources */,
 				C33D21B01A38EF6700E41ACE /* ViewController.swift in Sources */,
+				C3D7C7841A54E3EC00598DF4 /* WebServiceTableViewController.swift in Sources */,
 				C33D21AE1A38EF6700E41ACE /* AppDelegate.swift in Sources */,
 				C3780CCD1A4ED59600907D68 /* WebViewTestViewController.swift in Sources */,
+				C3D7C7861A54E41100598DF4 /* WebViewController.swift in Sources */,
 				C33BCC291A5069F600E7F272 /* EasyTableViewController.swift in Sources */,
 				C3AF746A1A3D68C7002BDF58 /* LabelViewController.swift in Sources */,
 				C3780CC91A4ED57700907D68 /* DatePickerTestViewController.swift in Sources */,
-				C33BCC2B1A507A9C00E7F272 /* tempTableViewController.swift in Sources */,
+				C3D7C7821A539D9200598DF4 /* TestTabBarViewController.swift in Sources */,
 				C3D162661A3F3E4400F916B1 /* LottoPickerViewController.swift in Sources */,
 				C3AF746C1A3D8C31002BDF58 /* TextViewController.swift in Sources */,
 				C3780CC71A4ED2A500907D68 /* AdvanceViewController.swift in Sources */,
@@ -400,6 +408,7 @@
 				INFOPLIST_FILE = UIKitSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -410,6 +419,7 @@
 				INFOPLIST_FILE = UIKitSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
