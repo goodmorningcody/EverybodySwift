@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x2D-Et-cpi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7EQ-HJ-KE6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -197,40 +197,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EkO-Sq-fbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1499" y="-4031"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Ddg-UE-7NJ">
-            <objects>
-                <viewController id="wLn-xc-JgH" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ldy-jr-hfs"/>
-                        <viewControllerLayoutGuide type="bottom" id="lOi-nR-dCK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n6x-f7-sCg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flower_yellow" translatesAutoresizingMaskIntoConstraints="NO" id="ytr-6V-g5J">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="kTC-XF-wya">
-                                <rect key="frame" x="281" y="555" width="39" height="37"/>
-                            </pageControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ytr-6V-g5J" firstAttribute="top" secondItem="n6x-f7-sCg" secondAttribute="top" id="D90-d5-87X"/>
-                            <constraint firstAttribute="trailing" secondItem="ytr-6V-g5J" secondAttribute="trailing" id="FE3-4d-5jy"/>
-                            <constraint firstAttribute="centerX" secondItem="kTC-XF-wya" secondAttribute="centerX" id="YWV-Qd-d2N"/>
-                            <constraint firstItem="ytr-6V-g5J" firstAttribute="leading" secondItem="n6x-f7-sCg" secondAttribute="leading" id="ZN9-ln-bkI"/>
-                            <constraint firstItem="lOi-nR-dCK" firstAttribute="top" secondItem="kTC-XF-wya" secondAttribute="bottom" constant="8" id="jGD-bw-p2d"/>
-                            <constraint firstItem="ytr-6V-g5J" firstAttribute="bottom" secondItem="lOi-nR-dCK" secondAttribute="top" id="nuL-xC-MCR"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yCz-2t-3b6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2043" y="-185"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qZA-iu-fig">
@@ -557,6 +523,46 @@
                 <exit id="q50-Qo-z7t" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="575" y="-524"/>
+        </scene>
+        <!--Season Page View Controller-->
+        <scene sceneID="ftz-F8-1Bm">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="7EQ-HJ-KE6" customClass="SeasonPageViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X8E-qX-HTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2569" y="1119"/>
+        </scene>
+        <!--Season View Controller-->
+        <scene sceneID="0WV-ns-4u8">
+            <objects>
+                <viewController storyboardIdentifier="SeasonViewControllerIdentifier" id="IPc-QC-ckM" customClass="SeasonViewController" customModule="UIKitSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZBk-V1-df2"/>
+                        <viewControllerLayoutGuide type="bottom" id="imE-ew-Uoi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nOh-6o-voU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="season_01" translatesAutoresizingMaskIntoConstraints="NO" id="YTl-nW-7gF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YTl-nW-7gF" firstAttribute="bottom" secondItem="imE-ew-Uoi" secondAttribute="top" id="OER-9Q-gRb"/>
+                            <constraint firstAttribute="trailing" secondItem="YTl-nW-7gF" secondAttribute="trailing" id="SXz-SE-H56"/>
+                            <constraint firstItem="YTl-nW-7gF" firstAttribute="top" secondItem="nOh-6o-voU" secondAttribute="top" id="gjX-RZ-TTt"/>
+                            <constraint firstItem="YTl-nW-7gF" firstAttribute="leading" secondItem="nOh-6o-voU" secondAttribute="leading" id="ha6-hY-ZCr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="YTl-nW-7gF" id="HPS-PA-gjZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mw0-qt-8WO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1877" y="1117"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Cyp-U0-oUY">
@@ -944,10 +950,10 @@ OTHER DEALINGS IN THE SOFTWARE.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="flower_yellow" width="393" height="590"/>
         <image name="full_opacity" width="32" height="32"/>
         <image name="lotto" width="320" height="240"/>
         <image name="low_opacity" width="33" height="33"/>
+        <image name="season_01" width="318" height="206"/>
         <image name="switch_icon" width="48" height="52"/>
         <image name="tab_date_normal" width="21" height="21"/>
         <image name="tab_map_normal" width="21" height="21"/>
