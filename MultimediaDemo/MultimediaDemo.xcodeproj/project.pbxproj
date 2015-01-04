@@ -19,6 +19,7 @@
 		C35426191A5739220086595B /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = C35426181A5739220086595B /* video.mov */; };
 		C393DD4D1A577212008416D9 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C393DD4C1A577212008416D9 /* music.mp3 */; };
 		C393DD4F1A57721E008416D9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C393DD4E1A57721E008416D9 /* AVFoundation.framework */; };
+		C393DD511A578A83008416D9 /* iTunesAndPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C393DD501A578A83008416D9 /* iTunesAndPhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		C35426181A5739220086595B /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.mov; sourceTree = "<group>"; };
 		C393DD4C1A577212008416D9 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		C393DD4E1A57721E008416D9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C393DD501A578A83008416D9 /* iTunesAndPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesAndPhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				C35425F51A5715800086595B /* LaunchScreen.xib */,
 				C35425E81A5715800086595B /* Supporting Files */,
 				C354260C1A5724B90086595B /* PlayViewController.swift */,
+				C393DD501A578A83008416D9 /* iTunesAndPhotoViewController.swift */,
 			);
 			path = MultimediaDemo;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C354260D1A5724B90086595B /* PlayViewController.swift in Sources */,
+				C393DD511A578A83008416D9 /* iTunesAndPhotoViewController.swift in Sources */,
 				C35425EF1A5715800086595B /* SecondViewController.swift in Sources */,
 				C35425EB1A5715800086595B /* AppDelegate.swift in Sources */,
 				C35425ED1A5715800086595B /* FirstViewController.swift in Sources */,
