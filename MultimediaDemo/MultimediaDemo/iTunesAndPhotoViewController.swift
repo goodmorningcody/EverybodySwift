@@ -7,6 +7,7 @@
 //
 
 import MediaPlayer
+import MobileCoreServices
 
 class iTunesAndPhotoViewController: UIViewController, MPMediaPickerControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -43,11 +44,17 @@ class iTunesAndPhotoViewController: UIViewController, MPMediaPickerControllerDel
     }
     
     @IBAction func touchedPhoto(sender:UIButton) {
-        var imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        imagePickerController.allowsEditing = false
-        presentViewController(imagePickerController, animated: true, completion: nil)
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            var imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
+            imagePickerController.mediaTypes = [kUTTypeImage]
+            imagePickerController.allowsEditing = false
+            presentViewController(imagePickerController, animated: true, completion: nil)
+        }
+        else {
+            UIAlertView(title: "Camera", message: "사용할 수 있는 카메라 장치가 없습니다.", delegate: nil, cancelButtonTitle: "확인").show()
+        }
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
