@@ -44,7 +44,7 @@
                             <constraint firstAttribute="centerX" secondItem="aAa-xP-jpk" secondAttribute="centerX" id="lVs-AN-WDs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Play Video/Audio" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Play Video/Audio" image="play" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,7 +96,7 @@
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Vgs-Oe-BiG" secondAttribute="bottom" constant="8" id="vWC-Qf-RhO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Access iTunes and Photos" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Access iTunes and Photos" image="folder" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="DuW-tI-3mQ" id="rkF-9k-eKc"/>
                     </connections>
@@ -118,15 +118,55 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="PMy-yF-knr" kind="relationship" relationship="viewControllers" id="IeK-CV-MGj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Record Audio-->
+        <scene sceneID="mfn-fC-eKd">
+            <objects>
+                <viewController id="PMy-yF-knr" customClass="RecordViewController" customModule="MultimediaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TbH-ML-RiN"/>
+                        <viewControllerLayoutGuide type="bottom" id="B9d-nT-8hk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WYs-CN-Ohp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UP9-wA-QXa">
+                                <rect key="frame" x="183" y="477" width="235" height="30"/>
+                                <state key="normal" title="Start Record">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="Stop Record"/>
+                                <connections>
+                                    <action selector="touchedRecord:" destination="PMy-yF-knr" eventType="touchUpInside" id="kj8-5M-641"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="UP9-wA-QXa" secondAttribute="centerX" id="BTQ-kH-UeM"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Record Audio" image="micro" id="30k-x1-bBe"/>
+                    <connections>
+                        <outlet property="recordAndStopButton" destination="UP9-wA-QXa" id="4cp-QT-5p5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grz-z1-c5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="776"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="folder" width="26" height="26"/>
+        <image name="micro" width="26" height="26"/>
+        <image name="play" width="32" height="32"/>
     </resources>
 </document>

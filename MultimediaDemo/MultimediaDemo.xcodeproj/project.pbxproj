@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C31C71241A59A8CD0058A8F5 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31C71231A59A8CD0058A8F5 /* RecordViewController.swift */; };
 		C35425EB1A5715800086595B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35425EA1A5715800086595B /* AppDelegate.swift */; };
-		C35425ED1A5715800086595B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35425EC1A5715800086595B /* FirstViewController.swift */; };
-		C35425EF1A5715800086595B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35425EE1A5715800086595B /* SecondViewController.swift */; };
 		C35425F21A5715800086595B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35425F01A5715800086595B /* Main.storyboard */; };
 		C35425F41A5715800086595B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C35425F31A5715800086595B /* Images.xcassets */; };
 		C35425F71A5715800086595B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C35425F51A5715800086595B /* LaunchScreen.xib */; };
@@ -33,11 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C31C71231A59A8CD0058A8F5 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		C35425E51A5715800086595B /* MultimediaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultimediaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C35425E91A5715800086595B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C35425EA1A5715800086595B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C35425EC1A5715800086595B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		C35425EE1A5715800086595B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C35425F11A5715800086595B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C35425F31A5715800086595B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C35425F61A5715800086595B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -98,14 +96,13 @@
 				C393DD4C1A577212008416D9 /* music.mp3 */,
 				C35426181A5739220086595B /* video.mov */,
 				C35425EA1A5715800086595B /* AppDelegate.swift */,
-				C35425EC1A5715800086595B /* FirstViewController.swift */,
-				C35425EE1A5715800086595B /* SecondViewController.swift */,
 				C35425F01A5715800086595B /* Main.storyboard */,
 				C35425F31A5715800086595B /* Images.xcassets */,
 				C35425F51A5715800086595B /* LaunchScreen.xib */,
 				C35425E81A5715800086595B /* Supporting Files */,
 				C354260C1A5724B90086595B /* PlayViewController.swift */,
 				C393DD501A578A83008416D9 /* iTunesAndPhotoViewController.swift */,
+				C31C71231A59A8CD0058A8F5 /* RecordViewController.swift */,
 			);
 			path = MultimediaDemo;
 			sourceTree = "<group>";
@@ -239,9 +236,8 @@
 			files = (
 				C354260D1A5724B90086595B /* PlayViewController.swift in Sources */,
 				C393DD511A578A83008416D9 /* iTunesAndPhotoViewController.swift in Sources */,
-				C35425EF1A5715800086595B /* SecondViewController.swift in Sources */,
+				C31C71241A59A8CD0058A8F5 /* RecordViewController.swift in Sources */,
 				C35425EB1A5715800086595B /* AppDelegate.swift in Sources */,
-				C35425ED1A5715800086595B /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
