@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import CoreMotion
 
 class AccelerometerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var motionManager = CMMotionManager()
+        
+        if motionManager.accelerometerAvailable==false {
+            println("Accelerometer 센서를 사용할 수 없습니다.")
+        }
+        else {
+            motionManager.accelerometerUpdateInterval = 0.2
+            motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue(), withHandler: {(accelerometerData: CMAccelerometerData!, error: NSError!) in
+                if error != nil {
+                    println("x : "+accelerometerData.acceleration.x.description)
+                    println("y : "+accelerometerData.acceleration.y.description)
+                    println("z : "+accelerometerData.acceleration.z.description)
+                }
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
