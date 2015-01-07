@@ -16,6 +16,7 @@
 		C38C65C71A5AC1260026C9AC /* GyroscopeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38C65C61A5AC1260026C9AC /* GyroscopeViewController.swift */; };
 		C38C65C91A5AC1390026C9AC /* AccelerometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38C65C81A5AC1390026C9AC /* AccelerometerViewController.swift */; };
 		C38C65CB1A5AC1430026C9AC /* GPSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38C65CA1A5AC1430026C9AC /* GPSViewController.swift */; };
+		C3D3E97C1A5C1FCF0051B8E2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D3E97B1A5C1FCF0051B8E2 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		C38C65C61A5AC1260026C9AC /* GyroscopeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GyroscopeViewController.swift; sourceTree = "<group>"; };
 		C38C65C81A5AC1390026C9AC /* AccelerometerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerometerViewController.swift; sourceTree = "<group>"; };
 		C38C65CA1A5AC1430026C9AC /* GPSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSViewController.swift; sourceTree = "<group>"; };
+		C3D3E97B1A5C1FCF0051B8E2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D3E97C1A5C1FCF0051B8E2 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +68,7 @@
 		C38C65961A5ABD5A0026C9AC = {
 			isa = PBXGroup;
 			children = (
+				C3D3E97B1A5C1FCF0051B8E2 /* CoreMotion.framework */,
 				C38C65A11A5ABD5A0026C9AC /* SensorsDemo */,
 				C38C65B91A5ABD5A0026C9AC /* SensorsDemoTests */,
 				C38C65A01A5ABD5A0026C9AC /* Products */,
