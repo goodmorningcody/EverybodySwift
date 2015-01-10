@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C308F9041A5F71710000366B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C308F9031A5F71710000366B /* CoreLocation.framework */; };
 		C343F2851A5AC15B007F192D /* ProximityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343F2841A5AC15B007F192D /* ProximityViewController.swift */; };
 		C38C65A51A5ABD5A0026C9AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38C65A41A5ABD5A0026C9AC /* AppDelegate.swift */; };
 		C38C65AC1A5ABD5A0026C9AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38C65AA1A5ABD5A0026C9AC /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C308F9031A5F71710000366B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C343F2841A5AC15B007F192D /* ProximityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProximityViewController.swift; sourceTree = "<group>"; };
 		C38C659F1A5ABD5A0026C9AC /* SensorsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38C65A31A5ABD5A0026C9AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C308F9041A5F71710000366B /* CoreLocation.framework in Frameworks */,
 				C3D3E97C1A5C1FCF0051B8E2 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +71,7 @@
 		C38C65961A5ABD5A0026C9AC = {
 			isa = PBXGroup;
 			children = (
+				C308F9031A5F71710000366B /* CoreLocation.framework */,
 				C3D3E97B1A5C1FCF0051B8E2 /* CoreMotion.framework */,
 				C38C65A11A5ABD5A0026C9AC /* SensorsDemo */,
 				C38C65B91A5ABD5A0026C9AC /* SensorsDemoTests */,

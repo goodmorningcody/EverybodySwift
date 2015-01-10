@@ -34,13 +34,27 @@
                     <view key="view" contentMode="scaleToFill" id="oHu-8N-DyQ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWZ-Yp-C7Z">
+                                <rect key="frame" x="187" y="498" width="227" height="30"/>
+                                <state key="normal" title="Update Location/Heading"/>
+                                <state key="selected" title="Stop updating Location/Heading"/>
+                                <connections>
+                                    <action selector="touchedUpdateOrStopButton:" destination="0fb-bI-xLK" eventType="touchUpInside" id="EU6-ew-Oyo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PB2-SD-x4d" firstAttribute="top" secondItem="jWZ-Yp-C7Z" secondAttribute="bottom" constant="23" id="jhM-hN-Cwl"/>
+                            <constraint firstAttribute="centerX" secondItem="jWZ-Yp-C7Z" secondAttribute="centerX" id="rAP-Zj-tmy"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="GPS" id="JmX-rT-gQK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZt-yH-B00" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18" y="698"/>
+            <point key="canvasLocation" x="-163" y="698"/>
         </scene>
         <!--Accelerometer-->
         <scene sceneID="wg7-f3-ORb">

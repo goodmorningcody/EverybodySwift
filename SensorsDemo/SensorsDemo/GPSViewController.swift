@@ -7,19 +7,48 @@
 //
 
 import UIKit
+import CoreLocation
 
-class GPSViewController: UIViewController {
+class GPSViewController: UIViewController, CLLocationManagerDelegate {
 
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined && locationManager.respondsToSelector(Selector("requestWhenInUseAuthorization")) == true {
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func touchedUpdateOrStopButton(sender: UIButton) {
+        if sender.selected {
+            locationManager.stopUpdatingLocation()
+            locationManager.stopUpdatingHeading()
+        }
+        else {
+            locationManager.startUpdatingLocation()
+            locationManager.startUpdatingHeading()
+        }
+        
+        sender.selected = !sender.selected
+    }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
+        println(newHeading.x)
+    }
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!){
+        var location:CLLocation = locations[locations.count - 1] as CLLocation
+        println(location.coordinate.longitude)
+        println(location.coordinate.latitude)
+    }
+    
+    
     
 
     /*

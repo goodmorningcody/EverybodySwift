@@ -155,9 +155,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Record Audio" image="micro" id="30k-x1-bBe"/>
-                    <connections>
-                        <outlet property="recordAndStopButton" destination="UP9-wA-QXa" id="4cp-QT-5p5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grz-z1-c5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
