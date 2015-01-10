@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C34F02B31A61965200469892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34F02B21A61965200469892 /* AppDelegate.swift */; };
-		C34F02B51A61965200469892 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34F02B41A61965200469892 /* FirstViewController.swift */; };
-		C34F02B71A61965200469892 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34F02B61A61965200469892 /* SecondViewController.swift */; };
 		C34F02BA1A61965200469892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34F02B81A61965200469892 /* Main.storyboard */; };
 		C34F02BC1A61965200469892 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34F02BB1A61965200469892 /* Images.xcassets */; };
 		C34F02BF1A61965200469892 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34F02BD1A61965200469892 /* LaunchScreen.xib */; };
 		C34F02CB1A61965200469892 /* WeatherDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34F02CA1A61965200469892 /* WeatherDemoTests.swift */; };
 		C34F02D51A619AC000469892 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34F02D41A619AC000469892 /* WeatherViewController.swift */; };
 		C34F02D71A619B5400469892 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34F02D61A619B5400469892 /* CoreLocation.framework */; };
+		C34F02D91A61D35700469892 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34F02D81A61D35700469892 /* CoreBluetooth.framework */; };
+		C34F02DD1A61DDD200469892 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34F02DC1A61DDD200469892 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +32,6 @@
 		C34F02AD1A61965200469892 /* WeatherDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34F02B11A61965200469892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C34F02B21A61965200469892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C34F02B41A61965200469892 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		C34F02B61A61965200469892 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C34F02B91A61965200469892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C34F02BB1A61965200469892 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C34F02BE1A61965200469892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,6 +40,8 @@
 		C34F02CA1A61965200469892 /* WeatherDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDemoTests.swift; sourceTree = "<group>"; };
 		C34F02D41A619AC000469892 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		C34F02D61A619B5400469892 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C34F02D81A61D35700469892 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		C34F02DC1A61DDD200469892 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34F02DD1A61DDD200469892 /* GameKit.framework in Frameworks */,
+				C34F02D91A61D35700469892 /* CoreBluetooth.framework in Frameworks */,
 				C34F02D71A619B5400469892 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +68,8 @@
 		C34F02A41A61965200469892 = {
 			isa = PBXGroup;
 			children = (
+				C34F02DC1A61DDD200469892 /* GameKit.framework */,
+				C34F02D81A61D35700469892 /* CoreBluetooth.framework */,
 				C34F02D61A619B5400469892 /* CoreLocation.framework */,
 				C34F02AF1A61965200469892 /* WeatherDemo */,
 				C34F02C71A61965200469892 /* WeatherDemoTests */,
@@ -86,8 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				C34F02B21A61965200469892 /* AppDelegate.swift */,
-				C34F02B41A61965200469892 /* FirstViewController.swift */,
-				C34F02B61A61965200469892 /* SecondViewController.swift */,
 				C34F02B81A61965200469892 /* Main.storyboard */,
 				C34F02D41A619AC000469892 /* WeatherViewController.swift */,
 				C34F02BB1A61965200469892 /* Images.xcassets */,
@@ -222,10 +224,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C34F02B71A61965200469892 /* SecondViewController.swift in Sources */,
 				C34F02D51A619AC000469892 /* WeatherViewController.swift in Sources */,
 				C34F02B31A61965200469892 /* AppDelegate.swift in Sources */,
-				C34F02B51A61965200469892 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
