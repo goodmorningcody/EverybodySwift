@@ -7,7 +7,26 @@
 //
 
 import UIKit
+import Foundation
+
+@objc protocol CreateToDoViewDelegate {
+    optional func didHidden(createToDoView: CreateToDoView)
+}
 
 class CreateToDoView: UIView {
+    
+    var delegate : CreateToDoViewDelegate?
+    
+    private func close() {
+        delegate?.didHidden?(self)
+    }
+    
+    @IBAction func touchedCancel(sender: UIButton) {
+        close()
+    }
+    
+    @IBAction func touchedAdd(sender: UIButton) {
+        close()
+    }
 
 }

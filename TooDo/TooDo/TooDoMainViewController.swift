@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class TooDoMainViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+class TooDoMainViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, CreateToDoViewDelegate {
 
     @IBOutlet var myMessageTextField : UITextField?
     @IBOutlet var createToDoView : CreateToDoView?
@@ -21,11 +21,12 @@ class TooDoMainViewController: UIViewController, UITextFieldDelegate, UITableVie
         
         dialogBackgroundGrayView = UIView(frame: self.view.frame)
         dialogBackgroundGrayView?.backgroundColor = UIColor.blackColor()
-        dialogBackgroundGrayView?.alpha = 0.3
         dialogBackgroundGrayView?.hidden = true
         self.view.addSubview(dialogBackgroundGrayView!)
         
         self.view.bringSubviewToFront(createToDoView!)
+        createToDoView?.hidden = true
+        createToDoView?.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,6 +48,12 @@ class TooDoMainViewController: UIViewController, UITextFieldDelegate, UITableVie
     }
     
     @IBAction func touchedAdd(sender: UIButton) {
+        UIView.animateWithDuration(Double(0.4), animations: { () -> Void in
+            self.dialogBackgroundGrayView?.hidden = false
+            self.dialogBackgroundGrayView?.alpha = 0.0
+            self.dialogBackgroundGrayView?.alpha = 0.4
+            self.createToDoView?.hidden = false
+        })
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -63,10 +70,13 @@ class TooDoMainViewController: UIViewController, UITextFieldDelegate, UITableVie
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //dialogBackgroundGrayView?.
-//        UIView.animateWithDuration(0.7, animations: { () -> Void in
-//            self.dialogBackgroundGrayView?.hidden = true
-//        })
+        
+    }
+    func didHidden(createToDoView: CreateToDoView) {
+        UIView.animateWithDuration(Double(0.4), animations: { () -> Void in
+            self.dialogBackgroundGrayView?.hidden = true
+            self.createToDoView?.hidden = true
+        })
     }
 
 }

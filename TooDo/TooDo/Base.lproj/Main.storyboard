@@ -80,10 +80,10 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qht-Fe-DtG">
-                                <rect key="frame" x="16" y="532" width="48" height="48"/>
+                                <rect key="frame" x="545" y="542" width="48" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="C0o-LX-dS1"/>
-                                    <constraint firstAttribute="width" constant="48" id="iZu-br-RPB"/>
+                                    <constraint firstAttribute="width" constant="48" id="Moy-3q-Uvl"/>
+                                    <constraint firstAttribute="height" constant="48" id="u6F-uh-xQt"/>
                                 </constraints>
                                 <state key="normal" image="add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,15 +94,61 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NPq-So-iNL" customClass="CreateToDoView" customModule="TooDo" customModuleProvider="target">
-                                <rect key="frame" x="140" y="92" width="320" height="251"/>
+                                <rect key="frame" x="140" y="51" width="320" height="251"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQs-r9-uTs">
+                                        <rect key="frame" x="17" y="208" width="129" height="30"/>
+                                        <color key="backgroundColor" red="0.95292859636871508" green="0.95292859636871508" blue="0.95292859636871508" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchedCancel:" destination="NPq-So-iNL" eventType="touchUpInside" id="EfE-lW-5fx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfj-Tk-Doh">
+                                        <rect key="frame" x="183" y="208" width="129" height="30"/>
+                                        <color key="backgroundColor" red="0.95292859636871508" green="0.95292859636871508" blue="0.95292859636871508" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchedAdd:" destination="NPq-So-iNL" eventType="touchUpInside" id="QDW-pE-YXC"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kYW-uj-gut">
+                                        <rect key="frame" x="17" y="128" width="295" height="30"/>
+                                        <color key="backgroundColor" red="0.97741358240223464" green="0.97741358240223464" blue="0.97741358240223464" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lht-hh-Osa">
+                                        <rect key="frame" x="17" y="44" width="295" height="30"/>
+                                        <color key="backgroundColor" red="0.97741358240223464" green="0.97741358240223464" blue="0.97741358240223464" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikn-m1-BQR">
+                                        <rect key="frame" x="17" y="18" width="290" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To Do" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niP-sD-RXK">
+                                        <rect key="frame" x="17" y="102" width="290" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Qht-Fe-DtG" firstAttribute="leading" secondItem="pSb-pD-Bgp" secondAttribute="leadingMargin" id="0ZN-NP-O0I"/>
                             <constraint firstItem="tNd-RT-xGn" firstAttribute="top" secondItem="6TM-RE-m2j" secondAttribute="bottom" constant="94" id="8pn-wT-28U"/>
                             <constraint firstItem="tNd-RT-xGn" firstAttribute="leading" secondItem="pSb-pD-Bgp" secondAttribute="leadingMargin" id="FqT-vm-G7a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qht-Fe-DtG" secondAttribute="trailing" constant="-9" id="PPq-So-A4y"/>
                             <constraint firstAttribute="trailing" secondItem="5Cc-nz-Ay6" secondAttribute="trailing" id="Pkj-A5-Y6L"/>
                             <constraint firstItem="hHz-3u-hmh" firstAttribute="top" secondItem="5Cc-nz-Ay6" secondAttribute="bottom" id="UGN-Iv-Hq0"/>
                             <constraint firstItem="hHz-3u-hmh" firstAttribute="leading" secondItem="pSb-pD-Bgp" secondAttribute="leading" id="Ur7-fJ-VOS"/>
@@ -110,7 +156,7 @@
                             <constraint firstItem="5Cc-nz-Ay6" firstAttribute="leading" secondItem="pSb-pD-Bgp" secondAttribute="leading" id="ZcR-S3-Wbi"/>
                             <constraint firstItem="tNd-RT-xGn" firstAttribute="trailing" secondItem="pSb-pD-Bgp" secondAttribute="trailingMargin" id="ZuK-J1-HI0"/>
                             <constraint firstAttribute="centerX" secondItem="NPq-So-iNL" secondAttribute="centerX" id="kLz-8j-w7u"/>
-                            <constraint firstItem="GjI-CE-7n5" firstAttribute="top" secondItem="Qht-Fe-DtG" secondAttribute="bottom" constant="20" id="qYt-mZ-Kvs"/>
+                            <constraint firstItem="GjI-CE-7n5" firstAttribute="top" secondItem="Qht-Fe-DtG" secondAttribute="bottom" constant="10" id="kOZ-1v-vFL"/>
                             <constraint firstAttribute="trailing" secondItem="hHz-3u-hmh" secondAttribute="trailing" id="tAs-ge-6G9"/>
                             <constraint firstItem="GjI-CE-7n5" firstAttribute="top" secondItem="hHz-3u-hmh" secondAttribute="bottom" id="zUj-zy-XFc"/>
                         </constraints>
@@ -124,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wDF-Ho-50i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165" y="717"/>
+            <point key="canvasLocation" x="185" y="717"/>
         </scene>
     </scenes>
     <resources>
