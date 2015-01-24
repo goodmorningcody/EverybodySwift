@@ -9,6 +9,11 @@
 import UIKit
 
 class TaskTableViewCell: UITableViewCell {
+    
+    @IBOutlet var checkboxButton : UIButton?
+    @IBOutlet var shadowImageView : UIImageView?
+    @IBOutlet var trashButton : UIButton?
+    @IBOutlet var taskLabel : UILabel?
 
     override func awakeFromNib() {
         super.awakeFromNib()

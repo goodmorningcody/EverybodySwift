@@ -12,12 +12,17 @@ class WeeklyToDoTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        for( var i : Int = 0; i<7; ++i ) {
+            println(Weekly.weekday(i))
+        }
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 249.0/255.0, green: 179.0/255.0, blue: 16.0/255.0, alpha: 1)
+        var font = UIFont(name: "Helvetica Bold", size: 22.0)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),  NSFontAttributeName : font!]
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plus"), style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        self.tableView?.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,26 +33,50 @@ class WeeklyToDoTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 7
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        return 2
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+        var cellIdentifier : String?
+        if indexPath.row==0 {
+            cellIdentifier = "WeekendTableViewCellIdentifier"
+        }
+        else {
+            cellIdentifier = "TaskTableViewCellIdentifier"
+        }
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier!, forIndexPath: indexPath) as UITableViewCell
+        if indexPath.row == 0 {
+            return updateWeekendCell(cell, withIndexPath: indexPath)
+        }
+        
+        return updateTaskCell(cell, withIndexPath: indexPath)
     }
-    */
+    
+    private func updateTaskCell(cell: UITableViewCell, withIndexPath indexPath : NSIndexPath) -> TaskTableViewCell {
+        var taskCell = cell as TaskTableViewCell
+        return taskCell
+    }
+    private func updateWeekendCell(cell: UITableViewCell, withIndexPath  indexPath : NSIndexPath) -> WeekendTableViewCell {
+        var weekendCell = cell as WeekendTableViewCell
+//        if indexPath.section == 0 {
+//            weekendCell.shadowImageView?.hidden = true
+//        }
+        weekendCell.shadowImageView?.hidden = indexPath.section == 0
+        
+        return weekendCell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row==0 {
+            return 69.0
+        }
+        return 55.0
+    }
 
     /*
     // Override to support conditional editing of the table view.

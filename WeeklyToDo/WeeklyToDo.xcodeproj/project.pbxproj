@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C30F6B0E1A70841800009A01 /* Weekly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F6B0D1A70841800009A01 /* Weekly.swift */; };
 		C378F2101A700FEF007C73D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F20F1A700FEF007C73D4 /* AppDelegate.swift */; };
 		C378F2121A700FEF007C73D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F2111A700FEF007C73D4 /* ViewController.swift */; };
 		C378F2151A700FEF007C73D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C378F2131A700FEF007C73D4 /* Main.storyboard */; };
 		C378F2171A700FEF007C73D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C378F2161A700FEF007C73D4 /* Images.xcassets */; };
 		C378F21A1A700FEF007C73D4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C378F2181A700FEF007C73D4 /* LaunchScreen.xib */; };
 		C378F2261A700FF0007C73D4 /* WeeklyToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F2251A700FF0007C73D4 /* WeeklyToDoTests.swift */; };
+		C378F2301A7013EF007C73D4 /* WeekendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F22F1A7013EF007C73D4 /* WeekendTableViewCell.swift */; };
+		C378F2321A70149D007C73D4 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F2311A70149D007C73D4 /* TaskTableViewCell.swift */; };
+		C378F2341A701917007C73D4 /* WeeklyToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F2331A701917007C73D4 /* WeeklyToDoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C30F6B0D1A70841800009A01 /* Weekly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weekly.swift; sourceTree = "<group>"; };
 		C378F20A1A700FEF007C73D4 /* WeeklyToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeklyToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C378F20E1A700FEF007C73D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C378F20F1A700FEF007C73D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +41,9 @@
 		C378F21F1A700FF0007C73D4 /* WeeklyToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeeklyToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C378F2241A700FF0007C73D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C378F2251A700FF0007C73D4 /* WeeklyToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyToDoTests.swift; sourceTree = "<group>"; };
+		C378F22F1A7013EF007C73D4 /* WeekendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekendTableViewCell.swift; sourceTree = "<group>"; };
+		C378F2311A70149D007C73D4 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
+		C378F2331A701917007C73D4 /* WeeklyToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyToDoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,10 @@
 				C378F2161A700FEF007C73D4 /* Images.xcassets */,
 				C378F2181A700FEF007C73D4 /* LaunchScreen.xib */,
 				C378F20D1A700FEF007C73D4 /* Supporting Files */,
+				C378F22F1A7013EF007C73D4 /* WeekendTableViewCell.swift */,
+				C378F2311A70149D007C73D4 /* TaskTableViewCell.swift */,
+				C378F2331A701917007C73D4 /* WeeklyToDoTableViewController.swift */,
+				C30F6B0D1A70841800009A01 /* Weekly.swift */,
 			);
 			path = WeeklyToDo;
 			sourceTree = "<group>";
@@ -161,6 +173,7 @@
 				TargetAttributes = {
 					C378F2091A700FEF007C73D4 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = VGJKMBVL2H;
 					};
 					C378F21E1A700FF0007C73D4 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -212,8 +225,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C378F2321A70149D007C73D4 /* TaskTableViewCell.swift in Sources */,
 				C378F2121A700FEF007C73D4 /* ViewController.swift in Sources */,
+				C30F6B0E1A70841800009A01 /* Weekly.swift in Sources */,
 				C378F2101A700FEF007C73D4 /* AppDelegate.swift in Sources */,
+				C378F2301A7013EF007C73D4 /* WeekendTableViewCell.swift in Sources */,
+				C378F2341A701917007C73D4 /* WeeklyToDoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,9 +353,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WeeklyToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -346,9 +366,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WeeklyToDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -405,6 +428,7 @@
 				C378F22B1A700FF0007C73D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C378F22C1A700FF0007C73D4 /* Build configuration list for PBXNativeTarget "WeeklyToDoTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +437,7 @@
 				C378F22E1A700FF0007C73D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
