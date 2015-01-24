@@ -13,16 +13,12 @@ class WeeklyToDoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for( var i : Int = 0; i<7; ++i ) {
-            println(Weekly.weekday(i))
-        }
-        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 249.0/255.0, green: 179.0/255.0, blue: 16.0/255.0, alpha: 1)
-        var font = UIFont(name: "Helvetica Bold", size: 22.0)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor(),  NSFontAttributeName : font!]
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "plus"), style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
-        self.tableView?.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        self.navigationController?.navigationBar.barTintColor = Color.getNavigationBackgroundColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:Color.getHightlightColor(),  NSFontAttributeName : Font.getHightlightFont()]
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add"), style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem?.tintColor = Color.getHightlightColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,11 +29,13 @@ class WeeklyToDoTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 7
+        return 0
+        //return 7
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 0
+        //return 2
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
