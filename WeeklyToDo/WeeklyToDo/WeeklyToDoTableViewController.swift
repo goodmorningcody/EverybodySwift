@@ -15,10 +15,10 @@ class WeeklyToDoTableViewController: UITableViewController {
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barTintColor = Color.getNavigationBackgroundColor()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:Color.getHightlightColor(),  NSFontAttributeName : Font.getHightlightFont()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:Color.getPointColor(), NSFontAttributeName : Font.getHightlightFont()]
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add"), style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
-        self.navigationItem.rightBarButtonItem?.tintColor = Color.getHightlightColor()
+        self.navigationItem.rightBarButtonItem?.tintColor = Color.getPointColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,13 +29,11 @@ class WeeklyToDoTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
-        //return 7
+        return 7
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-        //return 2
+        return 1
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -61,17 +59,16 @@ class WeeklyToDoTableViewController: UITableViewController {
     }
     private func updateWeekendCell(cell: UITableViewCell, withIndexPath  indexPath : NSIndexPath) -> WeekendTableViewCell {
         var weekendCell = cell as WeekendTableViewCell
-//        if indexPath.section == 0 {
-//            weekendCell.shadowImageView?.hidden = true
-//        }
-        weekendCell.shadowImageView?.hidden = indexPath.section == 0
+        
+        weekendCell.depthImageView?.hidden = true
+        weekendCell.todayMarkView?.hidden = (indexPath.section != 0)
         
         return weekendCell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row==0 {
-            return 69.0
+            return 58.0
         }
         return 55.0
     }

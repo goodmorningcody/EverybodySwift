@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6yc-wb-nc9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -24,16 +25,66 @@
         <scene sceneID="rpP-or-In2">
             <objects>
                 <tableViewController id="aWt-qQ-9k0" customClass="WeeklyToDoTableViewController" customModule="WeeklyToDo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CEe-W0-9Eg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CEe-W0-9Eg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vah-lv-lEs">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WeekendTableViewCellIdentifier" rowHeight="58" id="Vah-lv-lEs" customClass="WeekendTableViewCell" customModule="WeeklyToDo" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vah-lv-lEs" id="cce-rm-I1l">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tableview_weekly_underbar" translatesAutoresizingMaskIntoConstraints="NO" id="qMP-7p-qHe" userLabel="has depth image view">
+                                            <rect key="frame" x="0.0" y="51" width="600" height="7"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_tableview_weekly_nodepth" translatesAutoresizingMaskIntoConstraints="NO" id="W39-XX-qD2" userLabel="no dapth image view">
+                                            <rect key="frame" x="0.0" y="56" width="600" height="2"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gag-1b-jUs" userLabel="weekend label">
+                                            <rect key="frame" x="22" y="15" width="242" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="242" id="Tio-fT-KAw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.37254901960784315" green="0.32941176470588235" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28K-9w-6Cm" userLabel="count label">
+                                            <rect key="frame" x="525" y="15" width="67" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="Ms3-5m-7eC"/>
+                                                <constraint firstAttribute="height" constant="27" id="fas-Zm-a2Q"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.37254901959999998" green="0.3294117647" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQg-uV-fVv" userLabel="today mark view">
+                                            <rect key="frame" x="12" y="17" width="3" height="24"/>
+                                            <color key="backgroundColor" red="0.96078431372549022" green="0.42352941176470588" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="28K-9w-6Cm" firstAttribute="top" secondItem="cce-rm-I1l" secondAttribute="top" constant="15" id="0cM-tC-eKD"/>
+                                        <constraint firstItem="gag-1b-jUs" firstAttribute="leading" secondItem="cce-rm-I1l" secondAttribute="leadingMargin" constant="14" id="1g7-Aa-U51"/>
+                                        <constraint firstItem="qMP-7p-qHe" firstAttribute="top" secondItem="28K-9w-6Cm" secondAttribute="bottom" constant="9" id="5dM-TV-bZo"/>
+                                        <constraint firstItem="qMP-7p-qHe" firstAttribute="leading" secondItem="cce-rm-I1l" secondAttribute="leading" id="7IU-Tg-mLx"/>
+                                        <constraint firstAttribute="trailing" secondItem="qMP-7p-qHe" secondAttribute="trailing" id="Veu-TC-c0p"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gag-1b-jUs" secondAttribute="bottom" constant="8" id="dAf-tH-4Ay"/>
+                                        <constraint firstAttribute="trailing" secondItem="28K-9w-6Cm" secondAttribute="trailing" constant="8" id="fYm-EB-O7b"/>
+                                        <constraint firstItem="gag-1b-jUs" firstAttribute="top" secondItem="cce-rm-I1l" secondAttribute="topMargin" constant="7" id="ovD-Vi-CUy"/>
+                                        <constraint firstAttribute="bottom" secondItem="qMP-7p-qHe" secondAttribute="bottom" id="tZ7-9E-Ir9"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.97647058823529409" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="countLabel" destination="28K-9w-6Cm" id="Aso-FX-Snw"/>
+                                    <outlet property="depthImageView" destination="qMP-7p-qHe" id="RRb-BL-Ufq"/>
+                                    <outlet property="noDepthImageView" destination="W39-XX-qD2" id="VHx-O2-Q07"/>
+                                    <outlet property="todayMarkView" destination="VQg-uV-fVv" id="OlP-dH-Wlv"/>
+                                    <outlet property="weekendLabel" destination="gag-1b-jUs" id="iVf-Xj-FEm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -45,7 +96,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGC-0E-vY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="437"/>
+            <point key="canvasLocation" x="188" y="431"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="img_tableview_weekly_nodepth" width="414" height="2"/>
+        <image name="img_tableview_weekly_underbar" width="414" height="7"/>
+    </resources>
 </document>

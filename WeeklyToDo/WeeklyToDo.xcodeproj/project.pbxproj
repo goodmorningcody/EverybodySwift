@@ -87,9 +87,9 @@
 			children = (
 				C378F20F1A700FEF007C73D4 /* AppDelegate.swift */,
 				C378F20D1A700FEF007C73D4 /* Supporting Files */,
+				C378F2331A701917007C73D4 /* WeeklyToDoTableViewController.swift */,
 				C378F22F1A7013EF007C73D4 /* WeekendTableViewCell.swift */,
 				C378F2311A70149D007C73D4 /* TaskTableViewCell.swift */,
-				C378F2331A701917007C73D4 /* WeeklyToDoTableViewController.swift */,
 				C30F6B0D1A70841800009A01 /* Weekly.swift */,
 				C3F14CC11A73A47B008DE41B /* Common.swift */,
 			);

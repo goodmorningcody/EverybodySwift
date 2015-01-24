@@ -11,7 +11,9 @@ import UIKit
 class WeekendTableViewCell: UITableViewCell {
     @IBOutlet var weekendLabel : UILabel?
     @IBOutlet var countLabel : UILabel?
-    @IBOutlet var shadowImageView : UIImageView?
+    @IBOutlet var depthImageView : UIImageView?
+    @IBOutlet var noDepthImageView : UIImageView?
+    @IBOutlet var todayMarkView : UIView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
