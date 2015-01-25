@@ -13,6 +13,10 @@ class WeeklyToDoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        for( var i=0; i<7; ++i ) {
+//            println(Weekly.weekdayFromNow(i, useStandardFormat : false))
+//        }
+        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barTintColor = Color.getNavigationBackgroundColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:Color.getPointColor(), NSFontAttributeName : Font.getHightlightFont()]
@@ -33,11 +37,12 @@ class WeeklyToDoTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cellIdentifier : String?
+        
         if indexPath.row==0 {
             cellIdentifier = "WeekendTableViewCellIdentifier"
         }
@@ -60,8 +65,11 @@ class WeeklyToDoTableViewController: UITableViewController {
     private func updateWeekendCell(cell: UITableViewCell, withIndexPath  indexPath : NSIndexPath) -> WeekendTableViewCell {
         var weekendCell = cell as WeekendTableViewCell
         
-        weekendCell.depthImageView?.hidden = true
+        weekendCell.depthImageView?.hidden = false
+        
+        // for displaying weekend symbol
         weekendCell.todayMarkView?.hidden = (indexPath.section != 0)
+        weekendCell.weekendLabel?.text = Weekly.weekdayFromNow(indexPath.section, useStandardFormat: false)
         
         return weekendCell
     }
@@ -70,7 +78,7 @@ class WeeklyToDoTableViewController: UITableViewController {
         if indexPath.row==0 {
             return 58.0
         }
-        return 55.0
+        return 44.0
     }
 
     /*

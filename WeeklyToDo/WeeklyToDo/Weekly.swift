@@ -18,15 +18,15 @@ class Weekly {
         return dateFormatter.weekdaySymbols[index] as String
     }
     
-    class func weekdayFromNow(offset : Int) -> String {
+    class func weekdayFromNow(offset : Int, useStandardFormat : Bool) -> String {
         var dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale.currentLocale()
+        
+        if useStandardFormat==false {
+            dateFormatter.locale = NSLocale.currentLocale()
+        }
+        
         dateFormatter.dateFormat = "EEEE"
-        //var timeInterval : NSTimeInterval = 60.0*60.0*24.0* (Double)offset
-        //var date = NSDate(timeIntervalSinceNow: )
-        //var date = NSDate()
-        //date.dateByAddingTimeInterval(ti:)
-        //return dateFormatter.stringFromDate(NSDate(timeIntervalSinceNow: 60*60*24*offset))
-        return ""
+        var date = NSDate(timeIntervalSinceNow: 60.0*60.0*24.0 * Double(offset))
+        return dateFormatter.stringFromDate(date)
     }
 }

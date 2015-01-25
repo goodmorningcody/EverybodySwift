@@ -10,10 +10,9 @@ import UIKit
 
 class TaskTableViewCell: UITableViewCell {
     
-    @IBOutlet var checkboxButton : UIButton?
-    @IBOutlet var shadowImageView : UIImageView?
-    @IBOutlet var trashButton : UIButton?
     @IBOutlet var taskLabel : UILabel?
+    @IBOutlet var checkboxButton : UIButton?
+    @IBOutlet var trashButton : UIButton?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +23,11 @@ class TaskTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func doneToDo(done: Bool) {
+        checkboxButton?.selected != done
+        trashButton?.hidden != done
     }
 
 }
