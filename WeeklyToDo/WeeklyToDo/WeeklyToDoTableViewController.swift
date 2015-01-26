@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeeklyToDoTableViewController: UITableViewController {
+class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +33,11 @@ class WeeklyToDoTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 7
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -60,6 +60,15 @@ class WeeklyToDoTableViewController: UITableViewController {
     
     private func updateTaskCell(cell: UITableViewCell, withIndexPath indexPath : NSIndexPath) -> TaskTableViewCell {
         var taskCell = cell as TaskTableViewCell
+        taskCell.delegate = self
+        
+        if indexPath.row==1 {
+            taskCell.done = false
+        }
+        else if indexPath.row==2 {
+            taskCell.done = true
+        }
+        
         return taskCell
     }
     private func updateWeekendCell(cell: UITableViewCell, withIndexPath  indexPath : NSIndexPath) -> WeekendTableViewCell {

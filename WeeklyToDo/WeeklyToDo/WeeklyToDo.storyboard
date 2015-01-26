@@ -148,6 +148,11 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="2uv-Wy-6KC" secondAttribute="bottom" constant="5" id="xvh-Ct-pxA"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="checkboxButton" destination="N2Y-6x-hmK" id="4ss-7d-Pa9"/>
+                                    <outlet property="taskLabel" destination="2uv-Wy-6KC" id="BZv-hV-emZ"/>
+                                    <outlet property="trashButton" destination="Q3z-P2-d8D" id="X1i-qW-1YA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

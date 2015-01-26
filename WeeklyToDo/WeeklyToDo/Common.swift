@@ -26,7 +26,12 @@ class Color {
     class func getNavigationBackgroundColor() -> UIColor {
         return _navigationBackgroundColor
     }
-    //class func getTaskTextColor() ->
+    class func getTaskTextColor() -> UIColor {
+        return _taskTextColor
+    }
+    class func getDoneTaskTextColor() -> UIColor {
+        return _taskDoneTextColor
+    }
 }
 
 var _hightlightFont = UIFont(name: "Helvetica Bold", size: 22.0)
