@@ -8,8 +8,16 @@
 
 import UIKit
 
-class TaskViewController: UIViewController {
+class TaskView: UIView, UITextFieldDelegate {
     
     var task : Task?
     @IBOutlet var backgroundBlurImageView : UIImageView?
+    
+    @IBAction func touchedClose(sender : UIButton) {
+        removeFromSuperview()
+    }
+    
+    @IBAction func touchedSet(sender : UIButton) {
+        removeFromSuperview()
+    }
 }

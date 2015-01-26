@@ -22,8 +22,8 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     }
     
     func addNewTask() {
-        if let taskViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TaskViewControllerIdentifier") as? TaskViewController {
-            self.navigationController?.view.addSubview(taskViewController.view)
+        if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("TaskViewIdentifier") as? UIViewController {
+            self.navigationController?.view.addSubview(viewController.view)
         }
     }
 

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C30F6B0E1A70841800009A01 /* Weekly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F6B0D1A70841800009A01 /* Weekly.swift */; };
-		C35303871A76CA1F00A7A9AD /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35303861A76CA1F00A7A9AD /* TaskViewController.swift */; };
+		C35303871A76CA1F00A7A9AD /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35303861A76CA1F00A7A9AD /* TaskView.swift */; };
 		C35303891A76CF6F00A7A9AD /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C35303881A76CF6F00A7A9AD /* CoreImage.framework */; };
 		C378F2101A700FEF007C73D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F20F1A700FEF007C73D4 /* AppDelegate.swift */; };
 		C378F2171A700FEF007C73D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C378F2161A700FEF007C73D4 /* Images.xcassets */; };
@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		C30F6B0D1A70841800009A01 /* Weekly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weekly.swift; sourceTree = "<group>"; };
-		C35303861A76CA1F00A7A9AD /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		C35303861A76CA1F00A7A9AD /* TaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		C35303881A76CF6F00A7A9AD /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		C378F20A1A700FEF007C73D4 /* WeeklyToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeklyToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C378F20E1A700FEF007C73D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 				C30F6B0D1A70841800009A01 /* Weekly.swift */,
 				C3F14CC11A73A47B008DE41B /* Common.swift */,
 				C3F14CC81A75DE03008DE41B /* WeeklyToDoDB.swift */,
-				C35303861A76CA1F00A7A9AD /* TaskViewController.swift */,
+				C35303861A76CA1F00A7A9AD /* TaskView.swift */,
 			);
 			path = WeeklyToDo;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 				C378F2301A7013EF007C73D4 /* WeekendTableViewCell.swift in Sources */,
 				C397E6E71A760F0100D479F1 /* Weekend.swift in Sources */,
 				C3F14CC21A73A47B008DE41B /* Common.swift in Sources */,
-				C35303871A76CA1F00A7A9AD /* TaskViewController.swift in Sources */,
+				C35303871A76CA1F00A7A9AD /* TaskView.swift in Sources */,
 				C378F2341A701917007C73D4 /* WeeklyToDoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

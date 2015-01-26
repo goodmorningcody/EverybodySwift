@@ -172,15 +172,15 @@
             </objects>
             <point key="canvasLocation" x="42" y="439"/>
         </scene>
-        <!--Task View Controller-->
+        <!--View Controller-->
         <scene sceneID="V6t-KO-EEj">
             <objects>
-                <viewController storyboardIdentifier="TaskViewControllerIdentifier" id="hN2-z2-5G1" customClass="TaskViewController" customModule="WeeklyToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskViewIdentifier" id="hN2-z2-5G1" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XD7-Eb-gRe"/>
                         <viewControllerLayoutGuide type="bottom" id="t2W-z0-2tI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pKt-An-38f">
+                    <view key="view" contentMode="scaleToFill" id="pKt-An-38f" customClass="TaskView" customModule="WeeklyToDo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -210,6 +210,9 @@
                                     <color key="titleColor" red="0.96078431369999995" green="0.42352941179999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.96078431369999995" green="0.42352941179999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchedSet:" destination="pKt-An-38f" eventType="touchUpInside" id="r3A-E2-jlz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjf-06-9we">
                                 <rect key="frame" x="449" y="153" width="31" height="29"/>
@@ -221,15 +224,17 @@
                                 <state key="normal" image="close">
                                     <color key="titleShadowColor" red="0.96078431369999995" green="0.42352941179999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchedClose:" destination="pKt-An-38f" eventType="touchUpInside" id="1DZ-ru-L0N"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="popup_line" translatesAutoresizingMaskIntoConstraints="NO" id="jrU-pL-uG8">
                                 <rect key="frame" x="130" y="378" width="340" height="1.5"/>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mvo-Jb-t1C">
-                                <rect key="frame" x="129" y="334" width="263" height="29"/>
+                                <rect key="frame" x="129" y="328" width="340" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="263" id="jbK-0P-44n"/>
-                                    <constraint firstAttribute="height" constant="28" id="rrp-NC-gPI"/>
+                                    <constraint firstAttribute="width" constant="340" id="naj-3s-AmJ"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Repeat Every Week"/>
@@ -246,12 +251,12 @@
                             <constraint firstItem="jrU-pL-uG8" firstAttribute="top" secondItem="5jW-GQ-dqA" secondAttribute="bottom" constant="-75" id="CqO-X3-mh8"/>
                             <constraint firstAttribute="centerY" secondItem="5jW-GQ-dqA" secondAttribute="centerY" id="L6W-Q5-Qhr"/>
                             <constraint firstItem="Xgw-J9-9fb" firstAttribute="leading" secondItem="5jW-GQ-dqA" secondAttribute="trailing" constant="-359" id="Oxf-Zv-J1V"/>
-                            <constraint firstItem="Mvo-Jb-t1C" firstAttribute="top" secondItem="5jW-GQ-dqA" secondAttribute="bottom" constant="-119" id="Vtr-4Y-mkt"/>
+                            <constraint firstItem="Mvo-Jb-t1C" firstAttribute="top" secondItem="5jW-GQ-dqA" secondAttribute="bottom" constant="-125" id="SoF-1O-Bq2"/>
                             <constraint firstItem="Vjf-06-9we" firstAttribute="leading" secondItem="5jW-GQ-dqA" secondAttribute="trailing" constant="-38" id="WcJ-Ph-VzA"/>
                             <constraint firstItem="5jW-GQ-dqA" firstAttribute="leading" secondItem="jrU-pL-uG8" secondAttribute="trailing" constant="-357" id="ZbS-ot-nAF"/>
                             <constraint firstItem="5jW-GQ-dqA" firstAttribute="top" secondItem="XS7-kZ-HGr" secondAttribute="bottom" constant="-97" id="eKa-Cy-vrW"/>
                             <constraint firstItem="Xgw-J9-9fb" firstAttribute="top" secondItem="5jW-GQ-dqA" secondAttribute="bottom" constant="-54" id="jeF-as-57X"/>
-                            <constraint firstItem="5jW-GQ-dqA" firstAttribute="leading" secondItem="Mvo-Jb-t1C" secondAttribute="trailing" constant="-279" id="ofi-pl-VrW"/>
+                            <constraint firstItem="5jW-GQ-dqA" firstAttribute="leading" secondItem="Mvo-Jb-t1C" secondAttribute="trailing" constant="-356" id="jhP-LM-tBy"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
