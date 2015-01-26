@@ -33,10 +33,13 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 7
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section != 0 {
+            return 1
+        }
         return 3
     }
 
@@ -74,7 +77,10 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     private func updateWeekendCell(cell: UITableViewCell, withIndexPath  indexPath : NSIndexPath) -> WeekendTableViewCell {
         var weekendCell = cell as WeekendTableViewCell
         
-        weekendCell.depthImageView?.hidden = false
+        // It'is test
+        // depthImageView는 셀을 클릭할 때 확장할 수 있는 구조로 변경해야 합니다.
+        weekendCell.depthImageView?.hidden = (indexPath.section != 0)
+        
         
         // for displaying weekend symbol
         weekendCell.todayMarkView?.hidden = (indexPath.section != 0)

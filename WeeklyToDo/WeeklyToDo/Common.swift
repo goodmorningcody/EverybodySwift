@@ -13,8 +13,8 @@ var _navigationBackgroundColor = UIColor(red: 231.0/255.0, green: 227.0/255.0, b
 var _pointColor = UIColor(red:245.0/255.0, green: 108.0/255.0, blue: 114.0/255.0, alpha: 1)
 var _hightlightColor = UIColor(red:96.0/255.0, green: 84.0/255.0, blue: 72.0/255.0, alpha: 1)
 
-var _taskTextColor = UIColor(red: 95.0/255.0, green: 84.0/255.0, blue: 72.0/255.0, alpha: 1)
-var _taskDoneTextColor = UIColor(red: 200.0/255.0, green: 197.0/255.0, blue: 195.0/255.0, alpha: 1)
+var _taskTextColor = UIColor(red: 95.0/255.0, green: 84.0/255.0, blue: 72.0/255.0, alpha: 1.0)
+var _taskDoneTextColor = UIColor(red: 200.0/255.0, green: 197.0/255.0, blue: 195.0/255.0, alpha: 0.7)
 
 class Color {
     class func getPointColor() -> UIColor {
