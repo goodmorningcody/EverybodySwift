@@ -13,18 +13,27 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for( var i=0; i<7; ++i ) {
-            println(Weekly.weekday(i))
-        }
-        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barTintColor = Color.getNavigationBackgroundColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:Color.getPointColor(), NSFontAttributeName : Font.getHightlightFont()]
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add"), style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add"), style: UIBarButtonItemStyle.Plain, target: self, action: "addNewTask")
         self.navigationItem.rightBarButtonItem?.tintColor = Color.getPointColor()
     }
+    
+    func addNewTask() {
+        if let taskViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TaskViewControllerIdentifier") as? TaskViewController {
+            self.navigationController?.view.addSubview(taskViewController.view)
+        }
+    }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TaskSegueIdentifier" {
+            println("Create or Edit Task")
+        }
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -37,10 +46,8 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section != 0 {
-            return 1
-        }
-        return 3
+        var symbolInSection = Weekly.weekdayFromNow(section, useStandardFormat: true)
+        return WeeklyToDoDB.sharedInstance.countOftaskInWeekend(symbolInSection) + 1
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -134,15 +141,4 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

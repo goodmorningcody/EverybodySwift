@@ -7,115 +7,87 @@
 //
 
 import CoreData
+import UiKit
 
 var todoCoreModelFileName = "Weekly_To_Do_DB"
 
 class WeeklyToDoDB {
-    var managedObjectContext : NSManagedObjectContext?
+    class var sharedInstance : WeeklyToDoDB {
+        struct Static {
+            static var onceToken : dispatch_once_t = 0
+            static var instance : WeeklyToDoDB? = nil
+        }
+        dispatch_once(&Static.onceToken) {
+            Static.instance = WeeklyToDoDB()
+        }
+        return Static.instance!
+    }
     
     init() {
-        managedObjectContext = NSManagedObjectContext()
-    }
-    
-    func create(#todo:String, repeat:Bool, symbols:[String]) {
-        //http://timroadley.com/2012/02/12/core-data-basics-part-2-core-data-views/
-        for symbol in symbols {
+        var storedSymbols : [String] = [String]()
+        if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
+            for weekend in fetchResults {
+                storedSymbols.append(weekend.symbol)
+            }
+        }
+        
+        var symbol : String
+        for index in 0...6 {
+            symbol = Weekly.weekday(index, useStandardFormat: false)
+            let filtered = storedSymbols.filter { $0 == symbol }
+            if filtered.count==0 {
+                let weekend = NSEntityDescription.insertNewObjectForEntityForName("Weekend", inManagedObjectContext: self.managedObjectContext!) as Weekend
+                weekend.symbol = symbol
+            }
+        }
+        
+        if self.managedObjectContext?.hasChanges==true {
+            self.managedObjectContext?.save(nil)
         }
     }
-    func read(at:String) -> [Task]? {
-        //http://timroadley.com/2012/02/12/core-data-basics-part-2-core-data-views/
-        return nil
-    }
-    func update(index:Int, symbol:String) {
-        //http://timroadley.com/2012/02/14/core-data-basics-part-3-editing-and-deleting/
-    }
-    func delete(index:Int, symbol:String) {
-        //http://timroadley.com/2012/02/14/core-data-basics-part-3-editing-and-deleting/
-    }
-
     
-    var managedObjectModel : NSManagedObjectModel? {
-        get {
-            if self.managedObjectModel != nil {
-                return self.managedObjectModel
+    func countOftaskInWeekend(symbol:String) -> Int {
+        if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
+            for weekend in fetchResults {
+                if weekend.symbol==symbol {
+                    return weekend.tasks.count
+                }
             }
-            
-            if let modelURL = NSBundle.mainBundle().URLForResource(todoCoreModelFileName, withExtension: "mond") {
-                return NSManagedObjectModel(contentsOfURL: modelURL)
-            }
-            
+        }
+        return 0
+    }
+    
+    lazy var applicationDocumentsDirectory: NSURL = {
+        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        return urls[urls.count-1] as NSURL
+    }()
+    
+    lazy var managedObjectModel: NSManagedObjectModel = {
+        let modelURL = NSBundle.mainBundle().URLForResource("WeeklyToDo", withExtension: "momd")!
+        return NSManagedObjectModel(contentsOfURL: modelURL)!
+    }()
+    
+    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
+        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("WeeklyToDo.sqlite")
+        var error: NSError? = nil
+        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
+            coordinator = nil
+            NSLog("Unresolved error \(error), \(error!.userInfo)")
+            abort()
+        }
+        
+        return coordinator
+    }()
+    
+    lazy var managedObjectContext: NSManagedObjectContext? = {
+        
+        let coordinator = self.persistentStoreCoordinator
+        if coordinator == nil {
             return nil
         }
-    }
-    
-    var persistentStoreCoordinator : NSPersistentStoreCoordinator? {
-        get {
-            if self.persistentStoreCoordinator != nil {
-                return self.persistentStoreCoordinator
-            }
-            
-            var url = NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains:NSSearchPathDomainMask.UserDomainMask).last as? NSURL
-            var stordUrl = url?.URLByAppendingPathComponent(todoCoreModelFileName+".sqlite")
-            
-            var persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel!)
-            persistentStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: stordUrl, options: nil, error: nil)
-            return persistentStoreCoordinator
-        }
-    }
-    
-//    func persistentStoreCoordinator() -> NSPersistentStoreCoordinator? {
-//        //abort()
-//        return persistentStoreCoordinator
-//    }
-//    
-//    // Returns the persistent store coordinator for the application.
-//    // If the coordinator doesn't already exist, it is created and the application's store added to it.
-//    - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-//    {
-//    if (_persistentStoreCoordinator != nil) {
-//    return _persistentStoreCoordinator;
-//    }
-//    
-//    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Recipe_33___Using_Core_Data.sqlite"];
-//    
-//    NSError *error = nil;
-//    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-//    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-//    /*
-//    Replace this implementation with code to handle the error appropriately.
-//    
-//    abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//    
-//    Typical reasons for an error here include:
-//    * The persistent store is not accessible;
-//    * The schema for the persistent store is incompatible with current managed object model.
-//    Check the error message to determine what the actual problem was.
-//    
-//    
-//    If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-//    
-//    If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-//    * Simply deleting the existing store:
-//    [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-//    
-//    * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
-//    @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
-//    
-//    Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-//    
-//    */
-//    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//    abort();
-//    }
-//    
-//    return _persistentStoreCoordinator;
-//    }
-//    
-//    #pragma mark - Application's Documents directory
-//    
-//    // Returns the URL to the application's Documents directory.
-//    - (NSURL *)applicationDocumentsDirectory
-//    {
-//    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-//    }
+        var managedObjectContext = NSManagedObjectContext()
+        managedObjectContext.persistentStoreCoordinator = coordinator
+        return managedObjectContext
+    }()
 }

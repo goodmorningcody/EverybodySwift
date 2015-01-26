@@ -10,11 +10,15 @@ import Foundation
 
 class Weekly {
     
-    class func weekday(index : Int) -> String {
+    class func weekday(index : Int, useStandardFormat : Bool) -> String {
         // index에 해당하는 요일을 다국어로 변환한 후 반환
         // ie. index =0 is today
         var dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale.currentLocale()
+        
+        if useStandardFormat==false {
+            dateFormatter.locale = NSLocale.currentLocale()
+        }
+        
         return dateFormatter.weekdaySymbols[index] as String
     }
     

@@ -10,8 +10,6 @@ import Foundation
 import CoreData
 
 class Weekend: NSManagedObject {
-
     @NSManaged var symbol: String
     @NSManaged var tasks: NSSet
-
 }

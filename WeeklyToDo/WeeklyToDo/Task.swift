@@ -10,10 +10,7 @@ import Foundation
 import CoreData
 
 class Task: NSManagedObject {
-
     @NSManaged var repeat: NSNumber
     @NSManaged var todo: String
     @NSManaged var done: NSNumber
-    @NSManaged var weekends: NSSet
-
 }
