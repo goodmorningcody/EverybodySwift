@@ -104,6 +104,9 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="selected" image="check_diselected"/>
+                                            <connections>
+                                                <action selector="touchedDone:" destination="vxH-DL-2ed" eventType="touchUpInside" id="gH6-Ed-bfs"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3z-P2-d8D">
                                             <rect key="frame" x="542" y="8" width="46" height="22"/>
@@ -114,6 +117,9 @@
                                             <state key="normal" image="trash">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="touchedTrash:" destination="vxH-DL-2ed" eventType="touchUpInside" id="L25-b3-2YT"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a To Do. 12345678901234567890" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uv-Wy-6KC">
                                             <rect key="frame" x="78" y="10" width="456" height="21"/>
@@ -122,17 +128,16 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tableview_vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5TN-ri-c0W">
-                                            <rect key="frame" x="55" y="2" width="2" height="38"/>
+                                            <rect key="frame" x="58" y="4" width="2" height="34"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="38" id="UGp-in-E47"/>
-                                                <constraint firstAttribute="width" constant="2" id="eV3-fm-ymG"/>
+                                                <constraint firstAttribute="height" constant="34" id="XUq-ND-ZKr"/>
+                                                <constraint firstAttribute="width" constant="2" id="Zr4-Dp-t3y"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="NSV-8D-l9z" secondAttribute="trailing" id="0Xo-jY-ajd"/>
                                         <constraint firstItem="2uv-Wy-6KC" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leadingMargin" constant="70" id="0cH-Wf-RzA"/>
-                                        <constraint firstItem="5TN-ri-c0W" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leadingMargin" constant="47" id="2He-7z-Uny"/>
                                         <constraint firstItem="N2Y-6x-hmK" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" id="8S2-bv-kYj"/>
                                         <constraint firstItem="N2Y-6x-hmK" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leadingMargin" constant="-1" id="EQg-SL-bmN"/>
                                         <constraint firstItem="Q3z-P2-d8D" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" id="FO9-uH-v7g"/>
@@ -140,9 +145,10 @@
                                         <constraint firstItem="NSV-8D-l9z" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leading" id="H5P-g1-UTq"/>
                                         <constraint firstAttribute="trailing" secondItem="NSV-8D-l9z" secondAttribute="trailing" id="Usc-iS-JWF"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="2uv-Wy-6KC" secondAttribute="trailing" constant="58" id="dZE-1G-SrR"/>
+                                        <constraint firstItem="5TN-ri-c0W" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" constant="-4" id="fcS-Ra-c2c"/>
                                         <constraint firstItem="2uv-Wy-6KC" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" constant="2" id="gVO-tq-Kh4"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Q3z-P2-d8D" secondAttribute="trailing" constant="4" id="j8R-gr-prv"/>
-                                        <constraint firstItem="5TN-ri-c0W" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" constant="-6" id="mdh-pX-Jen"/>
+                                        <constraint firstItem="5TN-ri-c0W" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leadingMargin" constant="50" id="shU-w1-3EK"/>
                                         <constraint firstAttribute="bottom" secondItem="NSV-8D-l9z" secondAttribute="bottom" id="wIi-1b-deo"/>
                                         <constraint firstItem="NSV-8D-l9z" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="top" id="wmZ-kV-jH6"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="2uv-Wy-6KC" secondAttribute="bottom" constant="5" id="xvh-Ct-pxA"/>

@@ -89,6 +89,10 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         }
         return 44.0
     }
+    
+    func taskTableViewCell(#done: Bool, trach: Bool) {
+        println("taskTableViewCell in WeeklyToDoTableViewController")
+    }
 
     /*
     // Override to support conditional editing of the table view.

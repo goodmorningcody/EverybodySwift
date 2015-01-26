@@ -47,17 +47,12 @@ class TaskTableViewCell: UITableViewCell {
         }
     }
     
-//    func done(done: Bool) {
-//        checkboxButton?.selected = !done
-//        trashButton?.hidden = !done
-//        
-//        
-//        if done==true {
-//            taskLabel?.textColor = Color.getDoneTaskTextColor()
-//        }
-//        else {
-//            taskLabel?.textColor = Color.getTaskTextColor()
-//        }
-//    }
+    @IBAction func touchedDone(sender : UIButton) {
+        delegate?.taskTableViewCell?(done: true, trach: false)
+    }
+    
+    @IBAction func touchedTrash(sender: UIButton) {
+        delegate?.taskTableViewCell?(done: false, trach: true)
+    }
 
 }
