@@ -13,9 +13,9 @@ class WeeklyToDoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        for( var i=0; i<7; ++i ) {
-//            println(Weekly.weekdayFromNow(i, useStandardFormat : false))
-//        }
+        for( var i=0; i<7; ++i ) {
+            println(Weekly.weekday(i))
+        }
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barTintColor = Color.getNavigationBackgroundColor()

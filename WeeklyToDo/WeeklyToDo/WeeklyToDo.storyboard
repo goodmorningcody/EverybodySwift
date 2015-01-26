@@ -92,11 +92,14 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vxH-DL-2ed" id="TA1-oA-jzW">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="img_tableview_todo" translatesAutoresizingMaskIntoConstraints="NO" id="NSV-8D-l9z">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tableview_todo" translatesAutoresizingMaskIntoConstraints="NO" id="NSV-8D-l9z">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2Y-6x-hmK">
-                                            <rect key="frame" x="15" y="8" width="45" height="22"/>
+                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2Y-6x-hmK">
+                                            <rect key="frame" x="7" y="8" width="45" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="45" id="5b8-DD-YFL"/>
+                                            </constraints>
                                             <state key="normal" image="check">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -112,21 +115,37 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label Label Label Label " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uv-Wy-6KC">
-                                            <rect key="frame" x="68" y="11" width="466" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a To Do. 12345678901234567890" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uv-Wy-6KC">
+                                            <rect key="frame" x="78" y="10" width="456" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.37254901960784315" green="0.32941176470588235" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tableview_vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5TN-ri-c0W">
+                                            <rect key="frame" x="55" y="2" width="2" height="38"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="38" id="UGp-in-E47"/>
+                                                <constraint firstAttribute="width" constant="2" id="eV3-fm-ymG"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="NSV-8D-l9z" secondAttribute="trailing" id="0Xo-jY-ajd"/>
+                                        <constraint firstItem="2uv-Wy-6KC" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leadingMargin" constant="70" id="0cH-Wf-RzA"/>
+                                        <constraint firstItem="5TN-ri-c0W" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leadingMargin" constant="47" id="2He-7z-Uny"/>
+                                        <constraint firstItem="N2Y-6x-hmK" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" id="8S2-bv-kYj"/>
+                                        <constraint firstItem="N2Y-6x-hmK" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leadingMargin" constant="-1" id="EQg-SL-bmN"/>
                                         <constraint firstItem="Q3z-P2-d8D" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" id="FO9-uH-v7g"/>
                                         <constraint firstItem="NSV-8D-l9z" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leading" id="GYr-Vg-L7w"/>
-                                        <constraint firstItem="2uv-Wy-6KC" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leadingMargin" constant="60" id="dhi-hz-FfO"/>
+                                        <constraint firstItem="NSV-8D-l9z" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leading" id="H5P-g1-UTq"/>
+                                        <constraint firstAttribute="trailing" secondItem="NSV-8D-l9z" secondAttribute="trailing" id="Usc-iS-JWF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2uv-Wy-6KC" secondAttribute="trailing" constant="58" id="dZE-1G-SrR"/>
+                                        <constraint firstItem="2uv-Wy-6KC" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" constant="2" id="gVO-tq-Kh4"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Q3z-P2-d8D" secondAttribute="trailing" constant="4" id="j8R-gr-prv"/>
-                                        <constraint firstItem="2uv-Wy-6KC" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" constant="3" id="sgx-sO-eay"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="2uv-Wy-6KC" secondAttribute="trailing" constant="58" id="uEP-Qg-jNc"/>
+                                        <constraint firstItem="5TN-ri-c0W" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" constant="-6" id="mdh-pX-Jen"/>
+                                        <constraint firstAttribute="bottom" secondItem="NSV-8D-l9z" secondAttribute="bottom" id="wIi-1b-deo"/>
+                                        <constraint firstItem="NSV-8D-l9z" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="top" id="wmZ-kV-jH6"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2uv-Wy-6KC" secondAttribute="bottom" constant="5" id="xvh-Ct-pxA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -147,6 +166,7 @@
         <image name="check" width="26" height="20"/>
         <image name="check_diselected" width="26" height="20"/>
         <image name="img_tableview_todo" width="414" height="44"/>
+        <image name="img_tableview_vertical" width="2" height="49"/>
         <image name="img_tableview_weekly_nodepth" width="414" height="2"/>
         <image name="img_tableview_weekly_underbar" width="414" height="7"/>
         <image name="trash" width="16" height="22"/>
