@@ -21,6 +21,15 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add"), style: UIBarButtonItemStyle.Plain, target: self, action: "addNewTask")
         self.navigationItem.rightBarButtonItem?.tintColor = Color.getPointColor()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged:", name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    
+    func orientationChanged(notification: NSNotification) {
+        if let viewController = taskViewController {
+            viewController.view.center = CGPointMake(UIScreen.mainScreen().bounds.size.width/2, UIScreen.mainScreen().bounds.size.height/2)
+            viewController.view.bounds = UIScreen.mainScreen().bounds
+        }
     }
     
     func addNewTask() {

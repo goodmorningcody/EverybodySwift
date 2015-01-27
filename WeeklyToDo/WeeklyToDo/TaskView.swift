@@ -16,6 +16,9 @@ class TaskView: UIView, UITextFieldDelegate {
     @IBOutlet var weekendToggleButton : Array<UIButton>?
     @IBOutlet var repeatSegment : UISegmentedControl?
     
+    @IBAction func touchedWeekendToggleButton(sender: UIButton) {
+        sender.selected = !sender.selected
+    }
     @IBAction func touchedClose(sender : UIButton) {
         removeFromSuperview()
     }

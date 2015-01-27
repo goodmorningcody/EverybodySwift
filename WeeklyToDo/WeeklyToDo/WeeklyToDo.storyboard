@@ -180,7 +180,7 @@
                         <viewControllerLayoutGuide type="top" id="6Pn-uT-NCC"/>
                         <viewControllerLayoutGuide type="bottom" id="yCz-qD-1CT"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleAspectFill" id="wsW-jF-t9J" customClass="TaskView" customModule="WeeklyToDo" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="wsW-jF-t9J" customClass="TaskView" customModule="WeeklyToDo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -191,32 +191,14 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup" translatesAutoresizingMaskIntoConstraints="NO" id="ZDN-6h-eIe">
-                                            <rect key="frame" x="165" y="189" width="271" height="222"/>
+                                            <rect key="frame" x="144" y="172" width="313" height="256"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="271" id="V6r-hW-Yg9"/>
-                                                <constraint firstAttribute="height" constant="222" id="kKl-nz-hnh"/>
-                                            </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-el-GrY">
-                                            <rect key="frame" x="175" y="369" width="251" height="29"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="251" id="jK1-ym-egN"/>
-                                                <constraint firstAttribute="height" constant="29" id="js2-Hd-HPD"/>
-                                            </constraints>
-                                            <state key="normal" image="add_normal">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <state key="highlighted" image="add_touched"/>
-                                            <connections>
-                                                <action selector="touchedSet:" destination="wsW-jF-t9J" eventType="touchUpInside" id="9oo-kg-KJJ"/>
-                                            </connections>
-                                        </button>
                                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fng-tQ-cbR">
-                                            <rect key="frame" x="175" y="317" width="251" height="29"/>
+                                            <rect key="frame" x="155" y="321" width="289" height="29"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="28" id="qQ7-tn-oLM"/>
-                                                <constraint firstAttribute="width" constant="251" id="wXn-f1-ypY"/>
+                                                <constraint firstAttribute="height" constant="28" id="ojK-E2-DIC"/>
+                                                <constraint firstAttribute="width" constant="289" id="ozI-sX-gmF"/>
                                             </constraints>
                                             <segments>
                                                 <segment title="Every Week"/>
@@ -224,131 +206,191 @@
                                             </segments>
                                         </segmentedControl>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2De-Go-bA7">
-                                            <rect key="frame" x="398" y="195" width="38" height="22"/>
+                                            <rect key="frame" x="414" y="180" width="38" height="22"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="38" id="4A3-Qk-8AJ"/>
-                                                <constraint firstAttribute="height" constant="22" id="rzg-0m-9CO"/>
+                                                <constraint firstAttribute="width" constant="38" id="arN-Va-1fL"/>
+                                                <constraint firstAttribute="height" constant="22" id="bh9-h5-82I"/>
                                             </constraints>
                                             <state key="normal" image="close_normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="highlighted" image="close_touched"/>
+                                            <state key="highlighted" image="close_touched">
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </state>
                                             <connections>
                                                 <action selector="touchedClose:" destination="wsW-jF-t9J" eventType="touchUpInside" id="1T6-dK-K8B"/>
                                             </connections>
                                         </button>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r9b-we-Ru2">
-                                            <rect key="frame" x="175" y="234" width="251" height="30"/>
+                                            <rect key="frame" x="164" y="226" width="272" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="251" id="ZcI-Dy-frY"/>
-                                                <constraint firstAttribute="height" constant="30" id="h47-X4-e2J"/>
+                                                <constraint firstAttribute="height" constant="30" id="dQP-4a-sCv"/>
+                                                <constraint firstAttribute="width" constant="272" id="faA-5L-o21"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="wsW-jF-t9J" id="yfN-Yv-xkH"/>
+                                            </connections>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lka-cl-Oho">
-                                            <rect key="frame" x="175" y="278" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lka-cl-Oho">
+                                            <rect key="frame" x="158" y="276" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="E59-gf-TrM"/>
-                                                <constraint firstAttribute="height" constant="30" id="hct-1h-tEx"/>
+                                                <constraint firstAttribute="height" constant="30" id="4Le-Ae-k6g"/>
+                                                <constraint firstAttribute="width" constant="30" id="oZr-4H-0WR"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <state key="normal" title="일">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="oLz-jd-dng"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyd-m9-pyE">
-                                            <rect key="frame" x="212" y="278" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyd-m9-pyE">
+                                            <rect key="frame" x="199" y="276" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="ReY-48-IF5"/>
-                                                <constraint firstAttribute="width" constant="30" id="xMB-U9-6AA"/>
+                                                <constraint firstAttribute="height" constant="30" id="5is-5z-g88"/>
+                                                <constraint firstAttribute="width" constant="30" id="ka3-7e-iuj"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <state key="normal" title="월">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="HLf-WI-Up2"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="312-ct-Qgh">
-                                            <rect key="frame" x="248" y="278" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="312-ct-Qgh">
+                                            <rect key="frame" x="242" y="276" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="0oi-1x-2js"/>
-                                                <constraint firstAttribute="height" constant="30" id="eks-9r-szK"/>
+                                                <constraint firstAttribute="height" constant="30" id="FR1-oj-1a6"/>
+                                                <constraint firstAttribute="width" constant="30" id="L3M-IH-zp6"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <state key="normal" title="화">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="OMo-OU-nXo"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-PW-N3g">
-                                            <rect key="frame" x="285" y="278" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-PW-N3g">
+                                            <rect key="frame" x="284" y="276" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="YzB-95-WGS"/>
-                                                <constraint firstAttribute="height" constant="30" id="jYE-mD-i7N"/>
+                                                <constraint firstAttribute="height" constant="30" id="ARG-iE-hbo"/>
+                                                <constraint firstAttribute="width" constant="30" id="Vc5-xA-y5A"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <state key="normal" title="수">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="msx-IC-4LI"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mn-XS-N45">
-                                            <rect key="frame" x="321" y="278" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mn-XS-N45">
+                                            <rect key="frame" x="326" y="276" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="3eF-il-jtj"/>
-                                                <constraint firstAttribute="height" constant="30" id="rTP-2t-1wV"/>
+                                                <constraint firstAttribute="height" constant="30" id="Hru-63-IrQ"/>
+                                                <constraint firstAttribute="width" constant="30" id="vOd-AU-Bs5"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <state key="normal" title="목">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="EHS-Y0-tNH"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S47-cT-mmM">
-                                            <rect key="frame" x="357" y="278" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S47-cT-mmM">
+                                            <rect key="frame" x="369" y="276" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="Hhk-Wp-grH"/>
-                                                <constraint firstAttribute="height" constant="30" id="O7S-zp-KGe"/>
+                                                <constraint firstAttribute="width" constant="30" id="0TT-e2-ICZ"/>
+                                                <constraint firstAttribute="height" constant="30" id="6zs-2W-jmj"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <state key="normal" title="금">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="cgr-pQ-ByE"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-2X-QNr">
-                                            <rect key="frame" x="394" y="278" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-2X-QNr">
+                                            <rect key="frame" x="410" y="276" width="30" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="9bX-3a-1Uw"/>
-                                                <constraint firstAttribute="height" constant="30" id="OBU-Mn-f4A"/>
+                                                <constraint firstAttribute="height" constant="30" id="v1L-1o-LgV"/>
+                                                <constraint firstAttribute="width" constant="30" id="yeE-Gb-pMr"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <state key="normal" title="토">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="lr5-CZ-T1S"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly To Do" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="De2-g7-dja">
+                                            <rect key="frame" x="159" y="181" width="227" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="227" id="Gg1-ME-05F"/>
+                                                <constraint firstAttribute="height" constant="21" id="y6n-6L-d06"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <color key="textColor" red="0.98039215686274506" green="0.97254901960784312" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKh-el-GrY">
+                                            <rect key="frame" x="158" y="381" width="287" height="33"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="287" id="nc3-wn-rkG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                            <state key="normal" title="SET" backgroundImage="add_normal">
+                                                <color key="titleColor" red="0.96078431372549022" green="0.42352941176470588" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="add_touched"/>
+                                            <connections>
+                                                <action selector="touchedSet:" destination="wsW-jF-t9J" eventType="touchUpInside" id="9oo-kg-KJJ"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="centerX" secondItem="ZDN-6h-eIe" secondAttribute="centerX" constant="-0.5" id="6gT-1e-hgg"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="S47-cT-mmM" secondAttribute="bottom" constant="-119" id="71F-op-44j"/>
-                                        <constraint firstItem="OKh-el-GrY" firstAttribute="top" secondItem="ZDN-6h-eIe" secondAttribute="bottom" constant="-42" id="EXA-86-LGC"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="312-ct-Qgh" secondAttribute="trailing" constant="-113" id="Fr8-hI-yDn"/>
-                                        <constraint firstItem="fng-tQ-cbR" firstAttribute="top" secondItem="ZDN-6h-eIe" secondAttribute="bottom" constant="-94" id="Jnd-sc-l7j"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="fng-tQ-cbR" secondAttribute="trailing" constant="-261" id="K7H-PS-SIL"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="312-ct-Qgh" secondAttribute="bottom" constant="-119" id="LPR-UC-c4k"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="Lka-cl-Oho" secondAttribute="trailing" constant="-40" id="LZR-Uh-WrU"/>
-                                        <constraint firstItem="UqX-2X-QNr" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-42" id="NHS-Mn-eVD"/>
-                                        <constraint firstItem="S47-cT-mmM" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-79" id="Pax-8k-jxj"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="Lka-cl-Oho" secondAttribute="bottom" constant="-119" id="Pyl-rc-Q2J"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="UqX-2X-QNr" secondAttribute="bottom" constant="-119" id="R1p-Vx-XcO"/>
-                                        <constraint firstItem="2De-Go-bA7" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-38" id="U3p-J9-EuN"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="r9b-we-Ru2" secondAttribute="bottom" constant="-75" id="YiO-ag-g1k"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="5mn-XS-N45" secondAttribute="bottom" constant="-119" id="blu-fs-Sjl"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="qDw-PW-N3g" secondAttribute="trailing" constant="-150" id="cag-g7-kDO"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="Lyd-m9-pyE" secondAttribute="bottom" constant="-119" id="hcb-dC-GXc"/>
-                                        <constraint firstAttribute="centerY" secondItem="ZDN-6h-eIe" secondAttribute="centerY" id="hjE-R9-6DJ"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="Lyd-m9-pyE" secondAttribute="trailing" constant="-77" id="l7b-JZ-64Q"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="qDw-PW-N3g" secondAttribute="bottom" constant="-119" id="mcW-Sz-sDp"/>
-                                        <constraint firstItem="r9b-we-Ru2" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-261" id="pof-eh-qlm"/>
-                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="2De-Go-bA7" secondAttribute="bottom" constant="-28" id="t4q-5w-B8X"/>
-                                        <constraint firstItem="5mn-XS-N45" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-115" id="uMY-cv-1pT"/>
-                                        <constraint firstItem="OKh-el-GrY" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-261" id="vD2-b1-QpT"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="De2-g7-dja" secondAttribute="bottom" constant="-30" id="3Mz-Ie-Mcp"/>
+                                        <constraint firstItem="5mn-XS-N45" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-131" id="5VP-mL-3Gx"/>
+                                        <constraint firstItem="UqX-2X-QNr" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-47" id="7TN-Aa-Z45"/>
+                                        <constraint firstAttribute="centerX" secondItem="ZDN-6h-eIe" secondAttribute="centerX" id="Ah6-DG-Ea6"/>
+                                        <constraint firstItem="fng-tQ-cbR" firstAttribute="top" secondItem="ZDN-6h-eIe" secondAttribute="bottom" constant="-107" id="Aji-56-FyK"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="r9b-we-Ru2" secondAttribute="trailing" constant="-292" id="EgS-3g-V34"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="Lyd-m9-pyE" secondAttribute="bottom" constant="-134" id="Hrq-0b-qI4"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="qDw-PW-N3g" secondAttribute="trailing" constant="-170" id="MPd-3F-Sgg"/>
+                                        <constraint firstAttribute="centerY" secondItem="ZDN-6h-eIe" secondAttribute="centerY" id="Tlf-Ps-2mv"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="5mn-XS-N45" secondAttribute="bottom" constant="-134" id="Uek-9J-lvu"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="Lka-cl-Oho" secondAttribute="bottom" constant="-134" id="VS9-XY-57h"/>
+                                        <constraint firstItem="S47-cT-mmM" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-88" id="ZRQ-Ry-kwI"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="qDw-PW-N3g" secondAttribute="bottom" constant="-134" id="ZdL-vX-VfD"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="312-ct-Qgh" secondAttribute="bottom" constant="-134" id="b2F-n9-OO8"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="fng-tQ-cbR" secondAttribute="trailing" constant="-300" id="bjT-ha-gWb"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="UqX-2X-QNr" secondAttribute="bottom" constant="-134" id="cah-m9-ZX8"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="S47-cT-mmM" secondAttribute="bottom" constant="-134" id="ea9-95-9ln"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="312-ct-Qgh" secondAttribute="trailing" constant="-128" id="ewD-dB-mGZ"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="r9b-we-Ru2" secondAttribute="bottom" constant="-84" id="jfe-Xw-YAD"/>
+                                        <constraint firstItem="OKh-el-GrY" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-299" id="my5-vO-tJh"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="Lka-cl-Oho" secondAttribute="trailing" constant="-44" id="nX0-qH-vfX"/>
+                                        <constraint firstItem="OKh-el-GrY" firstAttribute="top" secondItem="ZDN-6h-eIe" secondAttribute="bottom" constant="-47" id="r7N-DB-sti"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="2De-Go-bA7" secondAttribute="bottom" constant="-30" id="s4B-og-3qh"/>
+                                        <constraint firstItem="2De-Go-bA7" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-43" id="sLC-tY-3mG"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="De2-g7-dja" secondAttribute="trailing" constant="-242" id="sdH-fA-00l"/>
+                                        <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="Lyd-m9-pyE" secondAttribute="trailing" constant="-85" id="uSh-0Y-mfW"/>
                                     </constraints>
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -357,34 +399,44 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5Zt-XE-p6W" firstAttribute="leading" secondItem="wsW-jF-t9J" secondAttribute="leading" id="BCu-e1-Zsz"/>
-                            <constraint firstAttribute="trailing" secondItem="5Zt-XE-p6W" secondAttribute="trailing" id="lwF-Mf-6YL"/>
-                            <constraint firstItem="yCz-qD-1CT" firstAttribute="top" secondItem="5Zt-XE-p6W" secondAttribute="bottom" id="rhc-H7-EtC"/>
-                            <constraint firstItem="5Zt-XE-p6W" firstAttribute="top" secondItem="wsW-jF-t9J" secondAttribute="top" id="sSG-CB-qxA"/>
+                            <constraint firstItem="5Zt-XE-p6W" firstAttribute="leading" secondItem="wsW-jF-t9J" secondAttribute="leading" id="CRo-rP-xH9"/>
+                            <constraint firstItem="5Zt-XE-p6W" firstAttribute="bottom" secondItem="yCz-qD-1CT" secondAttribute="top" id="XT4-H1-L7y"/>
+                            <constraint firstAttribute="trailing" secondItem="5Zt-XE-p6W" secondAttribute="trailing" id="Zbu-AN-2gM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Zt-XE-p6W" secondAttribute="trailing" constant="-16" id="bKE-no-Dmm"/>
+                            <constraint firstItem="yCz-qD-1CT" firstAttribute="top" secondItem="5Zt-XE-p6W" secondAttribute="bottom" id="c2Q-5k-ufb"/>
+                            <constraint firstItem="5Zt-XE-p6W" firstAttribute="top" secondItem="wsW-jF-t9J" secondAttribute="top" id="lMG-Qm-abR"/>
+                            <constraint firstItem="5Zt-XE-p6W" firstAttribute="leading" secondItem="wsW-jF-t9J" secondAttribute="leadingMargin" constant="-16" id="qBi-0n-nOH"/>
                         </constraints>
                         <connections>
                             <outlet property="repeatSegment" destination="fng-tQ-cbR" id="tyh-4D-Mvb"/>
                             <outlet property="taskTextField" destination="r9b-we-Ru2" id="jy1-xt-SQE"/>
+                            <outletCollection property="weekendToggleButton" destination="Lka-cl-Oho" collectionClass="NSMutableArray" id="cP9-dm-f5h"/>
+                            <outletCollection property="weekendToggleButton" destination="Lyd-m9-pyE" collectionClass="NSMutableArray" id="fRZ-sP-lSI"/>
+                            <outletCollection property="weekendToggleButton" destination="312-ct-Qgh" collectionClass="NSMutableArray" id="JcJ-dy-Wvy"/>
+                            <outletCollection property="weekendToggleButton" destination="qDw-PW-N3g" collectionClass="NSMutableArray" id="CIH-rz-iv8"/>
+                            <outletCollection property="weekendToggleButton" destination="5mn-XS-N45" collectionClass="NSMutableArray" id="pVr-WP-esz"/>
+                            <outletCollection property="weekendToggleButton" destination="S47-cT-mmM" collectionClass="NSMutableArray" id="0Qu-lt-dUv"/>
+                            <outletCollection property="weekendToggleButton" destination="UqX-2X-QNr" collectionClass="NSMutableArray" id="vMi-eP-KK9"/>
                         </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9O9-p0-I0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="527"/>
+            <point key="canvasLocation" x="749" y="439"/>
         </scene>
     </scenes>
     <resources>
-        <image name="add_normal" width="251" height="29"/>
-        <image name="add_touched" width="251" height="29"/>
+        <image name="add_normal" width="287" height="33"/>
+        <image name="add_touched" width="287" height="33"/>
         <image name="check" width="26" height="20"/>
         <image name="check_diselected" width="26" height="20"/>
-        <image name="close_normal" width="15" height="15"/>
-        <image name="close_touched" width="15" height="15"/>
+        <image name="close_normal" width="12" height="12"/>
+        <image name="close_touched" width="12" height="12"/>
         <image name="img_tableview_todo" width="414" height="44"/>
         <image name="img_tableview_vertical" width="2" height="49"/>
         <image name="img_tableview_weekly_nodepth" width="414" height="2"/>
         <image name="img_tableview_weekly_underbar" width="414" height="7"/>
-        <image name="popup" width="271" height="222"/>
+        <image name="popup" width="313" height="256"/>
         <image name="trash" width="16" height="22"/>
     </resources>
     <color key="tintColor" red="0.96078431372549022" green="0.42352941176470588" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
