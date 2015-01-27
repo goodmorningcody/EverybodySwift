@@ -10,6 +10,8 @@ import UIKit
 
 class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellProtocol {
 
+    var taskViewController : UIViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,9 +24,11 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     }
     
     func addNewTask() {
-        if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("TaskViewIdentifier") as? UIViewController {
-            self.navigationController?.view.addSubview(viewController.view)
+        if taskViewController == nil  {
+            taskViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TaskViewIdentifier") as? UIViewController
         }
+        
+        self.navigationController?.view.addSubview(taskViewController!.view)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

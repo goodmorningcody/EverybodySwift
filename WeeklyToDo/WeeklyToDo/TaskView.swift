@@ -11,7 +11,10 @@ import UIKit
 class TaskView: UIView, UITextFieldDelegate {
     
     var task : Task?
-    @IBOutlet var backgroundBlurImageView : UIImageView?
+    
+    @IBOutlet var taskTextField : UITextField?
+    @IBOutlet var weekendToggleButton : Array<UIButton>?
+    @IBOutlet var repeatSegment : UISegmentedControl?
     
     @IBAction func touchedClose(sender : UIButton) {
         removeFromSuperview()
@@ -19,5 +22,10 @@ class TaskView: UIView, UITextFieldDelegate {
     
     @IBAction func touchedSet(sender : UIButton) {
         removeFromSuperview()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

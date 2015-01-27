@@ -117,10 +117,10 @@
 				C378F2331A701917007C73D4 /* WeeklyToDoTableViewController.swift */,
 				C378F22F1A7013EF007C73D4 /* WeekendTableViewCell.swift */,
 				C378F2311A70149D007C73D4 /* TaskTableViewCell.swift */,
+				C35303861A76CA1F00A7A9AD /* TaskView.swift */,
 				C30F6B0D1A70841800009A01 /* Weekly.swift */,
 				C3F14CC11A73A47B008DE41B /* Common.swift */,
 				C3F14CC81A75DE03008DE41B /* WeeklyToDoDB.swift */,
-				C35303861A76CA1F00A7A9AD /* TaskView.swift */,
 			);
 			path = WeeklyToDo;
 			sourceTree = "<group>";
