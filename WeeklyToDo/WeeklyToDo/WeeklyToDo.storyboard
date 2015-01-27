@@ -184,7 +184,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zt-XE-p6W">
+                            <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zt-XE-p6W">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="h6z-Dk-wNd">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -402,14 +402,13 @@
                             <constraint firstItem="5Zt-XE-p6W" firstAttribute="leading" secondItem="wsW-jF-t9J" secondAttribute="leading" id="CRo-rP-xH9"/>
                             <constraint firstItem="5Zt-XE-p6W" firstAttribute="bottom" secondItem="yCz-qD-1CT" secondAttribute="top" id="XT4-H1-L7y"/>
                             <constraint firstAttribute="trailing" secondItem="5Zt-XE-p6W" secondAttribute="trailing" id="Zbu-AN-2gM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5Zt-XE-p6W" secondAttribute="trailing" constant="-16" id="bKE-no-Dmm"/>
                             <constraint firstItem="yCz-qD-1CT" firstAttribute="top" secondItem="5Zt-XE-p6W" secondAttribute="bottom" id="c2Q-5k-ufb"/>
                             <constraint firstItem="5Zt-XE-p6W" firstAttribute="top" secondItem="wsW-jF-t9J" secondAttribute="top" id="lMG-Qm-abR"/>
-                            <constraint firstItem="5Zt-XE-p6W" firstAttribute="leading" secondItem="wsW-jF-t9J" secondAttribute="leadingMargin" constant="-16" id="qBi-0n-nOH"/>
                         </constraints>
                         <connections>
                             <outlet property="repeatSegment" destination="fng-tQ-cbR" id="tyh-4D-Mvb"/>
                             <outlet property="taskTextField" destination="r9b-we-Ru2" id="jy1-xt-SQE"/>
+                            <outlet property="visualEffectView" destination="5Zt-XE-p6W" id="QeU-gP-jJN"/>
                             <outletCollection property="weekendToggleButton" destination="Lka-cl-Oho" collectionClass="NSMutableArray" id="cP9-dm-f5h"/>
                             <outletCollection property="weekendToggleButton" destination="Lyd-m9-pyE" collectionClass="NSMutableArray" id="fRZ-sP-lSI"/>
                             <outletCollection property="weekendToggleButton" destination="312-ct-Qgh" collectionClass="NSMutableArray" id="JcJ-dy-Wvy"/>

@@ -37,7 +37,12 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
             taskViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TaskViewIdentifier") as? UIViewController
         }
         
-        self.navigationController?.view.addSubview(taskViewController!.view)
+        if let rootView = self.navigationController?.view {
+            if let taskView = taskViewController!.view as? TaskView {
+                taskView.show(rootView)
+            }
+        }
+        
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
