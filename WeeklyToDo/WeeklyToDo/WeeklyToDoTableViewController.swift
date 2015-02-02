@@ -64,8 +64,7 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var symbolInSection = Weekly.weekdayFromNow(section, useStandardFormat: true)
-        return WeeklyToDoDB.sharedInstance.countOftaskInWeekend(symbolInSection) + 1
+        return WeeklyToDoDB.sharedInstance.countOfTaskInWeekend(section) + 1
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -89,12 +88,11 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     private func updateTaskCell(cell: UITableViewCell, withIndexPath indexPath : NSIndexPath) -> TaskTableViewCell {
         var taskCell = cell as TaskTableViewCell
         taskCell.delegate = self
+        taskCell.tableView = self.tableView
         
-        if indexPath.row==1 {
-            taskCell.done = false
-        }
-        else if indexPath.row==2 {
-            taskCell.done = true
+        if let task = WeeklyToDoDB.sharedInstance.taskInWeekend(indexPath.section, atIndex: indexPath.row-1) {
+            taskCell.todo = task.todo
+            taskCell.done = task.done.boolValue
         }
         
         return taskCell
@@ -102,12 +100,14 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     private func updateWeekendCell(cell: UITableViewCell, withIndexPath  indexPath : NSIndexPath) -> WeekendTableViewCell {
         var weekendCell = cell as WeekendTableViewCell
         
-        // It'is test
         // depthImageView는 셀을 클릭할 때 확장할 수 있는 구조로 변경해야 합니다.
-        weekendCell.depthImageView?.hidden = (indexPath.section != 0)
+        if WeeklyToDoDB.sharedInstance.countOfTaskInWeekend(indexPath.section) > 0 {
+            weekendCell.depthImageView?.hidden = false
+        }
+        else {
+            weekendCell.depthImageView?.hidden = true
+        }
         
-        
-        // for displaying weekend symbol
         weekendCell.todayMarkView?.hidden = (indexPath.section != 0)
         weekendCell.weekendLabel?.text = Weekly.weekdayFromNow(indexPath.section, useStandardFormat: false)
         
@@ -121,8 +121,9 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         return 44.0
     }
     
-    func taskTableViewCell(#done: Bool, trach: Bool) {
-        println("taskTableViewCell in WeeklyToDoTableViewController")
+    func taskTableViewCell(#done: Bool, trach: Bool, indexPath:NSIndexPath) {
+        WeeklyToDoDB.sharedInstance.switchDoneTaskInWeekend(indexPath.section, atIndex: indexPath.row-1)
+        self.tableView.reloadData()
     }
 
     /*

@@ -4,14 +4,14 @@
         <attribute name="done" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="repeat" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="todo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="weekends" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weekend" inverseName="tasks" inverseEntity="Weekend" syncable="YES"/>
+        <relationship name="weekend" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Weekend" inverseName="tasks" inverseEntity="Weekend" syncable="YES"/>
     </entity>
     <entity name="Weekend" representedClassName="WeeklyToDo.Weekend" syncable="YES">
         <attribute name="symbol" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="weekends" inverseEntity="Task" syncable="YES"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="weekend" inverseEntity="Task" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Task" positionX="-180" positionY="-234" width="126" height="105"/>
-        <element name="Weekend" positionX="79" positionY="-118" width="128" height="75"/>
+        <element name="Task" positionX="-180" positionY="-234" width="126" height="103"/>
+        <element name="Weekend" positionX="79" positionY="-118" width="128" height="73"/>
     </elements>
 </model>

@@ -248,7 +248,7 @@
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="oLz-jd-dng"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyd-m9-pyE">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyd-m9-pyE">
                                             <rect key="frame" x="199" y="276" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="5is-5z-g88"/>
@@ -263,7 +263,7 @@
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="HLf-WI-Up2"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="312-ct-Qgh">
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="312-ct-Qgh">
                                             <rect key="frame" x="242" y="276" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="FR1-oj-1a6"/>
@@ -278,7 +278,7 @@
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="OMo-OU-nXo"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-PW-N3g">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-PW-N3g">
                                             <rect key="frame" x="284" y="276" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="ARG-iE-hbo"/>
@@ -293,7 +293,7 @@
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="msx-IC-4LI"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mn-XS-N45">
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mn-XS-N45">
                                             <rect key="frame" x="326" y="276" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="Hru-63-IrQ"/>
@@ -308,7 +308,7 @@
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="EHS-Y0-tNH"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S47-cT-mmM">
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S47-cT-mmM">
                                             <rect key="frame" x="369" y="276" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="0TT-e2-ICZ"/>
@@ -323,7 +323,7 @@
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="cgr-pQ-ByE"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-2X-QNr">
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-2X-QNr">
                                             <rect key="frame" x="410" y="276" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="v1L-1o-LgV"/>
@@ -409,13 +409,13 @@
                             <outlet property="repeatSegment" destination="fng-tQ-cbR" id="tyh-4D-Mvb"/>
                             <outlet property="taskTextField" destination="r9b-we-Ru2" id="jy1-xt-SQE"/>
                             <outlet property="visualEffectView" destination="5Zt-XE-p6W" id="QeU-gP-jJN"/>
-                            <outletCollection property="weekendToggleButton" destination="Lka-cl-Oho" collectionClass="NSMutableArray" id="cP9-dm-f5h"/>
-                            <outletCollection property="weekendToggleButton" destination="Lyd-m9-pyE" collectionClass="NSMutableArray" id="fRZ-sP-lSI"/>
-                            <outletCollection property="weekendToggleButton" destination="312-ct-Qgh" collectionClass="NSMutableArray" id="JcJ-dy-Wvy"/>
-                            <outletCollection property="weekendToggleButton" destination="qDw-PW-N3g" collectionClass="NSMutableArray" id="CIH-rz-iv8"/>
-                            <outletCollection property="weekendToggleButton" destination="5mn-XS-N45" collectionClass="NSMutableArray" id="pVr-WP-esz"/>
-                            <outletCollection property="weekendToggleButton" destination="S47-cT-mmM" collectionClass="NSMutableArray" id="0Qu-lt-dUv"/>
-                            <outletCollection property="weekendToggleButton" destination="UqX-2X-QNr" collectionClass="NSMutableArray" id="vMi-eP-KK9"/>
+                            <outletCollection property="weekendButtonArray" destination="Lka-cl-Oho" collectionClass="NSMutableArray" id="efs-iK-AZG"/>
+                            <outletCollection property="weekendButtonArray" destination="Lyd-m9-pyE" collectionClass="NSMutableArray" id="jpy-pY-eQK"/>
+                            <outletCollection property="weekendButtonArray" destination="312-ct-Qgh" collectionClass="NSMutableArray" id="tVm-AU-vgg"/>
+                            <outletCollection property="weekendButtonArray" destination="qDw-PW-N3g" collectionClass="NSMutableArray" id="hVe-eo-wjl"/>
+                            <outletCollection property="weekendButtonArray" destination="5mn-XS-N45" collectionClass="NSMutableArray" id="1Q3-IO-omU"/>
+                            <outletCollection property="weekendButtonArray" destination="S47-cT-mmM" collectionClass="NSMutableArray" id="FVe-MF-XoL"/>
+                            <outletCollection property="weekendButtonArray" destination="UqX-2X-QNr" collectionClass="NSMutableArray" id="QNR-1e-hmA"/>
                         </connections>
                     </view>
                 </viewController>

@@ -17,11 +17,11 @@
 		C378F2301A7013EF007C73D4 /* WeekendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F22F1A7013EF007C73D4 /* WeekendTableViewCell.swift */; };
 		C378F2321A70149D007C73D4 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F2311A70149D007C73D4 /* TaskTableViewCell.swift */; };
 		C378F2341A701917007C73D4 /* WeeklyToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F2331A701917007C73D4 /* WeeklyToDoTableViewController.swift */; };
+		C38EC4721A7FFF0200719D53 /* WeeklyToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C38EC4701A7FFF0200719D53 /* WeeklyToDo.xcdatamodeld */; };
 		C397E6E71A760F0100D479F1 /* Weekend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C397E6E61A760F0100D479F1 /* Weekend.swift */; };
 		C397E6E91A760F0200D479F1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C397E6E81A760F0200D479F1 /* Task.swift */; };
 		C3F14CC01A73A18E008DE41B /* WeeklyToDo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F14CBF1A73A18E008DE41B /* WeeklyToDo.storyboard */; };
 		C3F14CC21A73A47B008DE41B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F14CC11A73A47B008DE41B /* Common.swift */; };
-		C3F14CC51A74CA22008DE41B /* WeeklyToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3F14CC31A74CA22008DE41B /* WeeklyToDo.xcdatamodeld */; };
 		C3F14CC71A75D48A008DE41B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F14CC61A75D48A008DE41B /* CoreData.framework */; };
 		C3F14CC91A75DE03008DE41B /* WeeklyToDoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F14CC81A75DE03008DE41B /* WeeklyToDoDB.swift */; };
 /* End PBXBuildFile section */
@@ -51,12 +51,11 @@
 		C378F22F1A7013EF007C73D4 /* WeekendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekendTableViewCell.swift; sourceTree = "<group>"; };
 		C378F2311A70149D007C73D4 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		C378F2331A701917007C73D4 /* WeeklyToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyToDoTableViewController.swift; sourceTree = "<group>"; };
-		C397E6E51A76053500D479F1 /* 0.9.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 0.9.1.xcdatamodel; sourceTree = "<group>"; };
+		C38EC4711A7FFF0200719D53 /* WeeklyToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeeklyToDo.xcdatamodel; sourceTree = "<group>"; };
 		C397E6E61A760F0100D479F1 /* Weekend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weekend.swift; sourceTree = "<group>"; };
 		C397E6E81A760F0200D479F1 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		C3F14CBF1A73A18E008DE41B /* WeeklyToDo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeeklyToDo.storyboard; sourceTree = "<group>"; };
 		C3F14CC11A73A47B008DE41B /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		C3F14CC41A74CA22008DE41B /* WeeklyToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeeklyToDo.xcdatamodel; sourceTree = "<group>"; };
 		C3F14CC61A75D48A008DE41B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C3F14CC81A75DE03008DE41B /* WeeklyToDoDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyToDoDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,11 +127,11 @@
 		C378F20D1A700FEF007C73D4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C38EC4701A7FFF0200719D53 /* WeeklyToDo.xcdatamodeld */,
 				C378F2161A700FEF007C73D4 /* Images.xcassets */,
 				C378F2181A700FEF007C73D4 /* LaunchScreen.xib */,
 				C3F14CBF1A73A18E008DE41B /* WeeklyToDo.storyboard */,
 				C378F20E1A700FEF007C73D4 /* Info.plist */,
-				C3F14CC31A74CA22008DE41B /* WeeklyToDo.xcdatamodeld */,
 				C397E6E81A760F0200D479F1 /* Task.swift */,
 				C397E6E61A760F0100D479F1 /* Weekend.swift */,
 			);
@@ -261,11 +260,11 @@
 				C30F6B0E1A70841800009A01 /* Weekly.swift in Sources */,
 				C397E6E91A760F0200D479F1 /* Task.swift in Sources */,
 				C3F14CC91A75DE03008DE41B /* WeeklyToDoDB.swift in Sources */,
-				C3F14CC51A74CA22008DE41B /* WeeklyToDo.xcdatamodeld in Sources */,
 				C378F2101A700FEF007C73D4 /* AppDelegate.swift in Sources */,
 				C378F2301A7013EF007C73D4 /* WeekendTableViewCell.swift in Sources */,
 				C397E6E71A760F0100D479F1 /* Weekend.swift in Sources */,
 				C3F14CC21A73A47B008DE41B /* Common.swift in Sources */,
+				C38EC4721A7FFF0200719D53 /* WeeklyToDo.xcdatamodeld in Sources */,
 				C35303871A76CA1F00A7A9AD /* TaskView.swift in Sources */,
 				C378F2341A701917007C73D4 /* WeeklyToDoTableViewController.swift in Sources */,
 			);
@@ -474,13 +473,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C3F14CC31A74CA22008DE41B /* WeeklyToDo.xcdatamodeld */ = {
+		C38EC4701A7FFF0200719D53 /* WeeklyToDo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C397E6E51A76053500D479F1 /* 0.9.1.xcdatamodel */,
-				C3F14CC41A74CA22008DE41B /* WeeklyToDo.xcdatamodel */,
+				C38EC4711A7FFF0200719D53 /* WeeklyToDo.xcdatamodel */,
 			);
-			currentVersion = C3F14CC41A74CA22008DE41B /* WeeklyToDo.xcdatamodel */;
+			currentVersion = C38EC4711A7FFF0200719D53 /* WeeklyToDo.xcdatamodel */;
 			path = WeeklyToDo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

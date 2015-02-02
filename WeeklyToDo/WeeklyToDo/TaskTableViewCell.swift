@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol TaskTableViewCellProtocol {
-    optional func taskTableViewCell(#done:Bool, trach:Bool)
+    optional func taskTableViewCell(#done:Bool, trach:Bool, indexPath:NSIndexPath?)
 }
 
 class TaskTableViewCell: UITableViewCell {
@@ -18,6 +18,7 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet var checkboxButton : UIButton?
     @IBOutlet var trashButton : UIButton?
     @IBOutlet var delegate : TaskTableViewCellProtocol?
+    var tableView : UITableView?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,14 @@ class TaskTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    var todo : String? {
+        get {
+            return self.taskLabel?.text
+        }
+        set {
+            taskLabel?.text = newValue
+        }
+    }
     var done : Bool {
         get {
             return self.done
@@ -48,11 +57,18 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     @IBAction func touchedDone(sender : UIButton) {
-        delegate?.taskTableViewCell?(done: true, trach: false)
+        //if let tableView = self.superview as? UITableView {
+        if let indexPathOfThisCell = tableView?.indexPathForCell(self) {
+            delegate?.taskTableViewCell?(done: true, trach: false, indexPath:indexPathOfThisCell)
+        }
+
     }
     
     @IBAction func touchedTrash(sender: UIButton) {
-        delegate?.taskTableViewCell?(done: false, trach: true)
+        //if let tableView = self.superview as? UITableView {
+            //var indexPathOfThisCell = tableView.indexPathForCell(self)
+//            delegate?.taskTableViewCell?(done: false, trach: true, indexPath:nil)
+        //}
     }
 
 }

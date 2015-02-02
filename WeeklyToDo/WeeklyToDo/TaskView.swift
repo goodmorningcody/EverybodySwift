@@ -7,13 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class TaskView: UIView, UITextFieldDelegate {
     
-    var task : Task?
-    
     @IBOutlet var taskTextField : UITextField?
-    @IBOutlet var weekendToggleButton : Array<UIButton>?
+    @IBOutlet var weekendButtonArray : [UIButton]?
     @IBOutlet var repeatSegment : UISegmentedControl?
     @IBOutlet var visualEffectView : UIVisualEffectView?
     
@@ -25,7 +24,34 @@ class TaskView: UIView, UITextFieldDelegate {
     }
     
     @IBAction func touchedSet(sender : UIButton) {
-        hide()
+
+        var selectedWeekendArray : [Int] = [Int]()
+        var button : UIButton?
+        for( var i=0; i<weekendButtonArray?.count; ++i ) {
+            button = weekendButtonArray?[i]
+            if button?.selected==true {
+                selectedWeekendArray.append(button!.tag)
+            }
+        }
+        
+        if selectedWeekendArray.count==0 {
+            println("선택된 weekend가 하나도 없습니다. 최소 하나는 선택되어야 합니다.")
+            return
+        }
+        
+        if let inputedToDo = taskTextField?.text {
+            for selectedWeekend in selectedWeekendArray {
+                
+                WeeklyToDoDB.sharedInstance.insertTaskInWeekend(inputedToDo,
+                    when: Weekly.weekday(selectedWeekend, useStandardFormat:true), isRepeat: repeatSegment?.selectedSegmentIndex==0 ? true : false)
+            }
+            
+            hide()
+        }
+        else {
+            println("To Do에 입력된 내용이 없습니다. 내용을 입력하지 않고는 생성할 수 없습니다. ")
+            return
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
