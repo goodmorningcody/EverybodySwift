@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellProtocol {
+class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellProtocol, TaskViewProtocol {
 
     var taskViewController : UIViewController?
     
@@ -39,10 +39,15 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         
         if let rootView = self.navigationController?.view {
             if let taskView = taskViewController!.view as? TaskView {
+                taskView.delegate = self
                 taskView.show(rootView)
             }
         }
         
+    }
+    
+    func didAddingToDo() {
+        tableView.reloadData()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

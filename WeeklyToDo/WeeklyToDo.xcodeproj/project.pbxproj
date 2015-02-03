@@ -18,6 +18,7 @@
 		C378F2321A70149D007C73D4 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F2311A70149D007C73D4 /* TaskTableViewCell.swift */; };
 		C378F2341A701917007C73D4 /* WeeklyToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378F2331A701917007C73D4 /* WeeklyToDoTableViewController.swift */; };
 		C38EC4721A7FFF0200719D53 /* WeeklyToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C38EC4701A7FFF0200719D53 /* WeeklyToDo.xcdatamodeld */; };
+		C38EC4741A80B10F00719D53 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EC4731A80B10F00719D53 /* CoreDataController.swift */; };
 		C397E6E71A760F0100D479F1 /* Weekend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C397E6E61A760F0100D479F1 /* Weekend.swift */; };
 		C397E6E91A760F0200D479F1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C397E6E81A760F0200D479F1 /* Task.swift */; };
 		C3F14CC01A73A18E008DE41B /* WeeklyToDo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3F14CBF1A73A18E008DE41B /* WeeklyToDo.storyboard */; };
@@ -52,6 +53,7 @@
 		C378F2311A70149D007C73D4 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		C378F2331A701917007C73D4 /* WeeklyToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyToDoTableViewController.swift; sourceTree = "<group>"; };
 		C38EC4711A7FFF0200719D53 /* WeeklyToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeeklyToDo.xcdatamodel; sourceTree = "<group>"; };
+		C38EC4731A80B10F00719D53 /* CoreDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		C397E6E61A760F0100D479F1 /* Weekend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weekend.swift; sourceTree = "<group>"; };
 		C397E6E81A760F0200D479F1 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		C3F14CBF1A73A18E008DE41B /* WeeklyToDo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeeklyToDo.storyboard; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				C30F6B0D1A70841800009A01 /* Weekly.swift */,
 				C3F14CC11A73A47B008DE41B /* Common.swift */,
 				C3F14CC81A75DE03008DE41B /* WeeklyToDoDB.swift */,
+				C38EC4731A80B10F00719D53 /* CoreDataController.swift */,
 			);
 			path = WeeklyToDo;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				C378F2321A70149D007C73D4 /* TaskTableViewCell.swift in Sources */,
 				C30F6B0E1A70841800009A01 /* Weekly.swift in Sources */,
+				C38EC4741A80B10F00719D53 /* CoreDataController.swift in Sources */,
 				C397E6E91A760F0200D479F1 /* Task.swift in Sources */,
 				C3F14CC91A75DE03008DE41B /* WeeklyToDoDB.swift in Sources */,
 				C378F2101A700FEF007C73D4 /* AppDelegate.swift in Sources */,

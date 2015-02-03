@@ -9,12 +9,20 @@
 import UIKit
 import CoreData
 
+@objc protocol TaskViewProtocol {
+    //optional func touched(#done:Bool, trash:Bool, indexPath:NSIndexPath?)
+    optional func didAddingToDo()
+}
+
+
 class TaskView: UIView, UITextFieldDelegate {
     
     @IBOutlet var taskTextField : UITextField?
     @IBOutlet var weekendButtonArray : [UIButton]?
     @IBOutlet var repeatSegment : UISegmentedControl?
     @IBOutlet var visualEffectView : UIVisualEffectView?
+    
+    var delegate : TaskViewProtocol?
     
     @IBAction func touchedWeekendToggleButton(sender: UIButton) {
         sender.selected = !sender.selected
@@ -47,6 +55,7 @@ class TaskView: UIView, UITextFieldDelegate {
             }
             
             hide()
+            delegate?.didAddingToDo?()
         }
         else {
             println("To Do에 입력된 내용이 없습니다. 내용을 입력하지 않고는 생성할 수 없습니다. ")
