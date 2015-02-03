@@ -69,14 +69,16 @@ class WeeklyToDoDB {
         }
     }
     
-    func switchDoneTaskInWeekend(weekend:Int, atIndex:Int) {
+    func removeTaskInWeekend(weekend:Int, atIndex:Int) {
         var symbolAtIndex = Weekly.weekdayFromNow(weekend, useStandardFormat: true)
         if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
             for weekend in fetchResults {
                 if weekend.symbol==symbolAtIndex {
                     if weekend.tasks.count>atIndex {
-                        var task = weekend.tasks.allObjects[atIndex] as Task
-                        task.done = !task.done.boolValue
+                        var tasks = weekend.mutableSetValueForKey("tasks")
+                        var tasksArray = tasks.allObjects
+                        tasksArray.removeAtIndex(atIndex)
+                        weekend.tasks = NSSet(array: tasksArray)
                     }
                 }
             }
@@ -87,13 +89,15 @@ class WeeklyToDoDB {
         }
     }
     
-    func insertTaskInWeekend(task:Task, symbol:String) {
+    func switchDoneTaskInWeekend(weekend:Int, atIndex:Int) {
+        var symbolAtIndex = Weekly.weekdayFromNow(weekend, useStandardFormat: true)
         if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
             for weekend in fetchResults {
-                if weekend.symbol==symbol {
-                    var tasks = weekend.mutableSetValueForKey("tasks")
-                    tasks.addObject(task)
-                    break
+                if weekend.symbol==symbolAtIndex {
+                    if weekend.tasks.count>atIndex {
+                        var task = weekend.tasks.allObjects[atIndex] as Task
+                        task.done = !task.done.boolValue
+                    }
                 }
             }
         }

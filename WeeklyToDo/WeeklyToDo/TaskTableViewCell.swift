@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol TaskTableViewCellProtocol {
-    optional func taskTableViewCell(#done:Bool, trach:Bool, indexPath:NSIndexPath?)
+    optional func taskTableViewCell(#done:Bool, trash:Bool, indexPath:NSIndexPath?)
 }
 
 class TaskTableViewCell: UITableViewCell {
@@ -57,18 +57,15 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     @IBAction func touchedDone(sender : UIButton) {
-        //if let tableView = self.superview as? UITableView {
         if let indexPathOfThisCell = tableView?.indexPathForCell(self) {
-            delegate?.taskTableViewCell?(done: true, trach: false, indexPath:indexPathOfThisCell)
+            delegate?.taskTableViewCell?(done: true, trash: false, indexPath:indexPathOfThisCell)
         }
-
     }
     
     @IBAction func touchedTrash(sender: UIButton) {
-        //if let tableView = self.superview as? UITableView {
-            //var indexPathOfThisCell = tableView.indexPathForCell(self)
-//            delegate?.taskTableViewCell?(done: false, trach: true, indexPath:nil)
-        //}
+        if let indexPathOfThisCell = tableView?.indexPathForCell(self) {
+            delegate?.taskTableViewCell?(done: false, trash: true, indexPath:indexPathOfThisCell)
+        }
     }
 
 }
