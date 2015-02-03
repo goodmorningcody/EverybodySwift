@@ -11,6 +11,7 @@ import UIKit
 class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellProtocol, TaskViewProtocol {
 
     var taskViewController : UIViewController?
+    var timer : NSTimer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +22,46 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add"), style: UIBarButtonItemStyle.Plain, target: self, action: "addNewTask")
         self.navigationItem.rightBarButtonItem?.tintColor = Color.getPointColor()
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "orientationChanged:", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("orientationChanged"), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("willEnterForrground"), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didEnterBackground"), name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        
+        setUpdateScheduler()
+    }
+    func didEnterBackground() {
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    func willEnterForrground() {
+        setUpdateScheduler()
+    }
+    func setUpdateScheduler() {
+        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: NSDate())
+        
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+
+        var afterSeconds = Double(((24-components.hour)*60*60)-(components.minute*60)-(components.second))
+        timer = NSTimer.scheduledTimerWithTimeInterval(afterSeconds, target: self, selector: Selector("needUpdate"), userInfo: nil, repeats: false)
+    }
+    func needUpdate() {
+        println("needUpdate")
+        WeeklyToDoDB.sharedInstance.needUpdate()
+        tableView?.reloadData()
+        setUpdateScheduler()
     }
     
-    func orientationChanged(notification: NSNotification) {
+    func orientationChanged() {
         if let viewController = taskViewController {
             viewController.view.center = CGPointMake(UIScreen.mainScreen().bounds.size.width/2, UIScreen.mainScreen().bounds.size.height/2)
             viewController.view.bounds = UIScreen.mainScreen().bounds

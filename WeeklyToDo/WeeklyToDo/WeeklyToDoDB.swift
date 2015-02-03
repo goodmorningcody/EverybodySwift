@@ -43,9 +43,19 @@ class WeeklyToDoDB : CoreDataController {
             }
         }
         
-        if self.managedObjectContext?.hasChanges==true {
-            self.managedObjectContext?.save(nil)
+        sync()
+    }
+    
+    func getWeekend( weekend:Int ) -> Weekend? {
+        var symbolAtIndex = Weekly.weekdayFromNow(weekend, useStandardFormat: true)
+        if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
+            for weekend in fetchResults {
+                if weekend.symbol==symbolAtIndex {
+                    return weekend
+                }
+            }
         }
+        return nil
     }
     
     func insertTaskInWeekend(todo:String, when:String, isRepeat:Bool) {
@@ -54,6 +64,7 @@ class WeeklyToDoDB : CoreDataController {
         task.todo = todo
         task.done = NSNumber(bool: false)
         task.repeat = NSNumber(bool: isRepeat)
+        task.creation = NSDate()
         
         if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
             for weekend in fetchResults {
@@ -66,104 +77,71 @@ class WeeklyToDoDB : CoreDataController {
             }
         }
         
-        if self.managedObjectContext?.hasChanges==true {
-            self.managedObjectContext?.save(nil)
-        }
+        sync()
     }
     
     func removeTaskInWeekend(weekend:Int, atIndex:Int) {
-        var symbolAtIndex = Weekly.weekdayFromNow(weekend, useStandardFormat: true)
-        if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
-            for weekend in fetchResults {
-                if weekend.symbol==symbolAtIndex {
-                    if weekend.tasks.count>atIndex {
-                        var tasks = weekend.mutableSetValueForKey("tasks")
-                        var tasksArray = tasks.allObjects
-                        tasksArray.removeAtIndex(atIndex)
-                        weekend.tasks = NSSet(array: tasksArray)
-                    }
-                }
+        if let fetched = getWeekend(weekend) {
+            if fetched.tasks.count>atIndex {
+                var tasks = fetched.mutableSetValueForKey("tasks")
+                var tasksArray = tasks.allObjects
+                tasksArray.removeAtIndex(atIndex)
+                fetched.tasks = NSSet(array: tasksArray)
             }
         }
-        
-        if self.managedObjectContext?.hasChanges==true {
-            self.managedObjectContext?.save(nil)
-        }
+        sync()
     }
     
     func switchDoneTaskInWeekend(weekend:Int, atIndex:Int) {
-        var symbolAtIndex = Weekly.weekdayFromNow(weekend, useStandardFormat: true)
-        if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
-            for weekend in fetchResults {
-                if weekend.symbol==symbolAtIndex {
-                    if weekend.tasks.count>atIndex {
-                        var task = weekend.tasks.allObjects[atIndex] as Task
-                        task.done = !task.done.boolValue
-                    }
-                }
+        if let fetched = getWeekend(weekend) {
+            if fetched.tasks.count>atIndex {
+                var task = fetched.tasks.allObjects[atIndex] as Task
+                task.done = !task.done.boolValue
             }
         }
         
-        if self.managedObjectContext?.hasChanges==true {
-            self.managedObjectContext?.save(nil)
-        }
+        sync()
     }
     
     func taskInWeekend(weekend:Int, atIndex:Int) -> Task? {
-        var symbolAtIndex = Weekly.weekdayFromNow(weekend, useStandardFormat: true)
-        
-        if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
-            for weekend in fetchResults {
-                if weekend.symbol==symbolAtIndex {
-                    if weekend.tasks.count<=atIndex {
-                        return nil
-                    }
-                    else {
-                        return weekend.tasks.allObjects[atIndex] as? Task
-                    }
-                }
+        if let fetched = getWeekend(weekend) {
+            if fetched.tasks.count>atIndex {
+                return fetched.tasks.allObjects[atIndex] as? Task
             }
         }
         return nil
     }
     
-    func taskInWeekend(symbol:String, atIndex:Int) -> Task? {
-        if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
-            for weekend in fetchResults {
-                if weekend.symbol==symbol {
-                    if weekend.tasks.count<=atIndex {
-                        return nil
-                    }
-                    else {
-                        return weekend.tasks.allObjects[atIndex] as? Task
-                    }
-                }
-            }
+    func countOfTaskInWeekend(weekend:Int) -> Int {
+        if let fetched = getWeekend(weekend) {
+            return fetched.tasks.count
         }
-        return nil
-    }
-    
-    func countOfTaskInWeekend(index:Int) -> Int {
-        var symbolAtIndex = Weekly.weekdayFromNow(index, useStandardFormat: true)
         
-        if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
-            for weekend in fetchResults {
-                if weekend.symbol==symbolAtIndex {
-                    return weekend.tasks.count
-                }
-            }
-        }
         return 0
     }
     
-    func countOfTaskInWeekend(symbol:String) -> Int {
-        if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
-            for weekend in fetchResults {
-                if weekend.symbol==symbol {
-                    return weekend.tasks.count
+    func needUpdate() {
+        // Core Data 갱신해야됨
+        // 1. 시간 계산 후 어제 Task 가져오기
+        if let fetched = getWeekend(-1) {
+            var tasks = fetched.mutableSetValueForKey("tasks")
+            var tasksArray = tasks.allObjects
+            
+            for( var i=tasksArray.count-1; i>=0; --i ) {
+                var task = tasksArray[i] as Task
+                
+                // 2-1. repeat true면서 done으로 되어 있는 녀석 풀기
+                if task.repeat.boolValue {
+                    task.done = NSNumber(bool: false)
+                }
+                //2-2. repeat false면 녀석 지우기
+                else {
+                    tasksArray.removeAtIndex(i)
                 }
             }
+            
+            fetched.tasks = NSSet(array: tasksArray)
         }
-        return 0
+        sync()
     }
 }

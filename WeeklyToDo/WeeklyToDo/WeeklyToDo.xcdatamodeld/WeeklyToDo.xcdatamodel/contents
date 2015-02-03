@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Task" representedClassName="WeeklyToDo.Task" syncable="YES">
+        <attribute name="creation" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="done" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="repeat" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="todo" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,7 +12,7 @@
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="weekend" inverseEntity="Task" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Task" positionX="-180" positionY="-234" width="126" height="105"/>
+        <element name="Task" positionX="-180" positionY="-234" width="126" height="120"/>
         <element name="Weekend" positionX="79" positionY="-118" width="128" height="73"/>
     </elements>
 </model>

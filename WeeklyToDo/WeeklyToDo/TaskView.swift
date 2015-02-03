@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 @objc protocol TaskViewProtocol {
-    //optional func touched(#done:Bool, trash:Bool, indexPath:NSIndexPath?)
     optional func didAddingToDo()
 }
 
@@ -49,9 +48,7 @@ class TaskView: UIView, UITextFieldDelegate {
         
         if let inputedToDo = taskTextField?.text {
             for selectedWeekend in selectedWeekendArray {
-                
-                WeeklyToDoDB.sharedInstance.insertTaskInWeekend(inputedToDo,
-                    when: Weekly.weekday(selectedWeekend, useStandardFormat:true), isRepeat: repeatSegment?.selectedSegmentIndex==0 ? true : false)
+                WeeklyToDoDB.sharedInstance.insertTaskInWeekend(inputedToDo, when: Weekly.weekday(selectedWeekend, useStandardFormat:true), isRepeat: repeatSegment?.selectedSegmentIndex==0 ? true : false)
             }
             
             hide()
