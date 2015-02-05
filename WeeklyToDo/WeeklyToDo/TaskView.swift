@@ -18,6 +18,8 @@ class TaskView: UIView, UITextFieldDelegate {
     
     @IBOutlet var taskTextField : UITextField?
     @IBOutlet var weekendButtonArray : [UIButton]?
+    @IBOutlet var todayImageArray : [UIImageView]?
+    
     @IBOutlet var repeatSegment : UISegmentedControl?
     @IBOutlet var visualEffectView : UIVisualEffectView?
     
