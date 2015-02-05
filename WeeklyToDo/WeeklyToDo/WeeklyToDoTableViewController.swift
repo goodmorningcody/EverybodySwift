@@ -129,6 +129,7 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     }
     
     private func updateTaskCell(cell: UITableViewCell, withIndexPath indexPath : NSIndexPath) -> TaskTableViewCell {
+        // 업데이트 로직을 cell 객체로 이동
         var taskCell = cell as TaskTableViewCell
         taskCell.delegate = self
         taskCell.tableView = self.tableView
@@ -141,6 +142,7 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         return taskCell
     }
     private func updateWeekendCell(cell: UITableViewCell, withIndexPath  indexPath : NSIndexPath) -> WeekendTableViewCell {
+        // 업데이트 로직을 cell 객체로 이동
         var weekendCell = cell as WeekendTableViewCell
         if WeeklyToDoDB.sharedInstance.countOfTaskInWeekend(indexPath.section) > 0 {
             weekendCell.depthImageView?.hidden = false
@@ -171,6 +173,13 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
             return 58.0
         }
         return 44.0
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row==0 {
+            return
+        }
+        println("did select row at index path")
     }
     
     func taskTableViewCell(#done: Bool, trash: Bool, indexPath:NSIndexPath) {

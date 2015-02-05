@@ -46,8 +46,8 @@ class WeeklyToDoDB : CoreDataController {
         sync()
     }
     
-    func getWeekend( weekend:Int ) -> Weekend? {
-        var symbolAtIndex = Weekly.weekdayFromNow(weekend, useStandardFormat: true)
+    func getWeekend( dayFromToday:Int ) -> Weekend? {
+        var symbolAtIndex = Weekly.weekdayFromNow(dayFromToday, useStandardFormat: true)
         if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
             for weekend in fetchResults {
                 if weekend.symbol==symbolAtIndex {
@@ -80,8 +80,8 @@ class WeeklyToDoDB : CoreDataController {
         sync()
     }
     
-    func removeTaskInWeekend(weekend:Int, atIndex:Int) {
-        if let fetched = getWeekend(weekend) {
+    func removeTaskInWeekend(dayFromToday:Int, atIndex:Int) {
+        if let fetched = getWeekend(dayFromToday) {
             if fetched.tasks.count>atIndex {
                 var tasks = fetched.mutableSetValueForKey("tasks")
                 var tasksArray = tasks.allObjects
@@ -92,8 +92,8 @@ class WeeklyToDoDB : CoreDataController {
         sync()
     }
     
-    func switchDoneTaskInWeekend(weekend:Int, atIndex:Int) {
-        if let fetched = getWeekend(weekend) {
+    func switchDoneTaskInWeekend(dayFromToday:Int, atIndex:Int) {
+        if let fetched = getWeekend(dayFromToday) {
             if fetched.tasks.count>atIndex {
                 var task = fetched.tasks.allObjects[atIndex] as Task
                 task.done = !task.done.boolValue
@@ -110,8 +110,8 @@ class WeeklyToDoDB : CoreDataController {
         sync()
     }
     
-    func taskInWeekend(weekend:Int, atIndex:Int) -> Task? {
-        if let fetched = getWeekend(weekend) {
+    func taskInWeekend(dayFromToday:Int, atIndex:Int) -> Task? {
+        if let fetched = getWeekend(dayFromToday) {
             if fetched.tasks.count>atIndex {
                 return fetched.tasks.allObjects[atIndex] as? Task
             }
@@ -119,9 +119,9 @@ class WeeklyToDoDB : CoreDataController {
         return nil
     }
     
-    func countOfDoneTaskInWeekend(weekend:Int) -> Int {
+    func countOfDoneTaskInWeekend(dayFromToday:Int) -> Int {
         var countOfDone = 0
-        if let fetched = getWeekend(weekend) {
+        if let fetched = getWeekend(dayFromToday) {
             for task in fetched.tasks.allObjects {
                 if task.done.boolValue==true {
                     ++countOfDone
@@ -132,8 +132,8 @@ class WeeklyToDoDB : CoreDataController {
         return countOfDone
     }
     
-    func countOfTaskInWeekend(weekend:Int) -> Int {
-        if let fetched = getWeekend(weekend) {
+    func countOfTaskInWeekend(dayFromToday:Int) -> Int {
+        if let fetched = getWeekend(dayFromToday) {
             return fetched.tasks.count
         }
         

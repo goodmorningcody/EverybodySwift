@@ -75,15 +75,18 @@ class TaskView: UIView, UITextFieldDelegate {
         )
     }
     
+    func show(weekend:Int, index:Int) {
+        //WeeklyToDoDB.sharedInstance.
+    }
     func show(parent: UIView) {
         self.visualEffectView?.alpha = 0.0
         var originalTransform = self.transform
         self.transform = CGAffineTransformMakeTranslation(self.transform.tx, bounds.height)
         parent.addSubview(self)
         
-        UIView.animateWithDuration(0.4, delay:0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.2, options:UIViewAnimationOptions.CurveEaseIn, animations: {
+        UIView.animateWithDuration(0.5, delay:0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.3, options:UIViewAnimationOptions.CurveEaseIn, animations: {
             println("") // for compile error T_T
-            self.visualEffectView?.alpha = 0.8
+            self.visualEffectView?.alpha = 1.0
             self.transform = originalTransform
             }, completion: { finished in
                 //self.removeFromSuperview()
