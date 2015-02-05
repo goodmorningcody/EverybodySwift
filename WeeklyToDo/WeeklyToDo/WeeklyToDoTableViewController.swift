@@ -22,6 +22,8 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add"), style: UIBarButtonItemStyle.Plain, target: self, action: "addNewTask")
         self.navigationItem.rightBarButtonItem?.tintColor = Color.getPointColor()
+        
+        WeeklyToDoDB.sharedInstance.needUpdate()
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)

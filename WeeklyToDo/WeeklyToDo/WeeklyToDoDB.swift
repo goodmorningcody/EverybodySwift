@@ -64,7 +64,7 @@ class WeeklyToDoDB : CoreDataController {
         task.todo = todo
         task.done = NSNumber(bool: false)
         task.repeat = NSNumber(bool: isRepeat)
-        task.creation = NSDate()
+        task.creationDate = NSDate()
         
         if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
             for weekend in fetchResults {
@@ -97,6 +97,13 @@ class WeeklyToDoDB : CoreDataController {
             if fetched.tasks.count>atIndex {
                 var task = fetched.tasks.allObjects[atIndex] as Task
                 task.done = !task.done.boolValue
+                
+                if task.done==true {
+                   task.doneDate = NSDate()
+                }
+                else {
+                   task.doneDate = nil
+                }
             }
         }
         
@@ -121,27 +128,51 @@ class WeeklyToDoDB : CoreDataController {
     }
     
     func needUpdate() {
+        for i in 0...6 {
+            if let weekend = getWeekend(i) {
+                var tasks = weekend.mutableSetValueForKey("tasks")
+                var taskArray = tasks.allObjects
+                
+                // 1. repeat false이고, creationDate가 오늘보다 작으면 삭제해야합니다
+                // 2. repeat가 true이고, done이 true이면서, doneDate가 오늘보다 작으면 done을 false변경 해야 합니다
+                for( var i=taskArray.count-1; i>=0; --i ) {
+                    var task = taskArray[i] as Task
+                    if task.didCreataionWhenPresent()==true {
+                        taskArray.removeAtIndex(i)
+                    }
+                    else if task.didDoneWhenPresent()==true {
+                        task.done = NSNumber(bool: false)
+                    }
+                }
+                
+                weekend.tasks = NSSet(array: taskArray)
+
+            }
+        }
+        
+        sync()
+        
         // Core Data 갱신해야됨
         // 1. 시간 계산 후 어제 Task 가져오기
-        if let fetched = getWeekend(-1) {
-            var tasks = fetched.mutableSetValueForKey("tasks")
-            var tasksArray = tasks.allObjects
-            
-            for( var i=tasksArray.count-1; i>=0; --i ) {
-                var task = tasksArray[i] as Task
-                
-                // 2-1. repeat true면서 done으로 되어 있는 녀석 풀기
-                if task.repeat.boolValue {
-                    task.done = NSNumber(bool: false)
-                }
-                //2-2. repeat false면 녀석 지우기
-                else {
-                    tasksArray.removeAtIndex(i)
-                }
-            }
-            
-            fetched.tasks = NSSet(array: tasksArray)
-        }
+//        if let fetched = getWeekend(-1) {
+//            var tasks = fetched.mutableSetValueForKey("tasks")
+//            var tasksArray = tasks.allObjects
+//            
+//            for( var i=tasksArray.count-1; i>=0; --i ) {
+//                var task = tasksArray[i] as Task
+//                
+//                // 2-1. repeat true면서 done으로 되어 있는 녀석 풀기
+//                if task.repeat.boolValue {
+//                    task.done = NSNumber(bool: false)
+//                }
+//                //2-2. repeat false면 녀석 지우기
+//                else {
+//                    tasksArray.removeAtIndex(i)
+//                }
+//            }
+//            
+//            fetched.tasks = NSSet(array: tasksArray)
+//        }
         sync()
     }
 }

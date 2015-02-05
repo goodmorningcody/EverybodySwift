@@ -13,6 +13,53 @@ class Task: NSManagedObject {
     @NSManaged var repeat: NSNumber
     @NSManaged var todo: String
     @NSManaged var done: NSNumber
-    @NSManaged var creation: NSDate
+    @NSManaged var doneDate: NSDate?
+    @NSManaged var creationDate: NSDate?
     @NSManaged var weekend : Weekend
+    
+    func didCreataionWhenPresent() -> Bool {
+        if repeat.boolValue==true {
+            return false
+        }
+        
+        if creationDate==nil {
+            return false
+        }
+        
+        var component = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: NSDate())
+        component.hour = 0
+        component.minute = 0
+        component.second = 0
+        
+        //let present = component.date
+        let present = NSCalendar.currentCalendar().dateFromComponents(component)
+        if present?.timeIntervalSince1970 > creationDate?.timeIntervalSince1970 {
+            return true
+        }
+        
+        return false
+    }
+    
+    func didDoneWhenPresent() -> Bool {
+        
+        if done.boolValue==false {
+            return false
+        }
+        
+        if doneDate==nil {
+            return false
+        }
+        
+        var component = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: NSDate())
+        component.hour = 0
+        component.minute = 0
+        component.second = 0
+        
+        let present = NSCalendar.currentCalendar().dateFromComponents(component)
+        if present?.timeIntervalSince1970 > doneDate?.timeIntervalSince1970 && repeat.boolValue==true {
+            return true
+        }
+        
+        return false
+    }
 }
