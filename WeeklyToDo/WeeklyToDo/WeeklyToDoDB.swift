@@ -119,6 +119,19 @@ class WeeklyToDoDB : CoreDataController {
         return nil
     }
     
+    func countOfDoneTaskInWeekend(weekend:Int) -> Int {
+        var countOfDone = 0
+        if let fetched = getWeekend(weekend) {
+            for task in fetched.tasks.allObjects {
+                if task.done.boolValue==true {
+                    ++countOfDone
+                }
+            }
+        }
+        
+        return countOfDone
+    }
+    
     func countOfTaskInWeekend(weekend:Int) -> Int {
         if let fetched = getWeekend(weekend) {
             return fetched.tasks.count
@@ -150,29 +163,6 @@ class WeeklyToDoDB : CoreDataController {
             }
         }
         
-        sync()
-        
-        // Core Data 갱신해야됨
-        // 1. 시간 계산 후 어제 Task 가져오기
-//        if let fetched = getWeekend(-1) {
-//            var tasks = fetched.mutableSetValueForKey("tasks")
-//            var tasksArray = tasks.allObjects
-//            
-//            for( var i=tasksArray.count-1; i>=0; --i ) {
-//                var task = tasksArray[i] as Task
-//                
-//                // 2-1. repeat true면서 done으로 되어 있는 녀석 풀기
-//                if task.repeat.boolValue {
-//                    task.done = NSNumber(bool: false)
-//                }
-//                //2-2. repeat false면 녀석 지우기
-//                else {
-//                    tasksArray.removeAtIndex(i)
-//                }
-//            }
-//            
-//            fetched.tasks = NSSet(array: tasksArray)
-//        }
         sync()
     }
 }

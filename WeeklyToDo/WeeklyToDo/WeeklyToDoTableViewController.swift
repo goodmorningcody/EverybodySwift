@@ -142,8 +142,6 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     }
     private func updateWeekendCell(cell: UITableViewCell, withIndexPath  indexPath : NSIndexPath) -> WeekendTableViewCell {
         var weekendCell = cell as WeekendTableViewCell
-        
-        // depthImageView는 셀을 클릭할 때 확장할 수 있는 구조로 변경해야 합니다.
         if WeeklyToDoDB.sharedInstance.countOfTaskInWeekend(indexPath.section) > 0 {
             weekendCell.depthImageView?.hidden = false
         }
@@ -153,6 +151,17 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         
         weekendCell.todayMarkView?.hidden = (indexPath.section != 0)
         weekendCell.weekendLabel?.text = Weekly.weekdayFromNow(indexPath.section, useStandardFormat: false)
+        
+        var countOfTask = WeeklyToDoDB.sharedInstance.countOfTaskInWeekend(indexPath.section)
+        var countOfDoneTask = WeeklyToDoDB.sharedInstance.countOfDoneTaskInWeekend(indexPath.section)
+        
+        if countOfTask>0 {
+            weekendCell.countLabel?.hidden = false
+            weekendCell.countLabel?.text = String(countOfDoneTask)+"/"+String(countOfTask)
+        }
+        else {
+            weekendCell.countLabel?.hidden = true
+        }
         
         return weekendCell
     }
