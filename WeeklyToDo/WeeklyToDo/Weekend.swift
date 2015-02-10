@@ -11,5 +11,6 @@ import CoreData
 
 class Weekend: NSManagedObject {
     @NSManaged var symbol: String
+    @NSManaged var date: NSDate?
     @NSManaged var tasks: NSSet
 }

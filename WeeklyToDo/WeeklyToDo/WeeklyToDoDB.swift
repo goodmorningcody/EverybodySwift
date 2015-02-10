@@ -68,6 +68,10 @@ class WeeklyToDoDB : CoreDataController {
         
         if let fetchResults = self.managedObjectContext!.executeFetchRequest(NSFetchRequest(entityName: "Weekend"), error: nil) as? [Weekend] {
             for weekend in fetchResults {
+                if let date = Weekly.dateFromNow(weekend.symbol) {
+                    weekend.date = date
+                }
+                
                 if weekend.symbol==when {
                     var tasks = weekend.mutableSetValueForKey("tasks")
                     task.weekend = weekend
@@ -148,6 +152,7 @@ class WeeklyToDoDB : CoreDataController {
                 
                 // 1. repeat false이고, creationDate가 오늘보다 작으면 삭제해야합니다
                 // 2. repeat가 true이고, done이 true이면서, doneDate가 오늘보다 작으면 done을 false변경 해야 합니다
+                // 3. 기존에 저장되어 있던 값을 갱신한 후 Weekend의 date값을 업데이트 합니다.
                 for( var i=taskArray.count-1; i>=0; --i ) {
                     var task = taskArray[i] as Task
                     if task.didCreataionWhenPresent()==true {
@@ -158,8 +163,11 @@ class WeeklyToDoDB : CoreDataController {
                     }
                 }
                 
+                if let date = Weekly.dateFromNow(weekend.symbol) {
+                    weekend.date = date
+                }
+                
                 weekend.tasks = NSSet(array: taskArray)
-
             }
         }
         

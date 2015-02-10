@@ -33,4 +33,48 @@ class Weekly {
         var date = NSDate(timeIntervalSinceNow: 60.0*60.0*24.0 * Double(offset))
         return dateFormatter.stringFromDate(date)
     }
+    
+    class func dateFromNow(toSymbol: String) -> NSDate? {
+        var symbols = NSDateFormatter().weekdaySymbols + NSDateFormatter().weekdaySymbols
+        var symbolOnToday = weekdayFromNow(0, useStandardFormat:false)
+        var length = 0
+        var foundedStartIndex = false
+        for symbol in symbols {
+            if symbol as String==symbolOnToday {
+                foundedStartIndex = true
+            }
+            else if foundedStartIndex==true {
+                ++length
+            }
+            
+            if symbol as String == toSymbol {
+                break
+            }
+        }
+        
+        var component = NSCalendar.currentCalendar().components(
+            NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay,
+            fromDate: NSDate(timeIntervalSinceNow: Double(60*60*24*length))
+        )
+        return NSCalendar.currentCalendar().dateFromComponents(component)
+    }
+//    class func lengthFromNow(toSymbol:String) -> Int {
+//        var symbols = NSDateFormatter().weekdaySymbols + NSDateFormatter().weekdaySymbols
+//        var symbolOnToday = weekdayFromNow(0, useStandardFormat:false)
+//        var length = 0
+//        var foundedStartIndex = false
+//        for symbol in symbols {
+//            if symbol as String==symbolOnToday {
+//                foundedStartIndex = true
+//            }
+//            else if foundedStartIndex==true {
+//                ++length
+//            }
+//            
+//            if symbol as String == toSymbol {
+//                break
+//            }
+//        }
+//        return length
+//    }
 }

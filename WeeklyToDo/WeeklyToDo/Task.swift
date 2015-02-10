@@ -46,17 +46,14 @@ class Task: NSManagedObject {
             return false
         }
         
-        if doneDate==nil {
-            return false
-        }
+        var componentPresent = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay, fromDate: weekend.date!)
         
-        var component = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay | NSCalendarUnit.CalendarUnitHour | NSCalendarUnit.CalendarUnitMinute | NSCalendarUnit.CalendarUnitSecond, fromDate: NSDate())
-        component.hour = 0
-        component.minute = 0
-        component.second = 0
+        var componentCurrent = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay, fromDate: NSDate())
         
-        let present = NSCalendar.currentCalendar().dateFromComponents(component)
-        if present?.timeIntervalSince1970 > doneDate?.timeIntervalSince1970 && repeat.boolValue==true {
+        let present = NSCalendar.currentCalendar().dateFromComponents(componentPresent)
+        let current = NSCalendar.currentCalendar().dateFromComponents(componentCurrent)
+        
+        if present?.timeIntervalSince1970 < current?.timeIntervalSince1970 && repeat.boolValue==true {
             return true
         }
         
