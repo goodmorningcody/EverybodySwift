@@ -81,7 +81,6 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
                 taskView.show(rootView)
             }
         }
-        
     }
     
     func didAddingToDo() {
@@ -137,6 +136,7 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         if let task = WeeklyToDoDB.sharedInstance.taskInWeekend(indexPath.section, atIndex: indexPath.row-1) {
             taskCell.todo = task.todo
             taskCell.done = task.done.boolValue
+            taskCell.repeat = task.repeat.boolValue
         }
         
         return taskCell
@@ -179,15 +179,28 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
         if indexPath.row==0 {
             return
         }
-        println("did select row at index path")
+        
+        if taskViewController == nil  {
+            taskViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TaskViewIdentifier") as? UIViewController
+        }
+        
+        if let rootView = self.navigationController?.view {
+            if let taskView = taskViewController!.view as? TaskView {
+                taskView.delegate = self
+                taskView.show(rootView, weekend: indexPath.section, index: indexPath.row-1)
+            }
+        }
     }
     
-    func taskTableViewCell(#done: Bool, trash: Bool, indexPath:NSIndexPath) {
+    func taskTableViewCell(#done: Bool, trash: Bool, repeat: Bool, indexPath:NSIndexPath) {
         if done==true {
             WeeklyToDoDB.sharedInstance.switchDoneTaskInWeekend(indexPath.section, atIndex: indexPath.row-1)
         }
         else if trash==true {
             WeeklyToDoDB.sharedInstance.removeTaskInWeekend(indexPath.section, atIndex: indexPath.row-1)
+        }
+        else if repeat==true {
+            WeeklyToDoDB.sharedInstance.switchRepeatOptionInWeekend(indexPath.section, atIndex: indexPath.row-1)
         }
         
         self.tableView.reloadData()

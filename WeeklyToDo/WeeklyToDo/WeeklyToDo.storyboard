@@ -95,7 +95,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tableview_todo" translatesAutoresizingMaskIntoConstraints="NO" id="NSV-8D-l9z">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2Y-6x-hmK">
+                                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N2Y-6x-hmK" userLabel="Done">
                                             <rect key="frame" x="7" y="8" width="45" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="5b8-DD-YFL"/>
@@ -108,7 +108,7 @@
                                                 <action selector="touchedDone:" destination="vxH-DL-2ed" eventType="touchUpInside" id="gH6-Ed-bfs"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3z-P2-d8D">
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3z-P2-d8D" userLabel="Trash">
                                             <rect key="frame" x="542" y="8" width="46" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="SWO-xB-yuR"/>
@@ -134,6 +134,20 @@
                                                 <constraint firstAttribute="width" constant="2" id="Zr4-Dp-t3y"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nda-UB-ySx" userLabel="Repeat">
+                                            <rect key="frame" x="542" y="4" width="46" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="MMj-uo-SIH"/>
+                                                <constraint firstAttribute="width" constant="46" id="N6j-1t-1qc"/>
+                                            </constraints>
+                                            <state key="normal" image="not_repeat">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="selected" image="repeat"/>
+                                            <connections>
+                                                <action selector="touchedRepeat:" destination="vxH-DL-2ed" eventType="touchUpInside" id="x9g-dD-wMI"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="NSV-8D-l9z" secondAttribute="trailing" id="0Xo-jY-ajd"/>
@@ -143,11 +157,13 @@
                                         <constraint firstItem="Q3z-P2-d8D" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" id="FO9-uH-v7g"/>
                                         <constraint firstItem="NSV-8D-l9z" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leading" id="GYr-Vg-L7w"/>
                                         <constraint firstItem="NSV-8D-l9z" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leading" id="H5P-g1-UTq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="nda-UB-ySx" secondAttribute="trailing" constant="4" id="J3G-7w-b1J"/>
                                         <constraint firstAttribute="trailing" secondItem="NSV-8D-l9z" secondAttribute="trailing" id="Usc-iS-JWF"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="2uv-Wy-6KC" secondAttribute="trailing" constant="58" id="dZE-1G-SrR"/>
                                         <constraint firstItem="5TN-ri-c0W" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" constant="-4" id="fcS-Ra-c2c"/>
                                         <constraint firstItem="2uv-Wy-6KC" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" constant="2" id="gVO-tq-Kh4"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Q3z-P2-d8D" secondAttribute="trailing" constant="4" id="j8R-gr-prv"/>
+                                        <constraint firstItem="nda-UB-ySx" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="topMargin" constant="-4" id="k7M-zK-Rnr"/>
                                         <constraint firstItem="5TN-ri-c0W" firstAttribute="leading" secondItem="TA1-oA-jzW" secondAttribute="leadingMargin" constant="50" id="shU-w1-3EK"/>
                                         <constraint firstAttribute="bottom" secondItem="NSV-8D-l9z" secondAttribute="bottom" id="wIi-1b-deo"/>
                                         <constraint firstItem="NSV-8D-l9z" firstAttribute="top" secondItem="TA1-oA-jzW" secondAttribute="top" id="wmZ-kV-jH6"/>
@@ -156,6 +172,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="checkboxButton" destination="N2Y-6x-hmK" id="4ss-7d-Pa9"/>
+                                    <outlet property="repeatButton" destination="nda-UB-ySx" id="Tdp-jy-1z7"/>
                                     <outlet property="taskLabel" destination="2uv-Wy-6KC" id="BZv-hV-emZ"/>
                                     <outlet property="trashButton" destination="Q3z-P2-d8D" id="X1i-qW-1YA"/>
                                 </connections>
@@ -233,7 +250,7 @@
                                                 <outlet property="delegate" destination="wsW-jF-t9J" id="yfN-Yv-xkH"/>
                                             </connections>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lka-cl-Oho">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lka-cl-Oho">
                                             <rect key="frame" x="152" y="270" width="42" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42" id="dcV-wZ-NGv"/>
@@ -245,14 +262,15 @@
                                                 <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" backgroundImage="weekend_selected">
+                                            <state key="disabled" title="일"/>
+                                            <state key="selected" title="일" backgroundImage="weekend_selected">
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="oLz-jd-dng"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyd-m9-pyE">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyd-m9-pyE">
                                             <rect key="frame" x="194" y="270" width="42" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="42" id="sZe-Ht-m2Q"/>
@@ -264,6 +282,7 @@
                                                 <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <state key="disabled" title="월"/>
                                             <state key="selected" backgroundImage="weekend_selected">
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
@@ -271,7 +290,7 @@
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="HLf-WI-Up2"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="312-ct-Qgh">
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="312-ct-Qgh">
                                             <rect key="frame" x="236" y="270" width="42" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42" id="DyX-Bd-uML"/>
@@ -283,14 +302,15 @@
                                                 <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" backgroundImage="weekend_selected">
+                                            <state key="disabled" title="화"/>
+                                            <state key="selected" title="화" backgroundImage="weekend_selected">
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="OMo-OU-nXo"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-PW-N3g">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-PW-N3g">
                                             <rect key="frame" x="279" y="270" width="42" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42" id="dBm-jW-HiL"/>
@@ -302,14 +322,15 @@
                                                 <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" backgroundImage="weekend_selected">
+                                            <state key="disabled" title="수"/>
+                                            <state key="selected" title="수" backgroundImage="weekend_selected">
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="msx-IC-4LI"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mn-XS-N45">
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mn-XS-N45">
                                             <rect key="frame" x="321" y="270" width="42" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42" id="DdT-yy-HfS"/>
@@ -321,14 +342,16 @@
                                                 <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" backgroundImage="weekend_selected">
+                                            <state key="disabled" title="목"/>
+                                            <state key="selected" title="목" backgroundImage="weekend_selected">
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <state key="highlighted" backgroundImage="weekend_disabled"/>
                                             <connections>
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="EHS-Y0-tNH"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S47-cT-mmM">
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S47-cT-mmM">
                                             <rect key="frame" x="363" y="270" width="42" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="42" id="gs6-7O-PxK"/>
@@ -340,14 +363,15 @@
                                                 <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" backgroundImage="weekend_selected">
+                                            <state key="disabled" title="금"/>
+                                            <state key="selected" title="금" backgroundImage="weekend_selected">
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
                                                 <action selector="touchedWeekendToggleButton:" destination="wsW-jF-t9J" eventType="touchUpInside" id="cgr-pQ-ByE"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-2X-QNr">
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-2X-QNr">
                                             <rect key="frame" x="406" y="270" width="42" height="42"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="42" id="koJ-ep-mv9"/>
@@ -359,7 +383,8 @@
                                                 <color key="titleColor" red="0.98039215690000003" green="0.97254901959999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" backgroundImage="weekend_selected">
+                                            <state key="disabled" title="토"/>
+                                            <state key="selected" title="토" backgroundImage="weekend_selected">
                                                 <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -391,70 +416,13 @@
                                                 <action selector="touchedSet:" destination="wsW-jF-t9J" eventType="touchUpInside" id="9oo-kg-KJJ"/>
                                             </connections>
                                         </button>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="today" translatesAutoresizingMaskIntoConstraints="NO" id="wOs-dd-9GV">
-                                            <rect key="frame" x="162" y="300" width="22" height="5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="5" id="lGZ-5F-JQg"/>
-                                                <constraint firstAttribute="width" constant="22" id="n8M-8Q-Dpv"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="today" translatesAutoresizingMaskIntoConstraints="NO" id="p5Z-bO-yIn">
-                                            <rect key="frame" x="204" y="300" width="22" height="5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="5" id="Ecq-On-NHY"/>
-                                                <constraint firstAttribute="width" constant="22" id="fWl-an-0r3"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="today" translatesAutoresizingMaskIntoConstraints="NO" id="G8E-lo-wOH">
-                                            <rect key="frame" x="246" y="300" width="22" height="5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="5" id="KVN-DC-toq"/>
-                                                <constraint firstAttribute="width" constant="22" id="iPO-OC-y4w"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="today" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-D2-1PV">
-                                            <rect key="frame" x="289" y="300" width="22" height="5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="22" id="AEI-R9-Jgz"/>
-                                                <constraint firstAttribute="height" constant="5" id="Gdb-P1-KRw"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="today" translatesAutoresizingMaskIntoConstraints="NO" id="sJc-2L-p60">
-                                            <rect key="frame" x="331" y="300" width="22" height="5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="22" id="lqt-tA-Quy"/>
-                                                <constraint firstAttribute="height" constant="5" id="o02-8M-Tha"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="today" translatesAutoresizingMaskIntoConstraints="NO" id="EUZ-pL-1fV">
-                                            <rect key="frame" x="373" y="300" width="22" height="5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="5" id="5rM-Md-Lc9"/>
-                                                <constraint firstAttribute="width" constant="22" id="MRp-hC-C8Q"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="today" translatesAutoresizingMaskIntoConstraints="NO" id="rYo-Ze-LPA">
-                                            <rect key="frame" x="416" y="300" width="22" height="5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="22" id="WO1-75-fbF"/>
-                                                <constraint firstAttribute="height" constant="5" id="dkR-l6-eJ4"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="G8E-lo-wOH" firstAttribute="top" secondItem="312-ct-Qgh" secondAttribute="bottom" constant="-12" id="39S-jt-g2V"/>
-                                        <constraint firstItem="rYo-Ze-LPA" firstAttribute="leading" secondItem="UqX-2X-QNr" secondAttribute="trailing" constant="-32" id="3L6-4U-s0E"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="De2-g7-dja" secondAttribute="bottom" constant="-30" id="3Mz-Ie-Mcp"/>
-                                        <constraint firstItem="rYo-Ze-LPA" firstAttribute="top" secondItem="UqX-2X-QNr" secondAttribute="bottom" constant="-12" id="5jv-Q1-lvG"/>
-                                        <constraint firstItem="p5Z-bO-yIn" firstAttribute="top" secondItem="Lyd-m9-pyE" secondAttribute="bottom" constant="-12" id="5kZ-at-del"/>
-                                        <constraint firstItem="Lyd-m9-pyE" firstAttribute="leading" secondItem="p5Z-bO-yIn" secondAttribute="trailing" constant="-32" id="6FE-MH-vme"/>
-                                        <constraint firstItem="EUZ-pL-1fV" firstAttribute="leading" secondItem="S47-cT-mmM" secondAttribute="trailing" constant="-32" id="77t-eK-oAI"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="Lka-cl-Oho" secondAttribute="trailing" constant="-50" id="7XX-mG-sZg"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="qDw-PW-N3g" secondAttribute="bottom" constant="-140" id="7pv-uK-eeg"/>
                                         <constraint firstAttribute="centerX" secondItem="ZDN-6h-eIe" secondAttribute="centerX" id="Ah6-DG-Ea6"/>
                                         <constraint firstItem="fng-tQ-cbR" firstAttribute="top" secondItem="ZDN-6h-eIe" secondAttribute="bottom" constant="-107" id="Aji-56-FyK"/>
-                                        <constraint firstItem="G8E-lo-wOH" firstAttribute="leading" secondItem="312-ct-Qgh" secondAttribute="trailing" constant="-32" id="Bn9-rq-jyH"/>
-                                        <constraint firstItem="wOs-dd-9GV" firstAttribute="top" secondItem="Lka-cl-Oho" secondAttribute="bottom" constant="-12" id="CUV-qN-2I9"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="r9b-we-Ru2" secondAttribute="trailing" constant="-292" id="EgS-3g-V34"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="qDw-PW-N3g" secondAttribute="trailing" constant="-177" id="Fdr-er-P01"/>
                                         <constraint firstItem="UqX-2X-QNr" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-51" id="G6Q-I3-yTM"/>
@@ -462,22 +430,15 @@
                                         <constraint firstAttribute="centerY" secondItem="ZDN-6h-eIe" secondAttribute="centerY" id="Tlf-Ps-2mv"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="S47-cT-mmM" secondAttribute="bottom" constant="-140" id="ZMQ-46-Bb8"/>
                                         <constraint firstItem="S47-cT-mmM" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-94" id="aVT-Cl-2Ye"/>
-                                        <constraint firstItem="EUZ-pL-1fV" firstAttribute="top" secondItem="S47-cT-mmM" secondAttribute="bottom" constant="-12" id="bLb-Pr-gkP"/>
-                                        <constraint firstItem="sJc-2L-p60" firstAttribute="top" secondItem="5mn-XS-N45" secondAttribute="bottom" constant="-12" id="bdc-f9-BgH"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="fng-tQ-cbR" secondAttribute="trailing" constant="-300" id="bjT-ha-gWb"/>
                                         <constraint firstItem="5mn-XS-N45" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-136" id="dEH-mg-wC1"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="312-ct-Qgh" secondAttribute="trailing" constant="-134" id="deC-uf-foZ"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="Lka-cl-Oho" secondAttribute="bottom" constant="-140" id="fai-K9-yhr"/>
-                                        <constraint firstItem="sJc-2L-p60" firstAttribute="leading" secondItem="5mn-XS-N45" secondAttribute="trailing" constant="-32" id="feM-bd-Gbx"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="Lyd-m9-pyE" secondAttribute="bottom" constant="-140" id="gKy-0v-hLz"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="r9b-we-Ru2" secondAttribute="bottom" constant="-84" id="jfe-Xw-YAD"/>
-                                        <constraint firstItem="wOs-dd-9GV" firstAttribute="leading" secondItem="Lka-cl-Oho" secondAttribute="trailing" constant="-32" id="kqS-GM-xN8"/>
                                         <constraint firstItem="OKh-el-GrY" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-299" id="my5-vO-tJh"/>
-                                        <constraint firstItem="XlW-D2-1PV" firstAttribute="top" secondItem="qDw-PW-N3g" secondAttribute="bottom" constant="-12" id="np6-z0-N58"/>
-                                        <constraint firstItem="p5Z-bO-yIn" firstAttribute="top" secondItem="Lyd-m9-pyE" secondAttribute="bottom" constant="-12" id="o6k-it-Rvb"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="leading" secondItem="Lyd-m9-pyE" secondAttribute="trailing" constant="-92" id="oMs-S6-qeS"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="5mn-XS-N45" secondAttribute="bottom" constant="-140" id="pLC-mE-dAK"/>
-                                        <constraint firstItem="XlW-D2-1PV" firstAttribute="leading" secondItem="qDw-PW-N3g" secondAttribute="trailing" constant="-32" id="qTw-oK-RkA"/>
                                         <constraint firstItem="OKh-el-GrY" firstAttribute="top" secondItem="ZDN-6h-eIe" secondAttribute="bottom" constant="-47" id="r7N-DB-sti"/>
                                         <constraint firstItem="ZDN-6h-eIe" firstAttribute="top" secondItem="2De-Go-bA7" secondAttribute="bottom" constant="-30" id="s4B-og-3qh"/>
                                         <constraint firstItem="2De-Go-bA7" firstAttribute="leading" secondItem="ZDN-6h-eIe" secondAttribute="trailing" constant="-43" id="sLC-tY-3mG"/>
@@ -498,6 +459,7 @@
                             <constraint firstItem="5Zt-XE-p6W" firstAttribute="top" secondItem="wsW-jF-t9J" secondAttribute="top" id="lMG-Qm-abR"/>
                         </constraints>
                         <connections>
+                            <outlet property="addOrEditButton" destination="OKh-el-GrY" id="5Pk-BB-p60"/>
                             <outlet property="repeatSegment" destination="fng-tQ-cbR" id="tyh-4D-Mvb"/>
                             <outlet property="taskTextField" destination="r9b-we-Ru2" id="jy1-xt-SQE"/>
                             <outlet property="visualEffectView" destination="5Zt-XE-p6W" id="QeU-gP-jJN"/>
@@ -508,13 +470,6 @@
                             <outletCollection property="weekendButtonArray" destination="5mn-XS-N45" collectionClass="NSMutableArray" id="1Q3-IO-omU"/>
                             <outletCollection property="weekendButtonArray" destination="S47-cT-mmM" collectionClass="NSMutableArray" id="FVe-MF-XoL"/>
                             <outletCollection property="weekendButtonArray" destination="UqX-2X-QNr" collectionClass="NSMutableArray" id="QNR-1e-hmA"/>
-                            <outletCollection property="todayImageArray" destination="wOs-dd-9GV" collectionClass="NSMutableArray" id="EPr-PM-nZn"/>
-                            <outletCollection property="todayImageArray" destination="p5Z-bO-yIn" collectionClass="NSMutableArray" id="zNq-PC-7My"/>
-                            <outletCollection property="todayImageArray" destination="G8E-lo-wOH" collectionClass="NSMutableArray" id="rR8-el-Ntc"/>
-                            <outletCollection property="todayImageArray" destination="XlW-D2-1PV" collectionClass="NSMutableArray" id="XP1-UL-5n8"/>
-                            <outletCollection property="todayImageArray" destination="sJc-2L-p60" collectionClass="NSMutableArray" id="RXb-ES-KW7"/>
-                            <outletCollection property="todayImageArray" destination="EUZ-pL-1fV" collectionClass="NSMutableArray" id="oIP-hp-BAT"/>
-                            <outletCollection property="todayImageArray" destination="rYo-Ze-LPA" collectionClass="NSMutableArray" id="Zmf-N8-aW3"/>
                         </connections>
                     </view>
                 </viewController>
@@ -534,9 +489,11 @@
         <image name="img_tableview_vertical" width="2" height="49"/>
         <image name="img_tableview_weekly_nodepth" width="414" height="2"/>
         <image name="img_tableview_weekly_underbar" width="414" height="7"/>
+        <image name="not_repeat" width="13" height="11"/>
         <image name="popup" width="313" height="256"/>
-        <image name="today" width="22" height="5"/>
+        <image name="repeat" width="13" height="11"/>
         <image name="trash" width="16" height="22"/>
+        <image name="weekend_disabled" width="42" height="42"/>
         <image name="weekend_selected" width="42" height="42"/>
     </resources>
     <color key="tintColor" red="0.96078431372549022" green="0.42352941176470588" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>

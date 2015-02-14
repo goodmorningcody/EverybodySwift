@@ -96,6 +96,34 @@ class WeeklyToDoDB : CoreDataController {
         sync()
     }
     
+    func updateTaskInWeekend(dayFromToday:Int, atIndex:Int, todo:String, isRepeat:Bool) {
+        if let fetched = getWeekend(dayFromToday) {
+            if fetched.tasks.count>atIndex {
+                var tasks = fetched.mutableSetValueForKey("tasks")
+                var taskArray = tasks.allObjects
+                if let task = taskArray[atIndex] as? Task {
+                    task.todo = todo
+                    task.repeat = NSNumber(bool: isRepeat)
+                    taskArray[atIndex] = task
+                }
+                
+                fetched.tasks = NSSet(array: taskArray)
+            }
+        }
+        sync()
+    }
+    
+    func switchRepeatOptionInWeekend(dayFromToday:Int, atIndex:Int) {
+        if let fetched = getWeekend(dayFromToday) {
+            if fetched.tasks.count>atIndex {
+                var task = fetched.tasks.allObjects[atIndex] as Task
+                task.repeat = !task.repeat.boolValue                
+            }
+        }
+        
+        sync()
+    }
+    
     func switchDoneTaskInWeekend(dayFromToday:Int, atIndex:Int) {
         if let fetched = getWeekend(dayFromToday) {
             if fetched.tasks.count>atIndex {

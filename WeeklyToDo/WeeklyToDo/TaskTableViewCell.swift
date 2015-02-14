@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol TaskTableViewCellProtocol {
-    optional func taskTableViewCell(#done:Bool, trash:Bool, indexPath:NSIndexPath?)
+    optional func taskTableViewCell(#done:Bool, trash:Bool, repeat:Bool, indexPath:NSIndexPath?)
 }
 
 class TaskTableViewCell: UITableViewCell {
@@ -17,18 +17,18 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet var taskLabel : UILabel?
     @IBOutlet var checkboxButton : UIButton?
     @IBOutlet var trashButton : UIButton?
+    @IBOutlet var repeatButton : UIButton?
+    
     @IBOutlet var delegate : TaskTableViewCellProtocol?
     var tableView : UITableView?
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var repeat : Bool {
+        get {
+            return self.repeatButton!.selected
+        }
+        set {
+            repeatButton!.selected = newValue
+        }
     }
     
     var todo : String? {
@@ -46,6 +46,7 @@ class TaskTableViewCell: UITableViewCell {
         set {
             checkboxButton?.selected = !newValue
             trashButton?.hidden = !newValue
+            repeatButton?.hidden = newValue
             
             if newValue==true {
                 taskLabel?.textColor = Color.getDoneTaskTextColor()
@@ -58,13 +59,19 @@ class TaskTableViewCell: UITableViewCell {
     
     @IBAction func touchedDone(sender : UIButton) {
         if let indexPathOfThisCell = tableView?.indexPathForCell(self) {
-            delegate?.taskTableViewCell?(done: true, trash: false, indexPath:indexPathOfThisCell)
+            delegate?.taskTableViewCell?(done: true, trash: false, repeat:false, indexPath:indexPathOfThisCell)
+        }
+    }
+    
+    @IBAction func touchedRepeat(sender: UIButton) {
+        if let indexPathOfThisCell = tableView?.indexPathForCell(self) {
+            delegate?.taskTableViewCell?(done: false, trash: false, repeat:true, indexPath:indexPathOfThisCell)
         }
     }
     
     @IBAction func touchedTrash(sender: UIButton) {
         if let indexPathOfThisCell = tableView?.indexPathForCell(self) {
-            delegate?.taskTableViewCell?(done: false, trash: true, indexPath:indexPathOfThisCell)
+            delegate?.taskTableViewCell?(done: false, trash: true, repeat:false, indexPath:indexPathOfThisCell)
         }
     }
 

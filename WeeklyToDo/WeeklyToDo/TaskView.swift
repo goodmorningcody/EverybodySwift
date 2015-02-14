@@ -17,6 +17,7 @@ import CoreData
 class TaskView: UIView, UITextFieldDelegate {
     
     @IBOutlet var taskTextField : UITextField?
+    @IBOutlet var addOrEditButton : UIButton?
     @IBOutlet var weekendButtonArray : [UIButton]?
     @IBOutlet var todayImageArray : [UIImageView]?
     
@@ -24,6 +25,10 @@ class TaskView: UIView, UITextFieldDelegate {
     @IBOutlet var visualEffectView : UIVisualEffectView?
     
     var delegate : TaskViewProtocol?
+    
+    var isOverwrite : Bool?
+    var overwriteWeekend : Int?
+    var overwriteIndexAtWeekend : Int?
     
     @IBAction func touchedWeekendToggleButton(sender: UIButton) {
         sender.selected = !sender.selected
@@ -44,21 +49,28 @@ class TaskView: UIView, UITextFieldDelegate {
         }
         
         if selectedWeekendArray.count==0 {
-            println("선택된 weekend가 하나도 없습니다. 최소 하나는 선택되어야 합니다.")
+            UIAlertView(title: "Weekly To-Do", message: "Please select a weekend", delegate: nil, cancelButtonTitle: "OK").show()
             return
         }
         
         if let inputedToDo = taskTextField?.text {
+            if countElements(inputedToDo)==0 {
+                UIAlertView(title: "Weekly To-Do", message: "Please input To-Do description.", delegate: nil, cancelButtonTitle: "OK").show()
+                return
+            }
+            
             for selectedWeekend in selectedWeekendArray {
-                WeeklyToDoDB.sharedInstance.insertTaskInWeekend(inputedToDo, when: Weekly.weekday(selectedWeekend, useStandardFormat:true), isRepeat: repeatSegment?.selectedSegmentIndex==0 ? true : false)
+                if isOverwrite==true {
+                    WeeklyToDoDB.sharedInstance.updateTaskInWeekend(overwriteWeekend!, atIndex: overwriteIndexAtWeekend!, todo: inputedToDo, isRepeat: repeatSegment?.selectedSegmentIndex==0 ? true : false)
+                }
+                else {
+                    WeeklyToDoDB.sharedInstance.insertTaskInWeekend(inputedToDo, when: Weekly.weekday(selectedWeekend, useStandardFormat:true), isRepeat: repeatSegment?.selectedSegmentIndex==0 ? true : false)
+                }
+                
             }
             
             hide()
             delegate?.didAddingToDo?()
-        }
-        else {
-            println("To Do에 입력된 내용이 없습니다. 내용을 입력하지 않고는 생성할 수 없습니다. ")
-            return
         }
     }
     
@@ -77,21 +89,65 @@ class TaskView: UIView, UITextFieldDelegate {
         )
     }
     
-    func show(weekend:Int, index:Int) {
-        //WeeklyToDoDB.sharedInstance.
-    }
-    func show(parent: UIView) {
+    func show(parent: UIView, weekend:Int, index:Int) {
+        isOverwrite = true
+        overwriteWeekend = weekend
+        overwriteIndexAtWeekend = index
+        
+        self.addOrEditButton?.setTitle("EDIT", forState: UIControlState.Normal)
+        self.addOrEditButton?.setTitle("EDIT", forState: UIControlState.Highlighted)
+        
+        if let task = WeeklyToDoDB.sharedInstance.taskInWeekend(weekend, atIndex:index) {
+            self.taskTextField?.text = task.todo
+            self.repeatSegment?.selectedSegmentIndex = task.repeat.boolValue==true ? 0:1
+            var dateFormatter = NSDateFormatter()
+            for( var i=0; i<dateFormatter.weekdaySymbols.count; ++i ) {
+                self.weekendButtonArray?[i].selected = dateFormatter.weekdaySymbols[i] as String == Weekly.weekdayFromNow(weekend, useStandardFormat: true)
+                self.weekendButtonArray?[i].userInteractionEnabled = false
+            }
+        }
+        
         self.visualEffectView?.alpha = 0.0
         var originalTransform = self.transform
         self.transform = CGAffineTransformMakeTranslation(self.transform.tx, bounds.height)
         parent.addSubview(self)
         
         UIView.animateWithDuration(0.5, delay:0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.3, options:UIViewAnimationOptions.CurveEaseIn, animations: {
-            println("") // for compile error T_T
             self.visualEffectView?.alpha = 1.0
             self.transform = originalTransform
-            }, completion: { finished in
-                //self.removeFromSuperview()
-        })
+            },
+            completion: { finished in
+            }
+        )
+        
     }
+    func show(parent: UIView) {
+        isOverwrite = false
+        
+        self.addOrEditButton?.setTitle("ADD", forState: UIControlState.Normal)
+        self.addOrEditButton?.setTitle("ADD", forState: UIControlState.Highlighted)
+        
+        self.taskTextField?.text = ""
+        self.repeatSegment?.selectedSegmentIndex = 0
+        
+        var dateFormatter = NSDateFormatter()
+        for( var i=0; i<dateFormatter.weekdaySymbols.count; ++i ) {
+            self.weekendButtonArray?[i].selected = dateFormatter.weekdaySymbols[i] as String == Weekly.weekdayFromNow(0, useStandardFormat: true)
+            self.weekendButtonArray?[i].userInteractionEnabled = true
+        }
+        
+        self.visualEffectView?.alpha = 0.0
+        var originalTransform = self.transform
+        self.transform = CGAffineTransformMakeTranslation(self.transform.tx, bounds.height)
+        parent.addSubview(self)
+        
+        UIView.animateWithDuration(0.5, delay:0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.3, options:UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.visualEffectView?.alpha = 1.0
+            self.transform = originalTransform
+            },
+            completion: { finished in
+            }
+        )
+    }
+    
 }
