@@ -16,10 +16,9 @@ class WeeklyToDoTableViewController: UITableViewController, TaskTableViewCellPro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barTintColor = Color.getNavigationBackgroundColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:Color.getPointColor(), NSFontAttributeName : Font.getHightlightFont()]
-        
+//
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "add"), style: UIBarButtonItemStyle.Plain, target: self, action: "addNewTask")
         self.navigationItem.rightBarButtonItem?.tintColor = Color.getPointColor()
         

@@ -99,7 +99,7 @@ class WeeklyToDoDB : CoreDataController {
     func updateTaskInWeekend(dayFromToday:Int, atIndex:Int, todo:String, isRepeat:Bool) {
         if let fetched = getWeekend(dayFromToday) {
             if fetched.tasks.count>atIndex {
-                var tasks = fetched.mutableSetValueForKey("tasks")
+                var tasks = fetched.tasks
                 var taskArray = tasks.allObjects
                 if let task = taskArray[atIndex] as? Task {
                     task.todo = todo

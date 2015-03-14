@@ -35,19 +35,19 @@ class Weekly {
     }
     
     class func dateFromNow(toSymbol: String) -> NSDate? {
-        var symbols = NSDateFormatter().weekdaySymbols + NSDateFormatter().weekdaySymbols
+        var symbols = NSDateFormatter().weekdaySymbols + NSDateFormatter().weekdaySymbols as [String]
         var symbolOnToday = weekdayFromNow(0, useStandardFormat:false)
         var length = 0
         var foundedStartIndex = false
         for symbol in symbols {
-            if symbol as String==symbolOnToday {
+            if symbol==symbolOnToday {
                 foundedStartIndex = true
             }
             else if foundedStartIndex==true {
                 ++length
             }
             
-            if symbol as String == toSymbol {
+            if symbol == toSymbol {
                 break
             }
         }
